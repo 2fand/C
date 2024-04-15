@@ -184,3 +184,27 @@ int main()
     return 0;
 }
 *///100以内的平方表^
+/*
+int main()
+{
+    int i=0;
+    for (i=0;i>-101;i--)
+    {
+        printf("%d\n",i);
+    }
+    return 0;
+}
+*///初识C语言中的自减符号“--”^
+/*
+int main()
+{
+    int a=1;
+    float b=1.23;
+    char c="1";
+    for (a=1;a<10;a++)
+    {
+        printf("h\n");
+    }
+    return 0;
+}
+*///初用断点调试^

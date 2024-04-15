@@ -3,7 +3,7 @@ int main()
 {
     int i=1;
     int a=0;
-    printf("(int=OK,9->=1)一一一一一\n\n");
+    printf("(int=OK,9->=1)\n\n");
     while (1)
     {
         scanf("%d",&a);
