@@ -208,3 +208,20 @@ int main()
     return 0;
 }
 *///初用断点调试^
+/*
+int main()
+{
+    char i=0;
+    scanf("%c",&i);
+    printf("\n%c%c%c %c %c  %c  %c%c%c\n%c   %c %c %c %c %c %c\n%c   %c%c%c %c%c%c %c%c%c\n%c   %c %c %c %c %c%c \n%c%c%c %c %c %c %c %c %c",i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i);
+    return 0;
+}
+*///另一种字符画^
+int main()
+{
+    char i=0;
+    printf("请输入一个字符\n");
+    scanf("%c",&i);
+    printf("%c的ASCII值是%d",i,i);
+    return 0;
+}
