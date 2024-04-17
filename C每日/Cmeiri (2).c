@@ -217,11 +217,25 @@ int main()
     return 0;
 }
 *///另一种字符画^
+/*
 int main()
 {
     char i=0;
     printf("请输入一个字符\n");
     scanf("%c",&i);
     printf("%c的ASCII值是%d",i,i);
+    return 0;
+}
+*///关于ASCII码的程序^
+/*void main() {printf("Hello,world!");}<--用两行代码来打印出“Hello,world”的程序
+-------
+#include <stdint.h>
+void main() {printf("Hello,world!");}
+-------
+*/
+int main() {
+    char i=0;
+    printf("ASCII码对照表v\n");
+    for (i=0;i!=-128;i++) {printf("%d:%c\n",i,i);}
     return 0;
 }
