@@ -251,6 +251,7 @@ int main() {
     return 0;
 }
 *///二进制，八进制，十进制，十六进制^
+/*
 int main() {
     float a=1.0;
     int b,c=0;
@@ -261,3 +262,4 @@ int main() {
     printf("\n%f",b/10);
     return 0;
 }
+*///一个能把至少二位的小数转化成一个一位小数的程序^
