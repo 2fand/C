@@ -233,9 +233,31 @@ int main()
 void main() {printf("Hello,world!");}
 -------
 */
+/*
 int main() {
     char i=0;
     printf("ASCII码对照表v\n");
     for (i=0;i!=-128;i++) {printf("%d:%c\n",i,i);}
+    return 0;
+}
+*///关于ASCII码的程序2^
+/*
+int main() {
+    int a=011163;
+    int b=0x1273;
+    int c=0b0001001001110011;
+    int d=4723;
+    printf("%d\n%d\n%d\n%d",a,b,c,d);
+    return 0;
+}
+*///二进制，八进制，十进制，十六进制^
+int main() {
+    float a=1.0;
+    int b,c=0;
+    scanf("%f",&a);
+    int b=a*10;
+    int c=a*100;
+    if (c-b*10>4) {b++;}
+    printf("\n%f",b/10);
     return 0;
 }
