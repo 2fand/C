@@ -250,16 +250,16 @@ int main() {
     printf("%d\n%d\n%d\n%d",a,b,c,d);
     return 0;
 }
-*///二进制，八进制，十进制，十六进制(二进制前面加0b,八进制前面加0,十六进制前面加0x)^
+*///二进制，八进制，十进制，十六进制^
 /*
 int main() {
     float a=1.0;
     int b,c=0;
     scanf("%f",&a);
-    int b=a*10;
-    int c=a*100;
+    int b=a*1000;
+    int c=a*10000;
     if (c-b*10>4) {b++;}
-    printf("\n%f",b/10);
+    printf("\n%f",b/1000);
     return 0;
 }
 *///一个能把至少二位的小数转化成一个一位小数的程序^
