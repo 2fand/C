@@ -1,4 +1,4 @@
-#include <stdint.h>//““ ’”里的东西是重点
+#include <stdio.h>//““ ’”里的东西是重点
 /*
 int main()
 {
@@ -263,3 +263,16 @@ int main() {
     return 0;
 }
 *///一个能把至少二位的小数转化成一个一位小数的程序^
+/*
+int main()
+{
+    0b010101;
+    23;
+    0654;
+    0xACD;
+    9.6;
+    "1
+    "jdfckjsn";
+    return 0;
+}
+*///字面常量^
