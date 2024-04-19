@@ -1,4 +1,4 @@
-#include<stdint.h>
+#include<stdioo.h>
 int main()
 {
     int i=1;
