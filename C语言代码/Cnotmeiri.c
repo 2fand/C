@@ -1,4 +1,4 @@
-#include <stdint.h>//““ ’”里的东西是重点
+#include <stdioo.h>//““ ’”里的东西是重点
 /*
 int main()
 {
