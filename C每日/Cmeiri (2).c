@@ -284,7 +284,7 @@ int main()
 	printf("%d", i);
 	return 0;
 }
-*///用const修饰的变量(修饰成的常量)^
+*///用const修饰的常变量^
 /*
 int a = 1;
 int main()
