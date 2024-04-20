@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS 1
 #include <stdio.h>//““ ’”里的东西是重点
 /*
 int main()
@@ -276,3 +277,20 @@ int main()
     return 0;
 }
 *///字面常量^
+/*
+int main()
+{
+	const int i = 1;
+	printf("%d", i);
+	return 0;
+}
+*///用const修饰的变量(修饰成的常量)^
+/*
+int a = 1;
+int main()
+{
+	scanf("%d", &a);
+	printf("%d", a << 1);
+	return 0;
+}
+*///初识位移符号“<<”(“>>”也是位移符号，目前还没写过)^
