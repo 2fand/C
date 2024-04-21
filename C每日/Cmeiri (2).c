@@ -294,3 +294,10 @@ int main()
 	return 0;
 }
 *///初识位移符号“<<”(“>>”也是位移符号，目前还没写过)^
+/*
+int main()
+{
+    printf("c\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a\a");
+    return 0;
+}
+*///初识“\a”转义符（但我听不出一丝声响来）^
