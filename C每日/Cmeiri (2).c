@@ -334,3 +334,21 @@ int main()
     return 0;
 }
 *///初识“\xdd”(“d”是十六进制中的一位数字)^
+/*
+int main()
+{
+	int i = 0;
+	printf("\a\\\t\\\"\"\'\v\v\v\v\v\t\a\a\a\n\v\n\v\\\\\\\\");
+	return 0;
+}
+*///一堆转义符^
+/*
+int main()
+{
+    int i=0;
+    scanf("%d",&i);
+    if (i==1) printf("你刚才输入的数是一");
+    else printf("你刚才输入的数不是一");
+    return 0;
+}
+*///没大括号的if函数^
