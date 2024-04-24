@@ -1,5 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include <stdio.h>//““ ’”里的东西是重点
+#include <string.h>
+#include <stdlib.h>
 /*
 int main()
 {
@@ -352,3 +354,19 @@ int main()
     return 0;
 }
 *///没大括号的if函数^
+/*
+int main()
+{
+    char i[]={'a','a','\0'};
+    printf("%d\n",strlen(i));
+    return 0;
+}
+*///初识“strlen()”函数和“\0”转义符^
+/*
+int main()
+{
+	system("color 42");
+	printf("color 42");
+	return 0;
+}
+*///初识“system()”函数^
