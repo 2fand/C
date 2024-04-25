@@ -370,3 +370,23 @@ int main()
 	return 0;
 }
 *///初识“system()”函数^
+/*
+int main()
+{
+    long long i=0;
+    char j[]="\0";
+    scanf("%lld.%s",&i,&j);
+    printf("%lld",strlen(j));
+    return 0;
+}
+*///一个能输出你输入的小数的位数的程序^
+/*
+int main()
+{
+    int a,b=0;
+    scanf("%d %d",&a,&b);
+    if (a==1 && b==1) {printf("你刚才输入的两个数都是1");}
+    else {printf("你刚才输入的两个数至少有一个不是1");}
+    return 0;
+}
+*///初识“&&”与运算^
