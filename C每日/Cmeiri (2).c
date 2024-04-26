@@ -390,3 +390,21 @@ int main()
     return 0;
 }
 *///初识“&&”与运算^
+/*
+int main()
+{
+    int a,b=0;
+    scanf("%d %d",&a,&b);
+    printf("%d",a||b);
+    return 0;
+}
+*///初识“||”或运算^
+/*
+int main()
+{
+    int a=0;
+    scanf("%d",&a);
+    printf("%d",!a);
+    return 0;
+}
+*///初识“!”非运算^
