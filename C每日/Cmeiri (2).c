@@ -421,3 +421,16 @@ int main()
     return 0;
 }
 *///打印一个只有十个整数的数组^
+/*
+int sum2(int a)
+{
+    a-=2;
+    return a;
+}
+int main()
+{
+    int i=0;
+    printf("%d",sum2(i));
+    return 0;
+}
+*///初识函数^
