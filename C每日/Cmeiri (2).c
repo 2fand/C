@@ -434,3 +434,33 @@ int main()
     return 0;
 }
 *///初识函数^
+/*
+int a,b=0;
+int Add10(int i) {
+    i+=10;
+    return i;
+}
+int Sum5Add10(int i,int ii) {
+    i-=5;
+    ii=Add10(ii);
+    return i+ii;
+}
+int main() {
+    a=Add10(a);
+    b=Sum5Add10(a,b);
+    printf("%d,%d",a,b);
+    return 0;
+}
+*///多重函数嵌套^
+/*
+int main() {
+    int a,b=0;
+    printf("被除数是");
+    scanf("%d",&a);
+    printf("\n除数是");
+    scanf("%d",&b);
+    if (!b) {printf("\n\a由于除数为0,所以无法给出被除数除以除数的商和余数\n");}
+    else {printf("\n若被除数为%d,除数为%d,则商为%d,余数为%d\n",a,b,a/b,a%b);}
+    return 0;
+}
+*///初识取模运算符“%”和取整的运算方法^
