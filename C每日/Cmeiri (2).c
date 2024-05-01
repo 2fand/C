@@ -2,6 +2,7 @@
 #include <stdio.h>//““ ’”里的东西是重点
 #include <string.h>
 #include <stdlib.h>
+#include <Windows.h>
 /*
 int main()
 {
@@ -509,3 +510,14 @@ int main() {
     return 0;
 }
 *///输出无限的“0o”群^
+/*
+enum Num {
+    A=1000
+};
+int main() {
+    enum Num i=A;
+    Sleep(i);
+    printf("%d",i);
+    return 0;
+}
+*///初识等待函数“Sleep()”并第一次用枚举常量的程序^
