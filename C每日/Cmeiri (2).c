@@ -492,3 +492,11 @@ int main() {
     return 0;
 }
 *///“10”数组输入^
+/*
+int main() {
+    while (1) {
+        printf(".");
+    }
+    return 0;
+}
+*///输出无限的点群^
