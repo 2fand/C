@@ -500,3 +500,12 @@ int main() {
     return 0;
 }
 *///输出无限的点群^
+/*
+int main() {
+    int i=0;
+    for (i=0;1;printf("o")) {
+        printf("0");
+    }
+    return 0;
+}
+*///输出无限的“0o”群^
