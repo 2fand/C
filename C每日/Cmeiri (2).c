@@ -541,3 +541,17 @@ int main() {
     return 0;
 }
 *///“只要输入1就输出1”^
+/* 
+enum A {
+    a,
+    b,
+    c
+};
+int main() {
+    int i=0;
+    enum A x=a;
+    x=(i++,++i,i++,i=i*2);
+    printf("i=%d,x=%d",i,x);
+    return 0;
+}
+*///初识逗号表达式^
