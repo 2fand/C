@@ -530,3 +530,14 @@ int main() {
     return 0;
 }
 *///初用等待输入1就执行的代码^
+/*
+enum A {O=1};
+int main() {
+    typedef unsigned int q;
+    q i=0;
+    scanf("%d",&i);
+    enum A a=O;
+    printf("%d",a!=i ? 0 : 1);
+    return 0;
+}
+*///“只要输入1就输出1”^
