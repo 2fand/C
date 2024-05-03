@@ -555,3 +555,29 @@ int main() {
     return 0;
 }
 *///初识逗号表达式^
+/*
+int main()
+{
+    int i,ii=1;
+    for (i=1;i<6;i++) {
+        for (ii=0;ii<i;ii++) {
+            printf("*");
+            if (i-1==ii) {printf("\n");}
+        }
+    }
+    return 0;
+}
+*///“没装修过的滑梯”^
+/*
+int main()
+{
+    int i,ii=1;
+    for (i=1;i<6;i++) {
+        for (ii=0;ii<i;ii++) {
+            if (i-1==ii) {printf("\\\n");}
+            else {printf("*");}
+        }
+    }
+    return 0;
+}
+*///“装修过的滑梯”^
