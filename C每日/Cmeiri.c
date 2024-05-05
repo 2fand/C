@@ -581,3 +581,9 @@ int main()
     return 0;
 }
 *///“装修过的滑梯”^
+/*
+int main() {
+    printf("\x68\x65\x6C\x6C\x6F\x2C\x77\x6F\x72\x6C\x64\x21");
+    return 0;    
+}
+*///新型打印“hello,world!”的方式^
