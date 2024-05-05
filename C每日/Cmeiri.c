@@ -587,3 +587,13 @@ int main() {
     return 0;    
 }
 *///新型打印“hello,world!”的方式^
+/*
+int main() {
+    int i=0;
+    for (i=0;i<5;i++) {
+        if (i==0 || i==4) {printf("*****\n");}
+        else {printf("*   *\n");}
+    }
+    return 0;    
+}
+*///能打印出用“*”组成的5*5的方框的程序^
