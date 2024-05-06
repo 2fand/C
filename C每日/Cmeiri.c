@@ -597,3 +597,12 @@ int main() {
     return 0;    
 }
 *///能打印出用“*”组成的5*5的“□”的程序^
+/*
+int main() {
+    long long i[2]={0};
+    int ii=0;
+    for (ii=0;ii<2;ii++) {scanf("%lld",&i[ii]);}
+    printf("%lld%lld",i[0],i[1]);
+    return 0;    
+}
+*///输出两个输入的数合起来的数(如果某个输入不是数，就把这个输入设为0)^
