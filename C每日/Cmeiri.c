@@ -1,4 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS 1
+//#define A(a,b) printf("%d",(a)+(b)); <------ “初用宏”中的宏
 #include <stdio.h>//““ ’”里的东西是重点
 #include <string.h>
 #include <stdlib.h>
@@ -606,3 +607,9 @@ int main() {
     return 0;    
 }
 *///输出两个输入的数合起来的数(如果某个输入不是数，就把这个输入设为0)^
+/*
+int main() {
+    A(1,2);
+    return 0;    
+}
+*///初用宏^
