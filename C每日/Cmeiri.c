@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 //#define A(a,b) printf("%d",(a)+(b)); <------ “初用宏”中的宏
+//#define A(x,y) (x,y) <------ “有表达式的宏”中的宏
 #include <stdio.h>//““ ’”里的东西是重点
 #include <string.h>
 #include <stdlib.h>
@@ -627,3 +628,11 @@ int main() {
     return 0;    
 }
 *///“纯分号”^
+/*
+int main() {
+    int i=0;
+    A(i++,i++);
+    printf("%d",i);
+    return 0;    
+}
+*///有表达式的宏^
