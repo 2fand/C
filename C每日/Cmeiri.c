@@ -636,3 +636,10 @@ int main() {
     return 0;    
 }
 *///有表达式的宏^
+/*
+int main() {
+    char a=getchar();
+    printf("%c",a);
+    return 0;    
+}
+*///初识“getchar()”函数^
