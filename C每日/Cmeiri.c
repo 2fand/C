@@ -652,3 +652,15 @@ int main() {
     return 0;    
 }
 *///能让你检测出是成年人、未成年人、婴儿、“还没有出生”这四个中的其中一个的程序^
+/*
+int main() {
+    int a,i,ii=0;
+    scanf("%d",&a);
+    printf("\n");
+    for (i=0;i<a;i++) {for (ii=00;ii<a;ii++) {
+        if (ii==a-1) {printf("■\n");}
+        else {printf("■");}
+    }}
+    return 0;    
+}
+*///打印一个边长为你输入的值的正方形(如果某个输入不是数，这个程序就不打印)^
