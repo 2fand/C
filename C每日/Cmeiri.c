@@ -664,3 +664,11 @@ int main() {
     return 0;    
 }
 *///打印一个边长为你输入的值的正方形(如果某个输入不是数，这个程序就不打印)^
+/*
+int main() {
+    auto int a=1;
+    register int b=2;
+    printf("%d,%d",a,b);
+    return 0;    
+}
+*///初识并初用“auto”和“register”这两个C语言中的关键字^
