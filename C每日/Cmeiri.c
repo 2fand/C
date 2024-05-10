@@ -672,3 +672,16 @@ int main() {
     return 0;    
 }
 *///初识并初用“auto”和“register”这两个C语言中的关键字^
+/*
+int main() {
+    goto a;
+    b:
+    printf("1\n");
+    goto c;
+    a:
+    printf("2\n");
+    goto b;
+    c:
+    return 0;    
+}
+*///初识并初用C语言里的“goto”关键字^
