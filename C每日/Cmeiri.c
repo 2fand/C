@@ -685,3 +685,17 @@ int main() {
     return 0;    
 }
 *///初识并初用C语言里的“goto”关键字^
+/*
+int main() {
+    do
+    {
+        printf("do while循环\n");
+    } while (0);
+    /*
+    while (0) {
+        printf("while循环\n");
+    }
+    */
+    return 0;    
+}
+*///初识并初用了C语言中的“do while”循环，并与“while”循环做了对比^
