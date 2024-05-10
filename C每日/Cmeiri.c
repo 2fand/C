@@ -2,7 +2,7 @@
 //#define A(a,b) printf("%d",(a)+(b)); <------ “初用宏”中的宏
 //#define A(x,y) (x,y) <------ “有表达式的宏”中的宏
 #include <stdio.h>//““ ’”里的东西是重点
-#include <string.h>
+#include <string.h>//“/-”“-/” <-- 程序里本来就有的注释
 #include <stdlib.h>
 #include <Windows.h>
 /*
@@ -25,7 +25,7 @@ int main()
     printf("%d\n%d",a+b,c-d);
     return 0;
 }
-*///一加一减0
+*///一加一减^
 /*
 int main()
 {
@@ -691,11 +691,11 @@ int main() {
     {
         printf("do while循环\n");
     } while (0);
-    /*
+    /-
     while (0) {
         printf("while循环\n");
     }
-    */
+    -/
     return 0;    
 }
 *///初识并初用了C语言中的“do while”循环，并与“while”循环做了对比^
