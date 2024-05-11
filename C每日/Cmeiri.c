@@ -709,3 +709,10 @@ int main() {
     return 0;    
 }
 *///“goto无限循环”^
+/*
+int main() {
+    int a=0;
+    printf("%d",sizeof a);
+    return 0;    
+}
+*///另一种“sizeof”的写法^
