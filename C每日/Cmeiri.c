@@ -699,3 +699,13 @@ int main() {
     return 0;    
 }
 *///初识并初用了C语言中的“do while”循环，并与“while”循环做了对比^
+/*
+int main() {
+    goto b;
+    a:
+    printf("goto无限循环\n");
+    b:
+    goto a;
+    return 0;    
+}
+*///“goto无限循环”^
