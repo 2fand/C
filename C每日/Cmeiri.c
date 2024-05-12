@@ -726,3 +726,10 @@ int main() {
     return 0;    
 }
 *///初识并初用“+=”和“-=”^
+/*
+int main() {
+	int a=123;
+	printf("%X", &a);
+	return 0;
+}
+*///输出“&a”的地址的后8位^
