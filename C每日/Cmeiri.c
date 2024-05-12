@@ -716,3 +716,13 @@ int main() {
     return 0;    
 }
 *///另一种“sizeof”的写法^
+/*
+int main() {
+    int a=0;
+    a+=2;
+    printf("a=%d\n",a);
+    a-=2;
+    printf("a=%d",a);
+    return 0;    
+}
+*///初识并初用“+=”和“-=”^
