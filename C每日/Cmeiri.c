@@ -733,3 +733,9 @@ int main() {
 	return 0;
 }
 *///输出“&a”的地址的后8位^
+/*
+int main() {
+    printf("你的操作系统是%d位的",sizeof(int*)*8);
+    return 0;    
+}
+*///能测出你的操作系统是几位的程序^
