@@ -746,3 +746,9 @@ int main() {
     return 0;    
 }
 *///输出“&a”的地址(既最正规，又完整)^
+/*
+int main() {
+    printf("%d",(int)1.1%1);
+    return 0;    
+}
+*///强制类型转换^
