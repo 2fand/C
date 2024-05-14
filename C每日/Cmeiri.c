@@ -752,3 +752,15 @@ int main() {
     return 0;    
 }
 *///强制类型转换^
+/*
+int main() {
+    int a=123;
+    a*=3;
+    printf("%d\n",a);
+    a/=3;
+    printf("%d\n",a);
+    a%=3;
+    printf("%d\n",a);
+    return 0;    
+}
+*///初识并初用“*=”“/=”和“%=”^
