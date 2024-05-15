@@ -774,3 +774,10 @@ int main() {
     return 0;    
 }
 *///初识并初用“>>=”和“<<=”^
+/*
+int main() {
+    int a=123;
+    printf("%d\n",*&a);
+    return 0;    
+}
+*///“间接性引用”^
