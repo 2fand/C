@@ -764,3 +764,13 @@ int main() {
     return 0;    
 }
 *///初识并初用“*=”“/=”和“%=”^
+/*
+int main() {
+    int a=16;
+    a>>=3;
+    printf("%d\n",a);
+    a<<=3;
+    printf("%d\n",a);
+    return 0;    
+}
+*///初识并初用“>>=”和“<<=”^
