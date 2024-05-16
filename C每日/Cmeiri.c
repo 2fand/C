@@ -787,3 +787,12 @@ int main() {
     return 0;    
 }
 *///“二级指针”^
+/*
+int main() {
+    int a,i=0;
+    scanf("%d",&a);
+    printf("\n");
+    for (i=0;i<a;i++) {printf(" @\n");}    
+    return 0;
+}
+*///输出一个长为你输入的数值(如果输入的东西不是一个数，那么输入的数值就是0)的竖着的直线^
