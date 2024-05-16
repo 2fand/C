@@ -781,3 +781,9 @@ int main() {
     return 0;    
 }
 *///“间接性引用”^
+/*
+int main() {
+    int* p=p;
+    return 0;    
+}
+*///“二级指针”^
