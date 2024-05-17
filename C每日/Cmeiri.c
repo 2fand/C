@@ -802,3 +802,14 @@ int main() {
     return 0;
 }
 *///“许多级指针”^
+/*
+int main() {
+    long long a[10]={0};
+    long long i,min=0;
+    for (i=0;i<10;i++) {scanf("%lld",&a[i]);}
+    min=a[0];
+    for (i=0;i<10;i++) {if (a[i]<min) {min=a[i];}}
+    printf("min=%lld",min);
+    return 0;
+}
+*///“求十个数中的最小值”(如果其中有不是数的东西,那么就把最小值设为0,并立刻终止)^
