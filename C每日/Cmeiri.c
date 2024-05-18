@@ -820,3 +820,11 @@ int main() {
     printf("%d",s.d);
 }
 *///初识并初用结构体^
+/*
+struct A{int i;};
+int main() {
+    struct A s={123222};
+    struct A * p=&s;
+    printf("%d",(*p).i);
+}
+*///“结构体里的成员变量的间接引用”^
