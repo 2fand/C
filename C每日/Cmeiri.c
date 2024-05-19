@@ -829,6 +829,14 @@ int main() {
 }
 *///“结构体里的成员变量的间接引用”^
 /*
+struct A{int i;};
+int main() {
+    struct A s={123222};
+    struct A * p=&s;
+    printf("%d",p->i);
+}
+*///初识并初用“->”^
+/*
 struct A{
     char name[20];
     int id;
@@ -838,4 +846,4 @@ int main() {
     struct A * p=&s;
     printf("name=%s,id=%d",p->name,p->id);
 }
-*///初运用结构体里的多个成员变量
+*///初运用结构体里的多个成员变量^
