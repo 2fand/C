@@ -828,3 +828,14 @@ int main() {
     printf("%d",(*p).i);
 }
 *///“结构体里的成员变量的间接引用”^
+/*
+struct A{
+    char name[20];
+    int id;
+};
+int main() {
+    struct A s={"this is a name",1234567};
+    struct A * p=&s;
+    printf("name=%s,id=%d",p->name,p->id);
+}
+*///初运用结构体里的多个成员变量
