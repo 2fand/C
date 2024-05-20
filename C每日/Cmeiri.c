@@ -847,3 +847,9 @@ int main() {
     printf("name=%s,id=%d",p->name,p->id);
 }
 *///初运用结构体里的多个成员变量^
+/*
+int main() {
+    printf("%d",~2);
+    return 0;
+}
+*///“按位非运算符‘~’”^
