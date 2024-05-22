@@ -879,3 +879,11 @@ int main() {
     return 0;
 }
 *///初识并初用“&=”^
+/*
+int main() {
+    int i=3;
+    i|=13;
+    printf("%d",i);
+    return 0;
+}
+*///初识并初用“|=”^
