@@ -887,3 +887,12 @@ int main() {
     return 0;
 }
 *///初识并初用“|=”^
+/*
+int main() {
+    while (1) {
+        break;
+        printf("C语言关键字break");
+    }
+    return 0;
+}
+*///初识并初用C语言关键字“break”^
