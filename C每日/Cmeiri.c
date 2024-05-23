@@ -896,3 +896,13 @@ int main() {
     return 0;
 }
 *///初识并初用C语言关键字“break”^
+/*
+int main() {
+    int i = 0;
+    for (i = 0; i < 10; i++) { 
+        if (i == 0) { continue; }
+        printf("C语言关键字continue   效果-> *%d*\n",i);
+    }
+    return 0;
+}
+*///初识并初用C语言关键字“continue”^
