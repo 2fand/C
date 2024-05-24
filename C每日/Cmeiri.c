@@ -906,3 +906,12 @@ int main() {
     return 0;
 }
 *///初识并初用C语言关键字“continue”^
+/*
+int main() {
+    int i=0;
+    for (i=0;i<10;i++) {printf("%d ",i);}
+    printf("\n\n");
+    for (i=9;i>-1;i--) {printf("%d ",i);}
+    return 0;
+}
+*///“for循环的顺序和逆序”^
