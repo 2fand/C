@@ -915,3 +915,10 @@ int main() {
     return 0;
 }
 *///“for循环的顺序和逆序”^
+/*
+int a=12345;
+int main() {
+    int a=321;
+    printf("a=%d",a);
+}
+*///“局部变量优先”^
