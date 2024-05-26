@@ -941,3 +941,19 @@ int main() {
     return 0;
 }
 *///打印25个特殊的数字(每一个数字都与它右上方或左下方的数字相等(除了没打印出来的部分))^
+/*
+int main() {
+    int a=0;
+    scanf("%d",&a);
+    switch (a) {
+        case 0:
+        printf("你刚才输入的数是“0”");
+        break;
+        case 1:
+        printf("你刚才输入的数是“1”");
+        break;
+        case 2:
+        printf("你刚才输入的数是“2”");
+    }
+}
+*///初识并初用C语言关键字“switch”^
