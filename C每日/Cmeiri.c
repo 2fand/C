@@ -989,3 +989,22 @@ int main() {
     else {printf("你刚才输入的数不是“0”");}
 }
 *///“别样的条件”4^
+/*
+int main() {
+    int a=0;
+    scanf("%d",&a);
+    switch (a) {
+        case 1:
+        case 2:
+        printf("你刚才输入的数在1~2之间");
+        break;
+        case 3:
+        case 4:
+        printf("你刚才输入的数在3~4之间");
+        break;
+        default:
+        printf("你刚才输入的的数不在1~4之间");
+        break;
+    }
+}
+*///“case”的几~几检测^
