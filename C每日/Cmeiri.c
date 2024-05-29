@@ -1008,3 +1008,10 @@ int main() {
     }
 }
 *///“case”的几~几检测^
+/*
+int main() {
+    int ii,ia=9;
+    for (ia=9;ia>3;ia--) {for (ii=ia;ii>ia-5;ii--) {printf("%d%s",ii,ia-4==ii ? "\n\n" : "  ");}}
+    return 0;
+}
+*///“也特殊的表格”(有点逆向)^
