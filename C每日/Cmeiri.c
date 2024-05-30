@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 //#define A(a,b) printf("%d",(a)+(b)); <------ “初用宏”中的宏
 //#define A(x,y) (x,y) <------ “有表达式的宏”中的宏
+//#define aaa(a) (a,a,a); <------ “能重复3次表达式的宏‘aaa(a)’”中的宏
 #include <stdio.h>//““ ’”里的东西是重点
 #include <string.h>//“/-”“-/” <-- 程序里本来就有的注释
 #include <stdlib.h>
@@ -1025,3 +1026,14 @@ int main() {
     return 0;
 }
 *///打印有20个数字的斐波那契数列^
+/*
+int main() {
+    int ia = 0;
+    aaa(ia++)
+    printf("%d\n\n",ia);
+    aaa(ia = 2)
+    aaa(ia *= ia)
+    printf("%d\n", ia);
+    return 0;
+}
+*///“能重复3次表达式的宏‘aaa(a)’”^
