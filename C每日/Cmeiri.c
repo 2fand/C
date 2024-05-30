@@ -1015,3 +1015,13 @@ int main() {
     return 0;
 }
 *///“也特殊的表格”(逆向版)^
+/*
+int main() {
+    int arr[20] = { 0,1 };
+    int ii = 2;
+    for (ii = 2; ii < 20; ii++) { arr[ii] = arr[ii - 1] + arr[ii - 2]; }
+    printf("有20个数字的斐波那契数列:");
+    for (ii = 0; ii < 20; ii++) { printf("%d%c", arr[ii],ii==19 ? '\n' : ','); }
+    return 0;
+}
+*///打印有20个数字的斐波那契数列^
