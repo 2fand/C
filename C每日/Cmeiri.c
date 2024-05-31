@@ -2,6 +2,7 @@
 //#define A(a,b) printf("%d",(a)+(b)); <------ “初用宏”中的宏
 //#define A(x,y) (x,y) <------ “有表达式的宏”中的宏
 //#define aaa(a) (a,a,a); <------ “能重复3次表达式的宏‘aaa(a)’”中的宏
+//#define q ; <------ “宏的查找替换”1中的宏
 #include <stdio.h>//““ ’”里的东西是重点
 #include <string.h>//“/-”“-/” <-- 程序里本来就有的注释
 #include <stdlib.h>
@@ -1037,3 +1038,10 @@ int main() {
     return 0;
 }
 *///“有能重复3次表达式的宏‘aaa(a)’”^
+/*
+int main() {
+    printf("Hello,world!\n")q
+    printf("3.141592653589\n")q
+    return 0;
+}
+*///“宏的查找替换”1^
