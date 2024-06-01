@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS 1
+#define _CRT_SECURE_NO_WARNINGS 1// <------ 所有程序的宏
 //#define A(a,b) printf("%d",(a)+(b)); <------ “初用宏”中的宏
 //#define A(x,y) (x,y) <------ “有表达式的宏”中的宏
 //#define aaa(a) (a,a,a); <------ “能重复3次表达式的宏‘aaa(a)’”中的宏
@@ -1061,3 +1061,9 @@ int main() {
     return 0;
 }
 *///“宏的替换”2^
+/*
+int main() {
+    printf("%d", _CRT_SECURE_NO_WARNINGS + _CRT_SECURE_NO_WARNINGS);
+    return 0;
+}
+*///“_CRT_SECURE_NO_WARNINGS”^
