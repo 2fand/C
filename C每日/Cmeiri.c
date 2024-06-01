@@ -1067,3 +1067,14 @@ int main() {
     return 0;
 }
 *///“_CRT_SECURE_NO_WARNINGS”^
+/*
+int main() {
+    int i = 0;
+    int ia = 1;
+    for (ia = 1; ia < 41; ia++) {
+        i += ia;
+        printf("%d%c", i, !(ia % 5) ? '\n' : ' ');
+    }
+    return 0;
+}
+*///“规范的三角数”^
