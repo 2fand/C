@@ -1125,3 +1125,10 @@ int main() {
 	return 0;
 }
 *///“猜输赢游戏”^
+/*
+int main() {
+	int i = 0;
+	while ((i=getchar()) != EOF) { putchar(i); }
+	return 0;
+}
+*///“复述机”^
