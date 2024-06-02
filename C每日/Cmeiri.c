@@ -1078,3 +1078,50 @@ int main() {
     return 0;
 }
 *///“规范的三角数”^
+/*
+int main() {
+	int i = 1;
+	int ia = 0;
+	int ib = 0;
+	int ic = 0;
+	printf("欢迎来玩猜输赢游戏，输入零即可开始，非零即可退出(需要两个人来玩这游戏)\n");
+	scanf("%d",&i);
+	if (!i) {
+		printf("请P1输入“赢”的位置(不要被P2看到)(非零在第一位，零在第二位)\n");
+		scanf("%d",&ia);
+		system("cls");
+		printf("? ?\n\n请P2输入你猜测的“赢”的位置(如果猜测正确，则P2赢，否则P1赢)\n");
+		scanf("%d", &ib);
+		system("cls");
+		printf("P2已猜测完成，请P1和P2来等待结果出现\n\n");
+		for (ic = 10; ic > -1; ic--) {
+			switch (ic) {
+				case 1:
+				system("color 0C");
+				break;
+				case 2:
+				system("color 06");
+				break;
+				case 3:
+				system("color 0A");
+				break;
+				default:
+				system("color 0F");
+				break;
+			}
+			printf("%d\n", ic);
+			Sleep(1000);
+		}
+		system("cls");
+		if ((ia || ib) && (!(ia && ib))) { system("color 40"); }
+		else { system("color A0"); }
+		printf("结果已揭晓!请见右面!(P2刚才输入的是%d) > %s\n",ib,ia ? "输 赢" : "赢 输\n");
+		Sleep(1000);
+		printf("现在，赢家是P%d!", (ia || ib) && (!(ia && ib)) ? 1 : 2);
+		Sleep(2500);
+	}
+	system("cls");
+	system("color 0F");
+	return 0;
+}
+*///“猜输赢游戏”^
