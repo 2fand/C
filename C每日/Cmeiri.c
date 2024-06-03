@@ -1132,3 +1132,12 @@ int main() {
 	return 0;
 }
 *///“复述机”^
+/*
+int main() {
+	int i = 0;
+	int ia = 0;
+	scanf("%d %d", &i, &ia);
+	printf("%s", (i || ia) && (!(i && ia)) ? "True" : "False");
+	return 0;
+}
+*///“异或门”^
