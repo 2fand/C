@@ -1140,4 +1140,13 @@ int main() {
 	printf("%s", (i || ia) && (!(i && ia)) ? "True" : "False");
 	return 0;
 }
-*///“异或门”^
+*///“异或门”(XOR)^
+/*
+int main() {
+	int i = 0;
+	int ia = 0;
+	scanf("%d %d", &i, &ia);
+	printf("%s", !((i || ia) && (!(i && ia))) ? "True" : "False");
+	return 0;
+}
+*///“同或门”(XNOR)^
