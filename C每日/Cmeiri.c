@@ -1150,3 +1150,42 @@ int main() {
 	return 0;
 }
 *///“同或门”(XNOR)^
+/*
+int main() {
+	while (1) {
+		system("color 03");
+		Sleep(1000);
+		system("color 14");
+		Sleep(1000);
+		system("color 25");
+		Sleep(1000);
+		system("color 36");
+		Sleep(1000);
+		system("color 47");
+		Sleep(1000);
+		system("color 58");
+		Sleep(1000);
+		system("color 69");
+		Sleep(1000);
+		system("color 7A");
+		Sleep(1000);
+		system("color 8B");
+		Sleep(1000);
+		system("color 9C");
+		Sleep(1000);
+		system("color AD");
+		Sleep(1000);
+		system("color BE");
+		Sleep(1000);
+		system("color CF");
+		Sleep(1000);
+		system("color D1");
+		Sleep(1000);
+		system("color E2");
+		Sleep(1000);
+		system("color F3");
+		Sleep(1000);
+	}
+	return 0;
+}
+*///“炫彩显示屏”^
