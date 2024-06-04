@@ -1189,3 +1189,11 @@ int main() {
 	return 0;
 }
 *///“炫彩显示屏”^
+/*
+int main() {
+	printf("hello,good bye!");
+	Sleep(3000);
+	system("cls");
+	return 0;
+}
+*///“cls”清屏^
