@@ -1197,3 +1197,9 @@ int main() {
 	return 0;
 }
 *///“cls”清屏^
+/*
+int main() {
+	system("help");
+	return 0;
+}
+*///“help”帮助^
