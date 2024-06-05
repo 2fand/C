@@ -1203,3 +1203,21 @@ int main() {
 	return 0;
 }
 *///“help”帮助^
+/*
+int main() {
+	int i = 0;
+	int ii = 0;
+	int ia = 0;
+	long long ll = 1;
+	scanf("%d^%d", &i, &ii);
+	ia = ii;
+	if (ii < 0 || i < 0) { printf("不支持负数运算"); }
+	else { 
+		if (ii) {
+			for (ii = ii; ii > 0; ii--) { ll *= i; }
+			printf("%d^%d=%lld", i, ia, ll);
+		}
+	}
+	return 0;
+}
+*///“正整数的几的几次方运算”^
