@@ -1221,3 +1221,18 @@ int main() {
 	return 0;
 }
 *///“正整数的几的几次方运算”^
+/*
+int main() {
+	int i = 0;
+	int ia = 0;
+	int ib = 0;
+	scanf("%d",&i);
+	for (ia = 0; ia < i; ia++) {
+		printf("%d", i);
+		for (ib = 0; ib < i; ib++) { 
+			if (i - 1 != ia) { printf("*"); }		
+		}
+	}
+	return 0;
+}
+*///“每个你输入的数的距离=你输入的数的数量个的‘*’”^
