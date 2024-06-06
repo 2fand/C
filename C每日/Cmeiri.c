@@ -1236,3 +1236,12 @@ int main() {
 	return 0;
 }
 *///“每个你输入的数的距离=你输入的数的数量个的‘*’”^
+/*
+int main() {
+	char arr[6] = { '0','0', '0', '0', '0', '\0' };
+	int i = 0;
+	for (i = 0; i < 5; i++) { arr[i] = getchar(); }
+	printf("\n%c%c%c%c%c", arr[3], arr[0], arr[4], arr[1], arr[2]);
+	return 0;
+}
+*///“简单五字符加密器”^
