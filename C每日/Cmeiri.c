@@ -1245,3 +1245,20 @@ int main() {
 	return 0;
 }
 *///“简单五字符加密器”^
+/*
+int main() {
+	long long ll = 0;
+	int i = 0;
+	int ia = 0;
+	printf("请输入你想要进行“3x+1”的数 > ");
+	scanf("%lld",&ll);
+	printf("请输入你想要进行“3x+1”的数的输入次数 > ");
+	scanf("%d", &i);
+	for (ia = 0 ; ia < i ; ia++) {
+		printf("%lld ",ll);
+		if (ll % 2) { ll = 3 * ll + 1; }
+		else { ll /= 2; }
+	}
+	return 0;
+}
+*///“3x+1”^
