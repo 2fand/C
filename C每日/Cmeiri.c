@@ -1262,3 +1262,18 @@ int main() {
 	return 0;
 }
 *///“3x+1”^
+/*
+int main() {
+	int arr[5] = { 0 };
+	int i = 0;
+	int ia = 0;
+	for (i = 0; i < 5; i++) { scanf("%d", &arr[i]); }
+	for (i = 1; i < 5; i++) {
+		if (arr[0] != arr[i]) {
+			ia = 1;
+			break;
+	} }
+	printf("你刚才输入的五个数%s",ia ? "有点不一样" : "都是一个样");
+	return 0;
+}
+*///“测五个数是否一样的程序”^
