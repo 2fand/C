@@ -1283,3 +1283,16 @@ int main() {
 	return 0;
 }
 *///“打印‘%s’‘%c’和‘%.1f’的程序”^
+/*
+int main() {
+	int i = 0;
+	int ia = 0;
+	int ib = 0;
+	scanf("%d", &i);
+	for (ia = 0; ia < i; ia++) { for (ib = 0; ib < i; ib++) {
+		printf("%c%c", ia <= ib ? '*' : ' ', i - 1 == ib ? '\n' : '\0');
+		
+	} }
+	return 0;
+}
+*///“打印高为你输入的数的由‘*’构成的‘◥’”^
