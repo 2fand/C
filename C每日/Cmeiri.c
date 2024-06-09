@@ -1286,6 +1286,16 @@ int main() {
 /*
 int main() {
 	int i = 0;
+	scanf("%d", &i);
+	if (i < 1) { printf("你刚才输入的数小于1"); }
+	else if (i > 1) { printf("你刚才输入的数大于1"); }
+	else { printf("你刚才输入的数是1"); }
+	return 0;
+}
+*///初识并初用“else if”^
+/*
+int main() {
+	int i = 0;
 	int ia = 0;
 	int ib = 0;
 	scanf("%d", &i);
