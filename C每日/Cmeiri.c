@@ -1317,3 +1317,11 @@ int main() {
 	return 0;
 }
 *///打印由“*”构成的，长度为你输入的数的虚线^
+/*
+int main() {
+	char arr[20] = { '\000' };
+	scanf("%s", arr);
+	printf("\narr(\"%s\")与“1234123”%s相同\n", arr, !(strcmp(arr, "1234123")) ? "\000" : "不");
+	return 0;
+}
+*///“strcmp函数的初次运用”^
