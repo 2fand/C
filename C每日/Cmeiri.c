@@ -1324,4 +1324,4 @@ int main() {
 	printf("\narr(\"%s\")与“1234123”%s相同\n", arr, !(strcmp(arr, "1234123")) ? "\000" : "不");
 	return 0;
 }
-*///“strcmp函数的初次运用”^
+*///“初识strcmp函数并初次运用”^
