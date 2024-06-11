@@ -1325,3 +1325,9 @@ int main() {
 	return 0;
 }
 *///“初识strcmp函数并初次运用”^
+/*
+int main() {
+	printf("9的开方 = %d",(int)(sqrt(9)));
+	return 0;
+}
+*///初识并初用开方函数——“sqrt函数”^
