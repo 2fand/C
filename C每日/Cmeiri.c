@@ -1331,3 +1331,18 @@ int main() {
 	return 0;
 }
 *///初识并初用开方函数——“sqrt函数”^
+/*
+typedef long long ll;
+int main() {
+	ll lla = 0;
+	ll llb = 0;
+	ll lli = 0;
+	scanf("%lld %lld",&lla,&llb);
+	ll llarr[2] = { lla,llb };
+	while (lla % llb) {
+		(lli = lla % llb, lla = llb, llb = lli);
+	}
+	printf("\n%lld和%lld的最大公因数为%lld\n", llarr[0], llarr[1], llb);
+	return 0;
+}
+*///“求你输入的两个数的最大公因数的程序”^
