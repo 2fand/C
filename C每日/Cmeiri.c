@@ -1346,3 +1346,19 @@ int main() {
 	return 0;
 }
 *///“求你输入的两个数的最大公因数的程序”^
+/*
+typedef long long ll;
+int main() {
+	ll lla = 0;
+	ll llb = 0;
+	ll lli = 0;
+	scanf("%lld %lld",&lla,&llb);
+	ll llab = lla * llb;
+	ll llarr[2] = { lla,llb };
+	while (lla % llb) {
+		(lli = lla % llb, lla = llb, llb = lli);
+	}
+	printf("\n%lld和%lld的最小公倍数为%lld\n", llarr[0], llarr[1], llab / llb);
+	return 0;
+}
+*///“求你输入的两个数的最小公倍数的程序”^
