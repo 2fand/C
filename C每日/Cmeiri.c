@@ -9,6 +9,8 @@
 #include <string.h>//“/-”“-/” <-- 程序里本来就有的注释
 #include <stdlib.h>
 #include <Windows.h>
+#include <random>
+#include <time.h>
 /*
 int main()
 {
@@ -1369,3 +1371,14 @@ int main() {
 	return 0;
 }
 *///“二维数组”^
+/*
+int main() {
+	int i = 1;
+	srand(time(NULL));
+	for (i = 1; i < 101;i++) {
+		Sleep(10);
+		printf("%d%c", rand(),!(i % 10) ? '\n' : ' ');
+	}
+	return 0;
+}
+*///随机数生成器^
