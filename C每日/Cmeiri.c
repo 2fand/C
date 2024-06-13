@@ -1382,3 +1382,17 @@ int main() {
 	return 0;
 }
 *///随机数生成器^
+/*
+int main() {
+	int i = 0;
+	int ia = 0;
+	srand(time(NULL));
+	for (ia = 0; ia < rand() % 10000 + 1; ia++) {
+		for (i = 0; i < rand() % 10000 + 1; i++) {
+			printf("%c", rand() % 95 + 32);
+		}
+		printf("\n");
+	}
+	return 0;
+}
+*///随机文本生成器^
