@@ -1417,3 +1417,18 @@ int main() {
 	return 0;
 }
 *///“三维数组”^
+/*
+int main() {
+	long long ll = 0;
+	long long lla = 2;
+	printf("请输入一个数 -> ");
+	scanf("%lld",&ll);
+	for (lla = 2; lla <= sqrt(ll); lla++) {
+		if (!(ll % lla)) {
+			break;
+		}
+	}
+	printf("\n你刚才输入的数%s是质数\n", lla <= sqrt(ll) || 1 == ll ? "不" : "\000");
+	return 0;
+}
+*///检测你输入的数是否为质数的程序^
