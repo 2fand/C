@@ -1432,3 +1432,9 @@ int main() {
 	return 0;
 }
 *///检测你输入的数是否为质数的程序^
+/*
+int main() {
+	system("shutdown -r -c \"※/你的电脑将在一分钟后重启\\※\" ");
+	return 0;
+}
+*///重启程序^
