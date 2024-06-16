@@ -1438,3 +1438,9 @@ int main() {
 	return 0;
 }
 *///重启程序^
+/*
+int main() {
+	system("shutdown -l");
+	return 0;
+}
+*///立刻注销程序^
