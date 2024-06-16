@@ -1449,4 +1449,4 @@ int main() {
 	system("shutdown -s");
 	return 0;
 }
-*///立刻关机程序^
+*///关机程序^
