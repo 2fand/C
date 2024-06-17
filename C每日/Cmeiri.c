@@ -1450,3 +1450,11 @@ int main() {
 	return 0;
 }
 *///关机程序^
+/*
+int main() {
+	char arr[] = "cello,world!\n";
+	memset(arr, 'H', 1);
+	printf("%s", arr);
+	return 0;
+}
+*///“初识并初用menset函数”^
