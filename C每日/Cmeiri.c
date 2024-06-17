@@ -1452,6 +1452,15 @@ int main() {
 *///关机程序^
 /*
 int main() {
+	char arr[] = "hello,world!\n";
+	char arr1[20] = { 0 };
+	strcpy(arr1, arr);
+	printf("%s", arr1);
+	return 0;
+}
+*///“初识并初用strcpy函数”^
+/*
+int main() {
 	char arr[] = "cello,world!\n";
 	memset(arr, 'H', 1);
 	printf("%s", arr);
