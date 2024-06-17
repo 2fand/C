@@ -1466,4 +1466,4 @@ int main() {
 	printf("%s", arr);
 	return 0;
 }
-*///“初识并初用menset函数”^
+*///“初识并初用memset函数”^
