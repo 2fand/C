@@ -1482,3 +1482,18 @@ int main() {
 	return 0;
 }
 *///求你输入的十位数中的各个数位之和的程序^
+/*
+int main() {
+	char arr[] = "\0";
+	scanf("%s", arr);
+	int i = strlen(arr);
+	int ia = 1;
+	for (ia = 0; ia < i; ia++) {
+		Sleep(618);
+		system("cls");
+		arr[ia] = (char)' ';
+		printf("%s\n", arr);
+	}
+	return 0;
+}
+*///能使你输入的字符串逐渐消失的程序^
