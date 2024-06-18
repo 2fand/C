@@ -1467,3 +1467,18 @@ int main() {
 	return 0;
 }
 *///“初识并初用memset函数”^
+/*
+int main() {
+	int arr[10] = { 0 };
+	int i = 0;
+	for (i = 0; i < 10; i++) {
+		scanf("%1d", &arr[i]);
+	}
+	long long iadd = arr[0];
+	for (i = 1; i < 10; i++) {
+		iadd += arr[i];
+	}
+	printf("%lld", iadd);
+	return 0;
+}
+*///求你输入的十位数中的各个数位之和的程序^
