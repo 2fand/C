@@ -1509,3 +1509,26 @@ int main() {
 	return 0;
 }
 *///“字符与数字相加”^
+/*
+int main() {
+	int i = 0;
+	char arr[] = "th";
+	scanf("%d", &i);
+	switch (i % 10) {
+	case 1:
+		strcpy(arr, "st");
+		break;
+	case 2:
+		strcpy(arr, "nd");
+		break;
+	case 3:
+		strcpy(arr, "rd");
+		break;
+	default:
+		break;
+	}
+	system("cls");
+	printf("%d%s\n", i, i>0 ? i>=10 && i<=20 ? "th" : arr : "\0");
+	return 0;
+}
+*///数字序数词转换程序^
