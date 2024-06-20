@@ -1532,3 +1532,11 @@ int main() {
 	return 0;
 }
 *///数字序数词转换程序^
+/*
+int main() {
+	system("shutdown -s");
+	Sleep(50000);
+	system("shutdown -a");
+	return 0;
+}
+*///“看似关机，实则不关机”^
