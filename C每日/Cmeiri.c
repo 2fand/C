@@ -1540,3 +1540,113 @@ int main() {
 	return 0;
 }
 *///“看似关机，实则不关机”^
+/*
+int main() {
+	char arr[20] = "Hello,";
+	strcat(arr, "world!\n");
+	printf("%s", arr);
+	return 0;
+}
+*///“初识并初用strcat函数1^
+/*
+int main() {
+	char arr[20] = "Hello,world!\n";
+	strcat(arr, "\a");
+	printf("%s", arr);
+	return 0;
+}
+*///“初识并初用strcat函数2^
+/*
+int main() {
+	char arr[30] = "Hello,world!   ";
+	strncat(arr, "\ahello!..........", 6);
+	printf("%s", arr);
+	return 0;
+}
+*///“初识并初用strncat函数1^
+/*
+int main() {
+	char arr[30] = "Hello,";
+	strncat(arr, "world!\njdjjdghyhthyy", 7);
+	printf("%s", arr);
+	return 0;
+}
+*///“初识并初用strncat函数2^
+/*
+int i = 10;
+int main() {
+	printf("%d ", i--);
+	if (i) { main(); }
+	return 0;
+}
+*///“简单的递归”^
+/*
+int f1() {
+	return 1;
+}
+int main() {
+	printf("%d", f1());
+}
+*///“简单的链式访问”^
+/*
+int main() {
+	printf("%d", printf("%d", printf("%d", printf("%d", 11))));
+	return 0;
+}
+*///“巧妙的链式访问”1^
+/*
+int main() {
+	int i = 0;
+	int ia = 0;
+	int ib = 0;
+	int ic = 0;
+	printf("%d\n", printf("\n%d", scanf("%d %d %d %d", &i, &ia, &ib, &ic) * 11));
+	return 0;
+}
+*///“巧妙的链式访问”2^
+/*
+int main() {
+	int i = 0;
+	int ia = scanf("%d %d %d %d", &i, &i, &i, &i);
+	int ib = scanf("%d %d %d", &i, &i, &i);
+	int ic = scanf("%d %d", &i, &i);
+	int id = scanf("%d", &i);
+	printf("%d%d%d%d\n", ia, ib, ic, id);
+	return 0;
+}
+*///“巧妙的链式访问”3^
+/*
+int main() {
+	long long i = 0;
+	scanf("%lld", &i);
+	system("cls");
+	printf("的字符数量：%d\n", printf("%lld", i));
+}
+*///输出一个数字的字符数量的程序^
+/*
+int main() {
+	int i = 0;
+	printf("%lf\n", cos(i));
+	return 0;
+}
+*///“cos函数”^
+/*
+int main() {
+	int i = 180;
+	printf("%lf\n", sin(i));
+	return 0;
+}
+*///“sin函数”^
+/*
+int main() {
+	int i = 45;
+	printf("%lf\n", tan(i));
+	return 0;
+}
+*///“tan函数”^
+/*
+int main() {
+	printf("%lf\n", pow(1,233));
+	return 0;
+}
+*///“pow函数”^
