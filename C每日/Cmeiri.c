@@ -1666,3 +1666,13 @@ int main() {
 	return 0;
 }
 *///除法计算器^
+/*
+int main() {
+	double i = 0;
+	double ia = 0;
+	printf("请输入两个值 -> ");
+	scanf("%lf %lf", &i, &ia);
+	printf("%lf和%lf的最大值为%lf", i, ia ,fmax(i, ia));
+	return 0;
+}
+*///“求最大值的函数”^
