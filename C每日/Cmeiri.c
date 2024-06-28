@@ -1650,3 +1650,19 @@ int main() {
 	return 0;
 }
 *///“pow函数”^
+/*
+int main() {
+	double i = 0;
+	double ia = 0;
+	printf("请输入一个除法算式 -> ");
+	scanf("%lf/%lf", &i, &ia);
+	printf("\n\n");
+	if (ia) {
+		printf("%lf/%lf=%lf", i, ia, i / ia);
+	}
+	else {
+		printf("错误，无法计算这个除法算式的结果\n");
+	}
+	return 0;
+}
+*///除法计算器^
