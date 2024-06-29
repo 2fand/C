@@ -1676,3 +1676,14 @@ int main() {
 	return 0;
 }
 *///“求最大值的函数”^
+/*
+int numlen(long long i) {
+	int ilen = printf("%lld", i);
+	system("cls");
+	return ilen;
+}
+int main() {
+	printf("%d", numlen(12345));
+	return 0;
+}
+*///“求一个数的字符数量的函数”^
