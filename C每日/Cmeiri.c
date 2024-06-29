@@ -1687,3 +1687,13 @@ int main() {
 	return 0;
 }
 *///“求一个数的字符数量的函数”^
+/*
+int main() {
+	double d = 0.0;
+	double da = 0.0;
+	printf("请输入两个值 -> ");
+	scanf("%lf %lf", &d, &da);
+	printf("\n\n在%lf和%lf中，%lf最小", d, da, fmin(d, da));
+	return 0;
+}
+*///“求最小值的函数”^
