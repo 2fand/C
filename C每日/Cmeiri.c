@@ -1704,3 +1704,18 @@ int main() {
 	return 0;
 }
 *///“奇妙的等式”^
+/*
+void printff(unsigned int i) {
+	while (i) {
+		printf("%u", i % 10);
+		i /= 10;
+	}
+}
+int main() {
+	unsigned int i = 0;
+	scanf("%u", &i);
+	printf("\n\n");
+	printff(i);
+	return 0;
+}
+*///数字倒序器^
