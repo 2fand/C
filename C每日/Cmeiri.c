@@ -1719,3 +1719,12 @@ int main() {
 	return 0;
 }
 *///数字倒序器^
+/*
+int main() {
+	char str[100] = "";
+	printf("至少要多少时间才能读完清华大学？ -> ");
+	scanf("%s", str);
+	printf("\n%s\n", strcmp(str, "一秒钟") ? "\a啊哦，你答错了，正确的答案是“一秒钟”" : "恭喜你，你答对了");
+	return 0;
+}
+*///“脑筋急转弯”^
