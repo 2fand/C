@@ -1728,3 +1728,11 @@ int main() {
 	return 0;
 }
 *///“脑筋急转弯”^
+/*
+int main() {
+	int arr[10] = { 1,2,3,4,5,6,7,8,9,0 };
+	int* p = arr;
+	printf("%d", *(p += 5, p));
+	return 0;
+}
+*///“数组与指针”^
