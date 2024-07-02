@@ -1736,3 +1736,18 @@ int main() {
 	return 0;
 }
 *///“数组与指针”^
+/*
+void Strcpy(char* v, const char* c) {
+	long long ll = 0;
+	for (ll = 0; '\0' != c[ll]; ll++) {
+		v[ll] = c[ll];
+	}
+	v[ll] = '\0';
+}
+int main() {
+	char str[10] = "";
+	Strcpy(str, "abcdef");
+	printf("%s", str);
+	return 0;
+}
+*///“我自创的Strcpy函数”^
