@@ -1751,3 +1751,19 @@ int main() {
 	return 0;
 }
 *///“我自创的Strcpy函数”^
+/*
+int main() {
+	int arr[20] = { 1 };
+	int i = 1;
+	for (; i!=20; (arr[i]++, i++)) {
+		arr[i] = arr[i - 1];
+	}
+	int* p = arr;
+	int* pa = arr;
+	pa += 3;
+	for (; 20 != *pa; (pa++, p++)) {
+		printf("%d %d ", *p, *pa);
+	}
+	return 0;
+}
+*///“+3-2”^
