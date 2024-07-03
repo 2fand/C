@@ -1773,3 +1773,32 @@ int main() {
 	return 0;
 }
 *///“start命令”^
+/*
+int main() {
+	int i = 0;
+	char str[10000] = "";
+	char stra[13] = "https://www.";
+	char strb[10000] = "start ";
+	printf("可以搜索或者输入网址(在Bing里搜索) -> ");
+	scanf("%s", str);
+	for (i = 0; i < 8; i++) {
+		if (str[i] != stra[i]) {
+			break;
+		}
+	}
+	if (8 != i) {
+		for (i = 0; i < 4; i++) {
+			if (str[i] != stra[i + 8]) {
+				break;
+			}
+		}
+		strcat(strb, "https://");
+		if (4 != i) {
+			strcat(strb, "cn.bing.com/search?q=");
+		}
+	}
+	strcat(strb, str);
+	system(strb);
+	return 0;
+}
+*///浏览器^
