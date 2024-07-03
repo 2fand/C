@@ -1767,3 +1767,9 @@ int main() {
 	return 0;
 }
 *///“+3-2”^
+/*
+int main() {
+	system("start https://www.csdn.net/");
+	return 0;
+}
+*///“start命令”^
