@@ -1824,3 +1824,25 @@ int main() {
 	return 0;
 }
 *///求一个字符串中的某个字符第一次出现在哪里的程序^
+/*
+int main() {
+	char str[13] = "hello,world!";
+	char* p = strrchr(str, 'l');
+	char* pa = str;
+	int count = 0;
+	for (; p != pa; pa++) {
+		if (NULL==p) {
+			break;
+		}
+		count++;
+	}
+	if (NULL == p) {
+		printf("ERROR");
+	}
+	else {
+		printf("%d", count);
+	}
+	printf("\n");
+	return 0;
+}
+*///求一个字符串中的某个字符最后一次出现在哪里的程序^
