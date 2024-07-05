@@ -5,6 +5,8 @@
 //#define q ; <------ “宏的替换”1中的宏
 //#define p ); <------ “宏的替换”2中的宏
 //#define q ; <------ “宏的替换”2中的宏
+//#define ROW 6 <------ “赛博解压板”中的宏(可以自己改)
+//#define COL 6 <------ “赛博解压板”中的宏(可以自己改)
 #include <stdio.h>//““ ’”里的东西是重点
 #include <string.h>//“/-”“-/” <-- 程序里本来就有的注释
 #include <stdlib.h>
@@ -1847,11 +1849,6 @@ int main() {
 }
 *///求一个字符串中的某个字符最后一次出现在哪里的程序^
 /*
-#define _CRT_SECURE_NO_WARNINGS 1
-#define ROW 6
-#define COL 6
-#include <stdio.h>
-#include <stdlib.h>
 void reset(char str[ROW][COL+1]) {
 	system("cls");
 	int i = 0;
@@ -1896,3 +1893,9 @@ int main() {
 	return 0;
 }
 *///“赛博解压板”^
+/*
+int main() {
+	system("tree");
+	return 0;
+}
+*///“tree”^
