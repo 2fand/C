@@ -1846,3 +1846,53 @@ int main() {
 	return 0;
 }
 *///求一个字符串中的某个字符最后一次出现在哪里的程序^
+/*
+#define _CRT_SECURE_NO_WARNINGS 1
+#define ROW 6
+#define COL 6
+#include <stdio.h>
+#include <stdlib.h>
+void reset(char str[ROW][COL+1]) {
+	system("cls");
+	int i = 0;
+	int ij = 0;
+	for (i = 0; i < ROW; i++) {
+		for (ij = 0; ij < COL; ij++) {
+			str[i][ij] = '@';
+		}
+	}
+	for (i = 0; i < ROW; i++) {
+		for (ij = 0; ij < COL; ij++) {
+			printf("@%c", COL - 1 == ij ? '\n' : ' ');
+		}
+	}
+}
+void print_table(char str[ROW][COL+1]) {
+	system("cls");
+	int il = 0;
+	int in = 0;
+	for (il = 0; il < ROW; il++) {
+		for (in = 0; in < COL; in++) {
+			printf("%c%c", str[il][in], COL - 1 == in ? '\n' : ' ');
+		}
+	}
+}
+int main() {
+	char str[ROW][COL+1];
+	int ik = 0;
+	int im = 0;
+	char ch = 0;//辅助
+	while (1) {
+		reset(str);
+		for (ik = 0; ik < ROW; ik++) {
+			for (im = 0; im < COL; im++) {
+				scanf("%c", &ch);
+				str[ik][im] = '.';
+				print_table(str);
+			}
+		}
+		scanf("%c",&ch);
+	}
+	return 0;
+}
+*///“赛博解压板”^
