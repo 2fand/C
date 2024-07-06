@@ -1922,3 +1922,26 @@ int main() {
 	return 0;
 }
 *///“牢大坠机”
+/*
+#define _CRT_SECURE_NO_WARNINGS 1
+#define HIGH 10
+#include <stdio.h>
+#include <Windows.h>
+int main() {
+	int i = 0;
+	int ia = 0;
+	for (i = 0; i < HIGH; i++) {
+		printf("---------------------");
+		for (ia = 0; ia < HIGH - i; ia++) {
+			printf("\n");
+		}
+		printf("    */ 反重力 \\*    ");
+		for (ia = 0; ia < i; ia++) {
+			printf("\n");
+		}
+		Sleep(100);
+		system("cls");
+	}
+	return 0;
+}
+*///“反重力”^
