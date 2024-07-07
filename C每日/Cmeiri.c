@@ -10,6 +10,7 @@
 //#define HIGH 66 <------ “牢大坠机”中的宏(可以自己改)
 //#define HIGH 10 <------ “反重力”中的宏(可以自己改)
 //#define HIGH 50 <------ “上升与下降”中的宏(可以自己改)
+//#define WIDTH 100 <------ “右”中的宏(可以自己改)
 #include <stdio.h>//““ ’”里的东西是重点
 #include <string.h>//“/-”“-/” <-- 程序里本来就有的注释
 #include <stdlib.h>
@@ -1989,3 +1990,21 @@ int main() {
 	return 0;
 }
 *///“上升与下降”^
+/*
+int main() {
+	char str[WIDTH + 1] = "";
+	char* p = str;
+	int i = 0;
+	for (; i<WIDTH; (p++,i++)) {
+		*p = ' ';
+	}
+	for (p=str; '\0' != *p; p++) {
+		*p = '&';
+		printf("%s|\n", str);
+		*p = ' ';
+		Sleep(10);
+		system("cls");
+	}
+	return 0;
+}
+*///“右”^
