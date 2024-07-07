@@ -7,6 +7,9 @@
 //#define q ; <------ “宏的替换”2中的宏
 //#define ROW 6 <------ “赛博解压板”中的宏(可以自己改)
 //#define COL 6 <------ “赛博解压板”中的宏(可以自己改)
+//#define HIGH 66 <------ “牢大坠机”中的宏(可以自己改)
+//#define HIGH 10 <------ “反重力”中的宏(可以自己改)
+//#define HIGH 50 <------ “上升与下降”中的宏(可以自己改)
 #include <stdio.h>//““ ’”里的东西是重点
 #include <string.h>//“/-”“-/” <-- 程序里本来就有的注释
 #include <stdlib.h>
@@ -1900,10 +1903,6 @@ int main() {
 }
 *///“tree”^
 /*
-#define _CRT_SECURE_NO_WARNINGS 1
-#define HIGH 66
-#include <stdio.h>
-#include <Windows.h>
 int main() {
 	int i = 0;
 	int ia = 0;
@@ -1923,10 +1922,6 @@ int main() {
 }
 *///“牢大坠机”
 /*
-#define _CRT_SECURE_NO_WARNINGS 1
-#define HIGH 10
-#include <stdio.h>
-#include <Windows.h>
 int main() {
 	int i = 0;
 	int ia = 0;
@@ -1945,3 +1940,52 @@ int main() {
 	return 0;
 }
 *///“反重力”^
+/*
+void up() {
+	int i = 0;
+	int ia = 0;
+	for (i = 0; i < HIGH; i++) {
+		printf("\n");
+		for (ia = 0; ia < HIGH - i; ia++) {
+			printf("\n");
+		}
+		printf("***************\n**   上升    **\n***************");
+		for (ia = 0; ia < i; ia++) {
+			printf("\n");
+		}
+		printf("\n");
+		Sleep(10);
+		system("cls");
+	}
+}
+void down() {
+	int i = 0;
+	int ia = 0;
+	for (i = 0; i < HIGH; i++) {
+		printf("\n");
+		for (ia = 0; ia < i; ia++) {
+			printf("\n");
+		}
+		printf("***************\n**   下降    **\n***************");
+		for (ia = 0; ia < HIGH - i; ia++) {
+			printf("\n");
+		}
+		printf("\n");
+		Sleep(10);
+		system("cls");
+	}
+}
+int main() {
+	int ib = 0;
+	for (;1; ib++) {
+		if (ib % 2) {
+			down();
+		}
+		else {
+			up();
+		}
+		Sleep(10);
+	}
+	return 0;
+}
+*///“上升与下降”^
