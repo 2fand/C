@@ -12,6 +12,9 @@
 //#define HIGH 50 <------ “上升与下降”中的宏(可以自己改)
 //#define WIDTH 100 <------ “右”中的宏(可以自己改)
 //#define WIDTH 10 <------ “左”中的宏(可以自己改)
+//#define HIGH 10 <------ “旋转”中的宏(可以自己改)
+//#define WIDTH HIGH <------ “旋转”中的宏(可以自己改)
+//#define TURNRIGHT 1 <------ “旋转”中的宏(可以自己改)(0代表逆时针，非0代表逆时针)
 #include <stdio.h>//““ ’”里的东西是重点
 #include <string.h>//“/-”“-/” <-- 程序里本来就有的注释
 #include <stdlib.h>
@@ -2026,3 +2029,95 @@ int main() {
 	}
 }
 *///“左”^
+/*
+void up() {
+	int i = 0;
+	int ia = 0;
+	for (i = 0; i < HIGH; i++) {
+		for ((printf("\n"), ia = 0); ia < HIGH - i; ia++) {
+			printf("\n");
+		}
+		for (ia = 1; ia < WIDTH && !(TURNRIGHT); ia++) {
+			printf(" ");
+		}
+		printf("*");//这里的文字可改
+		for (ia = -1; ia < i; ia++) {
+			printf("\n");
+		}
+		Sleep(10);
+		system("cls");
+	}
+}
+void down() {
+	int i = 0;
+	int ia = 0;
+	for (i = 0; i < HIGH; i++) {
+		for ((printf("\n"), ia = 0); ia < i; ia++) {
+			printf("\n");
+		}
+		for (ia = 1; ia < WIDTH && TURNRIGHT; ia++) {
+			printf(" ");
+		}
+		printf("*");//这里的文字可改
+		for (ia = -1; ia < HIGH - i; ia++) {
+			printf("\n");
+		}
+		Sleep(10);
+		system("cls");
+	}
+}
+void right() {
+	char str[WIDTH + 1] = "";
+	char* p = str;
+	int i = 0;
+	for (; i < WIDTH; (p++, i++)) {
+		*p = ' ';
+	}
+	for (p = str; '\0' != *p; p++) {
+		*p = '*';//这里的文字可改
+		for (i = 0; i < WIDTH && !(TURNRIGHT); i++) {
+			printf("\n");
+		}
+		printf("%s\n", str);
+		*p = ' ';
+		Sleep(10);
+		system("cls");
+	}
+}
+
+void left() {
+	char str[WIDTH + 1] = "";
+	char* p = str;
+	int i = 0;
+	int itu = 0;
+	for (; i < WIDTH; (p++, i++)) {
+		*p = ' ';
+	}
+	for (p--; i; (p--, i--)) {
+		*p = '*';//这里的文字可改
+		for (itu = 0; itu < WIDTH && TURNRIGHT; itu++) {
+			printf("\n");
+		}
+		printf("%s\n", str);
+		*p = ' ';
+		Sleep(10);
+		system("cls");
+	}
+}
+int main() {
+	while (1) {
+		if (TURNRIGHT) {
+			right();
+			down();
+			left();
+		}
+		else {
+			left();
+			down();
+			right();
+		}
+		up();
+	}
+	return 0;
+}
+*///“旋转”^
