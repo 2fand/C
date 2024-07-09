@@ -2121,3 +2121,13 @@ int main() {
 	return 0;
 }
 *///“旋转”^
+/*
+int main() {
+	long long ll = 0;
+	printf("请输入要转换的秒数 -> ");
+	scanf("%lld", &ll);
+	printf("%lld秒 = %lld时%lld分%lld秒", ll, ll / 3600, ll / 60 % 60, ll % 60);
+	
+	return 0;
+}
+*///秒与时间转换器^
