@@ -2131,3 +2131,19 @@ int main() {
 	return 0;
 }
 *///秒与时间转换器^
+/*
+int main() {
+	int i = 0;
+	int ia = 0;
+	int ib = 0;
+	printf("请输入一个时间((你输入的数字)时(你输入的数字)分(你输入的数字)秒) -> ");
+	scanf("%d时%d分%d秒", &i, &ia, &ib);
+	if (ia > 59 || ib > 59) {
+		printf("ERROR");
+	}
+	else {
+		printf("%d时%d分%d秒 = %d秒", i, ia, ib, i * 3600 + ia * 60 + ib);
+	}
+	return 0;
+}
+*///时间与秒转换器^
