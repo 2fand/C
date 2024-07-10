@@ -15,6 +15,14 @@
 //#define HIGH 10 <------ “旋转”中的宏(可以自己改)
 //#define WIDTH HIGH <------ “旋转”中的宏(可以自己改)
 //#define TURNRIGHT 1 <------ “旋转”中的宏(可以自己改)(0代表逆时针，非0代表逆时针)
+//#define WIDTH HIGH <------ “旋转”中的宏(可以自己改)
+//#define WIDTH HIGH <------ “旋转”中的宏(可以自己改)
+//#define WIDTH HIGH <------ “旋转”中的宏(可以自己改)
+//#define WIDTH HIGH <------ “旋转”中的宏(可以自己改)
+//#define HIGH 10 <------ “我的第一个2D游戏”中的宏(可以自己改)
+//#define WIDTH 10 <------ “我的第一个2D游戏”中的宏(可以自己改)
+//#define PLAYER 0][0 <------ “我的第一个2D游戏”中的宏(可以自己改)(这里的宏相当于一个数对)
+//#define GOAL 9][9 <------ “我的第一个2D游戏”中的宏(可以自己改)(这里的宏相当于一个数对)
 #include <stdio.h>//““ ’”里的东西是重点
 #include <string.h>//“/-”“-/” <-- 程序里本来就有的注释
 #include <stdlib.h>
@@ -2147,3 +2155,85 @@ int main() {
 	return 0;
 }
 *///时间与秒转换器^
+/*
+void print_table(int arr[HIGH][WIDTH]) {
+	system("cls");
+	int i = 0;
+	int ia = 0;
+	for (i = 0; i < HIGH; i++) {
+		for (ia = 0; ia < WIDTH; ia++) {
+			printf("%d%c", arr[i][ia], WIDTH - 1 == ia ? '\n' : ' ');
+		}
+	}
+}
+int main() {
+	printf("欢迎你来玩这个游戏，在这个游戏里“0”是空地，“1”是你，而“8”是终点，在这之中，你只需要到达终点，就可以赢了\n");
+	Sleep(2800);
+	int arr[HIGH][WIDTH] = { 0 };
+	if (&arr[PLAYER] == &arr[GOAL]) {
+		goto a;
+	}
+	arr[PLAYER] = 1;
+	arr[GOAL] = 8;
+	char ch = 0;
+	int* p = &arr[PLAYER];
+	int i = 0;
+	do {
+		print_table(arr);
+		ch = getchar();
+		while ('\n' != getchar()) {
+			;
+		}
+		*p = 0;
+		switch (ch) {
+		case 'w':
+			for (i = 0; i < WIDTH; i++) {
+				if (p == &arr[0][i]) {
+					break;
+				}
+			}
+			if (WIDTH == i) {
+				p -= WIDTH;
+			}
+			break;
+		case 'a':
+			for (i = 0; i < HIGH; i++) {
+				if (p == &arr[i][0]) {
+					break;
+				}
+			}
+			if (HIGH == i) {
+				p--;
+			}
+			break;
+		case 's':
+			for (i = 0; i < WIDTH; i++) {
+				if (p == &arr[HIGH - 1][i]) {
+					break;
+				}
+			}
+			if (WIDTH == i) {
+				p += WIDTH;
+			}
+			break;
+		case 'd':
+			for (i = 0; i < HIGH; i++) {
+				if (p == &arr[i][WIDTH - 1]) {
+					break;
+				}
+			}
+			if (HIGH == i) {
+				p++;
+			}
+			break;
+		default:
+			break;
+		}
+		*p = 1;
+	} while (8==arr[GOAL]);
+	a:
+	system("cls");
+	printf("恭喜你，你赢了");
+	return 0;
+}
+*///我的第一个2D游戏^
