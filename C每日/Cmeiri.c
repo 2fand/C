@@ -2237,3 +2237,11 @@ int main() {
 	return 0;
 }
 *///我的第一个2D游戏^
+/*
+int main() {
+	int i = 0;
+	if (1 || (printf("hello,world!\n"), ++i)) {
+		printf("%d\n", i);
+	}
+}
+*///“逻辑运算中的短路效应”^
