@@ -2274,3 +2274,23 @@ int main() {
 	return 0;
 }
 *///只用逻辑运算中的短路效应的计算阶乘的哈四年函数和程序^
+/*
+int main() {
+	int arr[4][4] = { 0 };
+	int i = 0;
+	long long ll = 0;
+	for (srand((unsigned int)time(NULL)),i = 0; i < 4; i++) {
+		for (ll = 0; ll < 4; ll++) {
+			arr[i][ll] = rand();
+		}
+	}
+	for (ll=arr[1][0],i = 1; i < 4; i++) {
+		ll += arr[1][i];
+	}
+	for (i = 0; i < 16; i++) {
+		printf("%d%c", arr[0][i],!((i+1)%4) ? '\n' : ' ');
+	}
+	printf("\n第二行的数字的和是%lld\n", ll);
+	return 0;
+}
+*///求一个4*4的二维数组的第二行的数字总和的程序^
