@@ -2261,3 +2261,16 @@ int main() {
 	return 0;
 }
 *///“0为3，2为1”(选自我的CSDN博客)^
+/*
+unsigned int fact(unsigned int u) {
+	unsigned int uret = 0;
+	uret = u;
+	return u || (u = 1, uret = 1), (u * (u > 1 && (uret = fact(u - 1)), uret));
+}
+int main() {
+	unsigned int u = 0;
+	scanf("%u", &u);
+	printf("%u", fact(u));
+	return 0;
+}
+*///只用逻辑运算中的短路效应的计算阶乘的哈四年函数和程序^
