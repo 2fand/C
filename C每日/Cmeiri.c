@@ -2294,3 +2294,39 @@ int main() {
 	return 0;
 }
 *///求一个4*4的二维数组的第二行的数字总和的程序^
+/*
+int simonsays(char* str) {
+	int ia = 0;
+	int iflag = 1;
+	printf("西蒙说");
+	Sleep(1000);
+	for (system("cls"), ia = 0; '\0' != str[ia]; ia++) {
+		printf("%c", str[ia]);
+		Sleep(500);
+		system("cls");
+		Sleep(100);
+	}
+	for (ia = 0; '\0' != str[ia]; ia++) {
+		if (str[ia] != (getchar())) {
+			iflag = 0;
+			break;
+		}
+	}
+	return ('\n' != getchar() && (iflag = 0)), iflag;
+}
+int main() {
+	printf("欢迎你来玩这个西蒙说游戏，在这个游戏中，你需要在看见“西蒙说”这三个字之后，就要开始记后面的字母了，这些字母有“R”“B”“Y”和“G”，而当要记的字母全部出现之后，就要把刚才记过的字母一次性输入进去，如果输入进去的字母与刚才显示的字母一模一样，那就继续玩下去，反之，就结束这一轮的游戏，这就是这个西蒙说游戏的规则");
+	Sleep(7000);
+	char str[99999] = "";
+	char stra[5] = "RBYG";
+	int i = 0;
+	int is = 1;
+	for (system("cls"), srand(time(NULL)), i = 0; is; system("cls"), i++) {
+		str[i] = stra[rand() % 4];
+		is = simonsays(str);
+	}
+	system("cls");
+	printf("游戏已结束\n");
+	return 0;
+}
+*///C语言西蒙说游戏程序^
