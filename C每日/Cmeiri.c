@@ -2330,3 +2330,23 @@ int main() {
 	return 0;
 }
 *///C语言西蒙说游戏程序^
+/*
+int main() {
+	int arr[4][4] = { 0 };
+	int i = 0;
+	long long ll = 0;
+	for (srand((unsigned int)time(NULL)), i = 0; i < 4; i++) {
+		for (ll = 0; ll < 4; ll++) {
+			arr[i][ll] = rand();
+		}
+	}
+	for (ll = arr[0][2], i = 1; i < 4; i++) {
+		ll += arr[i][2];
+	}
+	for (i = 0; i < 16; i++) {
+		printf("%d%c", arr[0][i], !((i + 1) % 4) ? '\n' : ' ');
+	}
+	printf("\n第三列的数字的和是%lld\n", ll);
+	return 0;
+}
+*///求一个4*4的二维数组的第三列的数字总和的程序^
