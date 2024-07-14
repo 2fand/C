@@ -2365,3 +2365,18 @@ int main() {
 	return 0;
 }
 *///“逆序输出数组”(选自我的CSDN博客)^
+/*
+void reprint(int* arr,int sz) {
+	int* p = arr + sz - 1;
+	for (; p >= arr; p--) {
+		printf("%d ", *p);
+	}
+}
+int main() {
+	int arr[9] = { 1,2,3,4,5,6,7,8,9 };
+	int sz = sizeof arr / sizeof arr[0];
+	int i = 0;
+	reprint(arr, sz);
+	return 0;
+}
+*///“数组初始化”(大部分选自我的CSDN博客)^
