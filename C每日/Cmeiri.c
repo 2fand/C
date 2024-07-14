@@ -2350,3 +2350,18 @@ int main() {
 	return 0;
 }
 *///求一个4*4的二维数组的第三列的数字总和的程序^
+/*
+void reprint(int* arr,int sz) {
+	int* p = arr + sz - 1;
+	for (; p >= arr; p--) {
+		printf("%d ", *p);
+	}
+}
+int main() {
+	int arr[9] = { 1,2,3,4,5,6,7,8,9 };
+	int sz = sizeof arr / sizeof arr[0];
+	int i = 0;
+	reprint(arr, sz);
+	return 0;
+}
+*///“逆序输出数组”(选自我的CSDN博客)^
