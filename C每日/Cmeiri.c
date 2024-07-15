@@ -23,6 +23,9 @@
 //#define WIDTH 10 <------ “我的第一个2D游戏”中的宏(可以自己改)
 //#define PLAYER 0][0 <------ “我的第一个2D游戏”中的宏(可以自己改)(这里的宏相当于一个数对)
 //#define GOAL 9][9 <------ “我的第一个2D游戏”中的宏(可以自己改)(这里的宏相当于一个数对)
+//#define WAIT 50 <------ “走马灯文字”中的宏(可以自己改)
+//#define T 10000 <------ “走马灯文字”中的宏(可以自己改)
+//#define RIGHT 1 <------ “走马灯文字”中的宏(可以自己改)(0往左，非0往右)
 #include <stdio.h>//““ ’”里的东西是重点
 #include <string.h>//“/-”“-/” <-- 程序里本来就有的注释
 #include <stdlib.h>
@@ -2380,3 +2383,31 @@ int main() {
 	return 0;
 }
 *///“数组初始化”(大部分选自我的CSDN博客)^
+/*
+int main() {
+	char str[T+1] = "";
+	char stra[T+1] = "";
+	int i = 0;
+	scanf("%s", str);
+	while (1) {
+		system("cls");
+		printf("%s", str);
+		if (RIGHT) {
+			for (i = 0; i < strlen(str); i++) {
+				stra[i + 1] = str[i];
+			}
+			stra[0] = stra[i];
+			stra[i] = '\0';
+		}
+		else {
+			stra[strlen(str) - 1] = str[0];
+			for (i = 1; i < strlen(str); i++) {
+				stra[i - 1] = str[i];
+			}
+		}
+		strcpy(str, stra);
+		Sleep(WAIT);
+	}
+	return 0;
+}
+*///“走马灯文字”(选自我的CSDN博客)^
