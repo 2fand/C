@@ -2417,3 +2417,47 @@ int main() {
 	return 0;
 }
 *///“%4d”和“%-4d”^
+/*
+void caeser(char* str, int ik) {
+	int im = 0;
+	int ima = 0;
+	int i = 0;
+	printf("偏移量为多少?(整数) -> ");
+	scanf("%d", &im);
+	im %= 95, ik && (im = -im), ima = im;
+	for (; i < strlen(str); i++) {
+		for (ima = im; ima;) {
+			ima > 0 && str[i]++, ima > 0 || str[i]--;
+			127 == str[i] && (str[i] = ' '), 31 == str[i] && (str[i] = '~');
+			ima > 0 && ima--, ima < 0 && ima++;
+		}
+	}
+}
+int main() {
+	int ik = 0;
+	char str[99999] = "";
+	while (1) {
+		char ck[] = "加";
+		printf("你要加密还是解密?(0加密，非0解密) -> ");
+		scanf("%d", &ik);
+		if (ik) {
+			strcpy(ck, "解");
+		}
+		printf("请输入你要凯撒密码%s密的文本(不能有不可以显示的字符) -> ", ck);
+		char* pc = str;
+		do {
+			scanf("%s", str);
+			pc = str;
+			for (; *pc > 31 && *pc < 127; pc++) {
+				;
+			}
+			if ('\0' != *pc) {
+				printf("输入错误，请重新输入 -> ");
+			}
+		} while ('\0' != *pc);
+		caeser(str, ik);
+		printf("%s密之后的文本 -> %s\n------------------------------------------------\n", ck, str);
+	}
+	return 0;
+}
+*///升级版凯撒密码加密解密器(选自我的CSDN博客)^
