@@ -2562,3 +2562,103 @@ int main() {
 	return 0;
 }
 *///“1.234567f”^
+/*
+void supersar(char* str, char* strs, int ipass) {
+	int inl = 0;
+	int inr = 0;
+	int ia = 0;
+	int iak = 0;
+	int keyarr[99999] = { 0 };
+	char strno[] = "要";
+	char keystr[99999] = "";
+	ipass && strcpy(strno, "有");
+	printf("左边的干扰字符%s多少长度?(正整数) -> ", strno);
+	do {
+		scanf("%d", &inl);
+		inl < 0 && printf("输入错误，请重新输入一遍(正整数) -> ");
+	} while (inl < 0);
+	printf("右边的干扰字符%s多少长度?(正整数) -> ", strno);
+	do {
+		scanf("%d", &inr);
+		inr < 0 && printf("输入错误，请重新输入一遍(正整数) -> ");
+	} while (inr < 0);
+	if (!ipass) {
+		//初始化
+		for (; ia < 10000; ia++) {
+			keyarr[ia] = 96;
+		}
+		//前干扰字符
+		for (ia = 0; ia < inl; ia++) {
+			strs[ia] = rand() % 95 + 32;
+		}
+		//超撒加密
+		for (; ia < inl + strlen(str); ia++) {
+			keyarr[ia - inl] = rand() % 95;
+			strs[ia] = str[ia - inl];
+			for (iak = keyarr[ia - inl]; iak > 0; iak--) {
+				127 == ++strs[ia] && (strs[ia] = ' ');
+			}
+		}
+		//后干扰字符
+		for (ia = 0; ia < inr; ia++) {
+			strs[inl + ia + strlen(str)] = rand() % 95 + 32;
+		}
+		//输出密钥
+		for (printf("密钥:"), ia = 0; 96 != keyarr[ia]; ia++) {
+			printf("%c", keyarr[ia] + 32);
+		}
+		printf("\n");
+	}
+	else {
+		char* pc = keystr;
+		//密钥询问
+		printf("密钥为多少? -> ");
+		while ('\n' != getchar()) {
+			;
+		}
+		while (*pc=getchar(), '\n' != *pc++) {
+			;
+		}
+		//超撒解密
+		for (*pc = '\0', ia = inl; ia < strlen(str) - inr; ia++) {
+			iak = keystr[ia - inl] - 32;
+			strs[ia - inl] = str[ia];
+			for (; iak > 0; iak--) {
+				strs[ia - inl]--;
+				31 == strs[ia - inl] && (strs[ia - inl] = '~');
+			}
+		}
+	}
+}
+int main() {
+	char str[99999] = "";
+	int i = 0;
+	srand((unsigned int)time(NULL));
+	while (1) {
+		char strp[] = "加";
+		printf("你要用超撒密码加密还是解密?(0加密，非0解密) -> ");
+		scanf("%d", &i);
+		printf("请输入你要用超撒密码%s密的字符串(不能有控制字符) -> ", (i && strcpy(strp, "解"), strp));
+		char* pc = str;
+		while ('\n' != getchar()) {
+			;
+		}
+		while (*pc = getchar(), '\n' != *pc) {
+			if (!(*pc > 31 && *pc++ < 127)) {
+				printf("输入错误，请重新输入 -> ");
+				while ('\n' != getchar()) {
+					;
+				}
+				while (pc != str) {
+					*pc-- = '\0';
+				}
+			}
+		}
+		*pc = '\0';
+		char strs[99999] = "";
+		supersar(str, strs, i);
+		printf("%s密之后的字符串 -> %s\n------------------------------------------\n", strp, strs);
+	}
+	return 0;
+}
+*///超撒加密2.0(选自我的CSDN博客)^
