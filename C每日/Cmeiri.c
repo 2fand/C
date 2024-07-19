@@ -2672,3 +2672,19 @@ int main() {
     return 0;
 }
 *///“i[arr]”^
+/*
+int main() {
+    system("title 命令提示符");
+    char str[99999] = "";
+    while (1) {
+        char* pc = str;
+        while (*pc = getchar(), '\n' != *pc) {
+            pc++;
+        }
+        *pc = '\0';
+        system(str);
+        printf("\n");
+    }
+    return 0;
+}
+*///模拟命令提示符(选自我的CSDN博客)^
