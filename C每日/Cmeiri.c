@@ -2688,3 +2688,12 @@ int main() {
     return 0;
 }
 *///模拟命令提示符(选自我的CSDN博客)^
+/*
+int main() {
+	int i = 0;
+	printf("把i设为几? -> ");
+	scanf("%d", &i);
+	assert(i);
+	return 0;
+}
+*///“assert断言”^
