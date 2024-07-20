@@ -2697,3 +2697,10 @@ int main() {
 	return 0;
 }
 *///“assert断言”^
+/*
+int main() {
+	int i = 114514;
+	printf("%d\n", (&i)<:0:>);
+	return 0;
+}
+*///“(&i)<:0:>”(选自我的CSDN博客)^
