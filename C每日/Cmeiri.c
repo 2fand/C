@@ -2704,3 +2704,10 @@ int main() {
 	return 0;
 }
 *///“(&i)<:0:>”(选自我的CSDN博客)^
+/*
+int main() {
+	int i = 114514;
+	printf("%d\n", 0[&i]);
+	return 0;
+}
+*///“0[&i]”(选自我的CSDN博客)^
