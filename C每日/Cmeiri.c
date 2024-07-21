@@ -2793,3 +2793,16 @@ int main() {
 	return 0;
 }
 *///“迷宫游戏”(选自我的CSDN博客)^
+/*
+int main() {
+	int i = 0;
+	srand((unsigned int)time(NULL));
+	char ch = 0;
+	while (1) {
+		printf("%d", rand());
+		scanf("%c", &ch);
+		system("cls");
+	}
+	return 0;
+}
+*///随机数生成器^
