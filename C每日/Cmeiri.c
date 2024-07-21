@@ -2711,3 +2711,85 @@ int main() {
 	return 0;
 }
 *///“0[&i]”(选自我的CSDN博客)^
+/*
+/*
+void printmaze(char strmaze[9][9]) {
+	int ia = 0;
+	int ib = 0;
+	for (ia = 0; ia < 9; ia++) {
+		for (ib = 0; ib < 9; ib++) {
+			printf("%c", strmaze[ia][ib]);
+		}
+		printf("|\n");
+	}
+	printf("---------@\n");
+}
+int main() {
+	int i = 0;
+	char ch = 0;
+	char strmaze[9][9] = {
+		"P *      ",
+		"*  *  *  ",
+		" *     **",
+		"*   *    ",
+		"  *  * * ",
+		" * * *   ",
+		"  * * ** ",
+		" *   * **",
+		"   *    G"
+	};
+	char* cp = &strmaze[0][0];
+	printf("欢迎你来玩这个迷宫游戏，在这个迷宫中，“P”是你，“G”是终点，而“*”是墙，空格是你可以走的地方，“w”往上，“a”往左，“s”往下，“d”往右，而你只要走到终点就可以了，这就是这个迷宫游戏的规则");
+	Sleep(4500);
+	system("cls");
+	while ('G' == strmaze[8][8]) {
+		printmaze(strmaze);
+		scanf("%c", &ch);
+		while ('\n' != getchar()) {
+			;
+		}
+		*cp = ' ';
+		switch (ch) {
+		case 'w':
+			for (i = 0; i < 9; i++) {
+				if (cp == &strmaze[0][i]) {
+					break;
+				}
+			}
+			(9 == i && '*' != *(cp - 9)) && (cp -= 9);
+			break;
+		case 'a':
+			for (i = 0; i < 9; i++) {
+				if (cp == &strmaze[i][0]) {
+					break;
+				}
+			}
+			(9 == i && '*' != *(cp - 1)) && cp--;
+			break;
+		case 's':
+			for (i = 0; i < 9; i++) {
+				if (cp == &strmaze[8][i]) {
+					break;
+				}
+			}
+			(9 == i && '*' != *(cp + 9)) && (cp += 9);
+			break;
+		case 'd':
+			for (i = 0; i < 9; i++) {
+				if (cp == &strmaze[i][8]) {
+					break;
+				}
+			}
+			(9 == i && '*' != *(cp + 1)) && cp++;
+			break;
+		default:
+			break;
+		}
+		*cp = 'P';
+		system("cls");
+	}
+	system("color 0A");
+	printf("恭喜你，你赢了\n");
+	return 0;
+}
+*///“迷宫游戏”(选自我的CSDN博客)^
