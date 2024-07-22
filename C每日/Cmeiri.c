@@ -2806,3 +2806,21 @@ int main() {
 	return 0;
 }
 *///随机数生成器^
+/*
+int main() {
+	int ihea = 0;
+	int ifoo = 0;
+	int ichi = 0;
+	printf("请输入头的数量 -> ");
+	scanf("%d", &ihea);
+	printf("请输入脚的数量 -> ");
+	scanf("%d", &ifoo);
+	for (; -1 != ihea; ichi++, ihea--) {
+		if (ichi * 2 + ihea * 4 == ifoo) {
+			break;
+		}
+	}
+	-1 != ihea && printf("鸡有%d只，兔有%d只\n", ichi, ihea), -1 != ihea || printf("无解\n");
+	return 0;
+}
+*///“鸡兔同笼求解器”(选自我的CSDN博客)^
