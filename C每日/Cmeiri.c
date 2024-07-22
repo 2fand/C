@@ -2824,3 +2824,13 @@ int main() {
 	return 0;
 }
 *///“鸡兔同笼求解器”(选自我的CSDN博客)^
+/*
+int main() {
+	int arr[10] = { 1,2,3,4,5,6,7,8,9,0 };
+	const int* pi = arr;
+	pi += 5;//OK
+	//*pi += 5;//err
+	printf("%d\n", *pi);
+	return 0;
+}
+*///“const int* pi”^
