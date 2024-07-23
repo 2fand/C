@@ -2920,3 +2920,9 @@ int main() {
 	return 0;
 }
 *///“边界互通迷宫”(选自我的CSDN博客)^
+/*
+int main() {
+	printf("\033[33mYellow\033[0m\n");
+	return 0;
+}
+*///“Yellow”^
