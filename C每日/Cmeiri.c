@@ -2926,3 +2926,121 @@ int main() {
 	return 0;
 }
 *///“Yellow”^
+/*
+void printmaze(const char strmaze[9][9], const char* ShAdDr[6]) {
+	int ia = 0;
+	int ib = 0;
+	int ic = 0;
+	const char str[4] = "134";
+	for (ia = 0; ia < 9; ia++) {
+		for (ib = 0; ib < 9; ib++) {
+			for (ic = 0; ic < 6; ic++) {
+				if (&strmaze[ia][ib] == ShAdDr[ic] && 'P' != *ShAdDr[ic]) {
+					break;
+				}
+			}
+			printf("\033[3%cm%c", 'G' == strmaze[ia][ib] ? '2' : 6 == ic ? '7' : str[ic % 3], strmaze[ia][ib]);
+		}
+		printf("\033[0m|\n");
+	}
+	printf("---------@\n");
+}
+int main() {
+	int i = 0;
+	int ie = 0;
+	char ch = 0;
+	const char strmaze[9][9] = {
+		"P*\\      ",
+		" *  * * *",
+		"  **   * ",
+		" *\\* *   ",
+		"   **\\**#",
+		"#****    ",
+		"   *  *  ",
+		" *   * **",
+		"   *   #G"
+	};
+	char* cp = &strmaze[0][0];
+	char* ShAdDr[6] = { &strmaze[3][2], &strmaze[4][5], &strmaze[0][2], &strmaze[5][0], &strmaze[4][8], &strmaze[8][7] };//ShAdDr -> Switchs And Doors
+	char regis[4] = "\\\\\\";
+	printf("欢迎你来玩这个迷宫游戏，在这个迷宫中，“P”是你，“G”是终点，而“*”是墙，空格是你可以走的地方，“w”往上，“a”往左，“s”往下，“d”往右，“z”用来打开或者关闭开关，并且，“\\”和“/”都是开关，用来控制门“#”的开和关，而你只要走到终点就可以了，这就是这个迷宫游戏的规则");
+	Sleep(6600);
+	system("cls");
+	while ('G' == strmaze[8][8]) {
+		printmaze(strmaze, ShAdDr);
+		scanf("%c", &ch);
+		while ('\n' != getchar()) {
+			;
+		}
+		*cp = ' ';
+		for (ie = 0; ie < 3; ie++) {
+			' ' == *ShAdDr[ie] && (*ShAdDr[ie] = regis[ie]);
+		}
+		switch (ch) {
+		case 'w':
+			for (i = 0; i < 9; i++) {
+				if (cp == &strmaze[0][i]) {
+					break;
+				}
+			}
+			(9 == i && ('*' != *(cp - 9) && '#' != *(cp - 9))) && (cp -= 9);
+			break;
+		case 'a':
+			for (i = 0; i < 9; i++) {
+				if (cp == &strmaze[i][0]) {
+					break;
+				}
+			}
+			(9 == i && ('*' != *(cp - 1) && '#' != *(cp - 1))) && cp--;
+			break;
+		case 's':
+			for (i = 0; i < 9; i++) {
+				if (cp == &strmaze[8][i]) {
+					break;
+				}
+			}
+			(9 == i && ('*' != *(cp + 9) && '#' != *(cp + 9))) && (cp += 9);
+			break;
+		case 'd':
+			for (i = 0; i < 9; i++) {
+				if (cp == &strmaze[i][8]) {
+					break;
+				}
+			}
+			(9 == i && ('*' != *(cp + 1) && '#' != *(cp + 1))) && (cp++);
+			break;
+		case 'z':
+			for (ie = 0; ie < 3; ie++) {
+				if (ShAdDr[ie] == cp) {
+					if ('\\' == regis[ie]) {
+						regis[ie] = '/';
+					}
+					else {
+						regis[ie] = '\\';
+					}
+					if ('\\' == *ShAdDr[ie]) {
+						*ShAdDr[ie] = '/';
+					}
+					else {
+						*ShAdDr[ie] = '\\';
+					}
+					if (' ' == *(ShAdDr[ie + 3])) {
+						*(ShAdDr[ie + 3]) = '#';
+					}
+					else {
+						*(ShAdDr[ie + 3]) = ' ';
+					}
+				}
+			}
+			break;
+		default:
+			break;
+		}
+		*cp = 'P';
+		system("cls");
+	}
+	system("color 0A");
+	printf("恭喜你，你赢了\n");
+	return 0;
+}
+*///“开关迷宫”(选自我的CSDN博客)^
