@@ -3044,3 +3044,9 @@ int main() {
 	return 0;
 }
 *///“开关迷宫”(选自我的CSDN博客)^
+/*
+int main() {
+	float f = 114514E-6f;
+	printf("%f", f);
+}
+*///“114514E-6f”^
