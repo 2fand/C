@@ -3150,3 +3150,9 @@ int main() {
 	return 0;
 }
 *///“边界互通传送迷宫”(选自我的CSDN博客)^
+/*
+int main() {
+	printf("\033[1;36mCYAN\n\033[0m");
+	return 0;
+}
+*///“CYAN”^
