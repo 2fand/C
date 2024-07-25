@@ -3050,3 +3050,103 @@ int main() {
 	printf("%f", f);
 }
 *///“114514E-6f”^
+/*
+void printmaze(const char strmaze[9][9]) {
+	int ia = 0;
+	int ib = 0;
+	for (ia = 0; ia < 9; ia++) {
+		for (ib = 0; ib < 9; ib++) {
+			printf("\033[%sm%c", 'G' == strmaze[ia][ib] ? "32" : '^' == strmaze[ia][ib] ? "33" : "0", strmaze[ia][ib]);
+		}
+		printf("\033[0m|\n");
+	}
+	printf("---------@\n");
+}
+int main() {
+	int i = 0;
+	char ch = 0;
+	char strmaze[9][9] = {
+		" *  ^^ ^ ",
+		"*P*^ ^  ^",
+		"^*^    ^ ",
+		" ^ ^^^ ^ ",
+		"      ^  ",
+		"   ^ ^^ ^",
+		"^^ ^    ^",
+		"    ^  G ",
+		" ^  ^  * "
+	};
+	char* cp = &strmaze[1][1];
+	char* const carrp[32] = { &strmaze[0][4],&strmaze[0][5],&strmaze[0][7],&strmaze[1][3],&strmaze[1][5],&strmaze[1][8],&strmaze[2][0],&strmaze[2][7],&strmaze[3][3],&strmaze[3][4],&strmaze[3][7], &strmaze[4][6],&strmaze[6][0],&strmaze[3][1],&strmaze[5][6],&strmaze[6][3],&strmaze[7][4],&strmaze[2][2],&strmaze[3][5],&strmaze[6][1],&strmaze[6][8],&strmaze[5][8],&strmaze[5][5],&strmaze[5][3],&strmaze[8][4],&strmaze[8][1],&strmaze[0][1],&strmaze[1][0],&strmaze[1][2],&strmaze[2][1],&strmaze[8][7],&strmaze[1][1] };
+	printf("欢迎你来玩这个迷宫游戏，在这个迷宫中，“P”是你，“G”是终点，而“*”是你可以走的地方，空格是虚空，你不能走，“w”往上，“a”往左，“s”往下，“d”往右，并且，这个迷宫边界互通，而且只要在传送点“^”上输入“z”，就可以传送到这个传送点的另一端，而你只要走到终点就可以了，这就是这个迷宫游戏的规则");
+	Sleep(8800);
+	system("cls");
+	while ('G' == strmaze[7][7]) {
+		printmaze(strmaze);
+		scanf("%c", &ch);
+		while ('\n' != getchar()) {
+			;
+		}
+		*cp = ' ';
+		for (i = 0; i < 26; i++) {
+			' ' == *carrp[i] && (*carrp[i] = '^');
+		}
+		for (; i < 32; i++) {
+			' ' == *carrp[i] && (*carrp[i] = '*');
+		}
+		switch (ch) {
+		case 'w':
+			for (i = 0; i < 9; i++) {
+				if (cp == &strmaze[0][i]) {
+					break;
+				}
+			}
+			(9 == i && ' ' != *(cp - 9)) && (cp -= 9);
+			(9 != i && ' ' != *(cp + 72)) && (cp += 72);
+			break;
+		case 'a':
+			for (i = 0; i < 9; i++) {
+				if (cp == &strmaze[i][0]) {
+					break;
+				}
+			}
+			(9 == i && ' ' != *(cp - 1)) && cp--;
+			(9 != i && ' ' != *(cp + 8)) && (cp += 8);
+			break;
+		case 's':
+			for (i = 0; i < 9; i++) {
+				if (cp == &strmaze[8][i]) {
+					break;
+				}
+			}
+			(9 == i && ' ' != *(cp + 9)) && (cp += 9);
+			(9 != i && ' ' != *(cp - 72)) && (cp -= 72);
+			break;
+		case 'd':
+			for (i = 0; i < 9; i++) {
+				if (cp == &strmaze[i][8]) {
+					break;
+				}
+			}
+			(9 == i && ' ' != *(cp + 1)) && (cp++);
+			(9 != i && ' ' != *(cp - 8)) && (cp -= 8);
+			break;
+		case 'z':
+			for (i = 0; i < 26; i++) {
+				if (carrp[i] == cp) {
+					i < 13 && (cp = carrp[i + 13]), i < 13 || (cp = carrp[i - 13]);
+					break;
+				}
+			}
+			break;
+		default:
+			break;
+		}
+		*cp = 'P';
+		system("cls");
+	}
+	system("color 0A");
+	printf("恭喜你，你赢了\n");
+	return 0;
+}
+*///“边界互通传送迷宫”(选自我的CSDN博客)^
