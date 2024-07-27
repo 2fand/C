@@ -3258,3 +3258,33 @@ int main() {
 	return 0;
 }
 *///“下划线”^
+/*
+int main() {
+	char strsquare[12][3] = { { "1;1" }, { "3" }, { "2;1" }, { "6" }, { "4;1" }, { "5;1" } };//红黄绿青蓝紫
+	char strsquarea[12][3] = { 0 };
+	int i = 0;
+	int ia = 0;
+	for (i = 0; i < 6; i++) {
+		strcpy(strsquare[i + 6], strsquare[i]);
+	}
+	while (1) {
+		for (i = 0; i < 6; i++) {
+			for (ia = i; ia < i + 6; ia++) {
+				printf("\033[4%sm \033[0m", strsquare[ia]);
+			}
+			printf("\n");
+		}
+		strcpy(strsquarea[0], strsquare[5]);
+		for (i = 0; i < 5; i++) {
+			strcpy(strsquarea[i + 1], strsquare[i]);
+		}
+		for (i = 0; i < 6; i++) {
+			strcpy(strsquare[i], strsquarea[i]);
+			strcpy(strsquare[i + 6], strsquarea[i]);
+		}
+		Sleep(10);
+		system("cls");
+	}
+	return 0;
+}
+*///“彩虹渐变方块”(选自我的CSDN博客)^
