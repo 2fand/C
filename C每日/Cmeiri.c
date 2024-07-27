@@ -3288,3 +3288,9 @@ int main() {
 	return 0;
 }
 *///“彩虹渐变方块”(选自我的CSDN博客)^
+/*
+int main() {
+	printf("\033[36;7mi");
+	return 0;
+}
+*///“反显”^
