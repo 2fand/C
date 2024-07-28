@@ -3294,3 +3294,103 @@ int main() {
 	return 0;
 }
 *///“反显”^
+/*
+void printmaze(const char strmaze[9][9], const int id) {
+	int ia = 0;
+	int ib = 0;
+	for (ia = 0; ia < 9; ia++) {
+		for (ib = 0; ib < 9; ib++) {
+			printf("\033[%sm%c\033[0m", 'G' == strmaze[ia][ib] ? "32" : '*' == strmaze[ia][ib] ? "36" : 'P' == strmaze[ia][ib] ? ((id > 4 && id <= 8) ? "36;1" : id <= 4 ? "36" : "0") : "0", strmaze[ia][ib]);
+		}
+		printf("\033[0m|\n");
+	}
+	printf("---------@\n");
+	if (id > 8) {
+		printf("\033[32m还剩%d回合", id);
+	}
+	else if (id > 4) {
+		printf("\033[33m还剩%d回合", id);
+	}
+	else {
+		printf("\033[31m还剩%d回合", id);
+	}
+	printf("\n\033[0m");
+}
+int main() {
+	int i = 0;
+	int id = 12;
+	char ch = 0;
+	char strmaze[9][9] = {
+		"P  *   * ",
+		"*    *   ",
+		"  *  **  ",
+		" ** *  * ",
+		"   *    *",
+		"*     * *",
+		"  *      ",
+		" *   * * ",
+		"   *   *G"
+	};
+	char* cp = &strmaze[0][0];
+	printf("欢迎你来玩这个\033[36m冰迷宫\033[0m游戏，在这个迷宫中，“P”是你，“G”是终点，而“*”是墙，空格是\033[36m冰\033[0m，“w”往上滑，“a”往左滑，“s”往下滑，“d”往右滑，而你只要滑到终点就可以了\033[31m(注意，你会在12回合之后被冻死)\033[0m，这就是这个\033[36m冰迷宫\033[0m游戏的规则");
+	Sleep(6000);
+	system("cls");
+	for (; 'G' == strmaze[8][8] && id; id--) {
+		printmaze(strmaze, id);
+		scanf("%c", &ch);
+		while ('\n' != getchar()) {
+			;
+		}
+		*cp = ' ';
+		switch (ch) {
+		case 'w':
+			do {
+				for (i = 0; i < 9; i++) {
+					if (cp == &strmaze[0][i]) {
+						break;
+					}
+				}
+				(9 == i && '*' != *(cp - 9)) && (cp -= 9);
+			} while (9 == i && '*' != *(cp - 9));
+			break;
+		case 'a':
+			do {
+				for (i = 0; i < 9; i++) {
+					if (cp == &strmaze[i][0]) {
+						break;
+					}
+				}
+				(9 == i && '*' != *(cp - 1)) && cp--;
+			} while (9 == i && '*' != *(cp - 1));
+			break;
+		case 's':
+			do {
+				for (i = 0; i < 9; i++) {
+					if (cp == &strmaze[8][i]) {
+						break;
+					}
+				}
+				(9 == i && '*' != *(cp + 9)) && (cp += 9);
+			} while (9 == i && '*' != *(cp + 9));
+			break;
+		case 'd':
+			do {
+				for (i = 0; i < 9; i++) {
+					if (cp == &strmaze[i][8]) {
+						break;
+					}
+				}
+				(9 == i && '*' != *(cp + 1)) && cp++;
+			} while (9 == i && '*' != *(cp + 1));
+			break;
+		default:
+			break;
+		}
+		*cp = 'P';
+		system("cls");
+	}
+	'G' == strmaze[8][8] && system("color 04"), 'G' == strmaze[8][8] || system("color 0A");
+	'G' == strmaze[8][8] && printf("你被冻死了\n"), 'G' == strmaze[8][8] || printf("恭喜你，你赢了\n");
+	return 0;
+}
+*///“冰迷宫”(选自我的CSDN博客)^
