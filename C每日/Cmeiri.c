@@ -3394,3 +3394,115 @@ int main() {
 	return 0;
 }
 *///“冰迷宫”(选自我的CSDN博客)^
+/*
+void printmaze(const char strmaze[9][9]) {
+	int ia = 0;
+	int ib = 0;
+	for (ia = 0; ia < 9; ia++) {
+		for (ib = 0; ib < 9; ib++) {
+			printf("%c", strmaze[ia][ib]);
+		}
+		printf("|\n");
+	}
+	printf("---------@\n");
+}
+int main() {
+	int i = 0;
+	char ch = 0;
+	char strmaze[9][9] = {
+		"P  * *   ",
+		"  * * *  ",
+		"   * *   ",
+		"*       *",
+		" *  *  * ",
+		"*       *",
+		"   * *   ",
+		"  * * *  ",
+		"   * *   "
+	};
+	char* cp = &strmaze[0][0];
+	system("cls");
+	while (1) {
+		printmaze(strmaze);
+		scanf("%c", &ch);
+		while ('\n' != getchar()) {
+			;
+		}
+		*cp = ' ';
+		switch (ch) {
+			case 'w':
+				for (i = 0; i < 9; i++) {
+					if (cp == &strmaze[0][i]) {
+						break;
+					}
+				}
+				(9 == i && '*' != *(cp - 9)) && (cp -= 9);
+				break;
+			case 'a':
+				for (i = 0; i < 9; i++) {
+					if (cp == &strmaze[i][0]) {
+						break;
+					}
+				}
+				(9 == i && '*' != *(cp - 1)) && cp--;
+				break;
+			case 's':
+			{
+				for (i = 0; i < 9; i++) {
+					if (cp == &strmaze[8][i]) {
+						break;
+					}
+				}
+				(9 == i && '*' != *(cp + 9)) && (cp += 9);
+
+				break;
+			case 'd':
+				for (i = 0; i < 9; i++) {
+					if (cp == &strmaze[i][8]) {
+						break;
+					}
+				}
+				(9 == i && '*' != *(cp + 1)) && cp++;
+				break;
+			case 'q':
+				for (i = 0; i < 9; i++) {
+					if (cp == &strmaze[i][0] || cp == &strmaze[0][i]) {
+						break;
+					}
+				}
+				(9 == i && '*' != *(cp - 10)) && (cp -= 10);
+				break;
+			case 'e':
+				for (i = 0; i < 9; i++) {
+					if (cp == &strmaze[i][8] || cp == &strmaze[0][i]) {
+						break;
+					}
+				}
+				(9 == i && '*' != *(cp - 8)) && (cp -= 8);
+				break;
+			case 'z':
+				for (i = 0; i < 9; i++) {
+					if (cp == &strmaze[i][0] || cp == &strmaze[8][i]) {
+						break;
+					}
+				}
+				(9 == i && '*' != *(cp + 8)) && (cp += 8);
+				break;
+			case 'c':
+				for (i = 0; i < 9; i++) {
+					if (cp == &strmaze[i][8] || cp == &strmaze[8][i]) {
+						break;
+					}
+				}
+				(9 == i && '*' != *(cp + 10)) && (cp += 10);
+				break;
+			default:
+				break;
+			}
+		}
+		*cp = 'P';
+		system("cls");
+	}
+	return 0;
+}
+*///“斜向移动”^
