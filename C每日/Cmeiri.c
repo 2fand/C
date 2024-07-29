@@ -3544,3 +3544,24 @@ int main() {
 	return 0;
 }
 *///百分号打印器(选自我的CSDN博客)^
+/*
+int main() {
+	int arr[10] = { 1,4,2,6,3,8,10,7,5,9 };
+	int isz = sizeof arr / sizeof arr[0];
+	int i = 0;
+	for (i=isz-1; i > 0; i--) {
+		for (int ia = 0;ia < i;ia++) {
+			if (arr[ia] > arr[ia + 1]) {
+				int itmp = arr[ia];
+				arr[ia] = arr[ia + 1];
+				arr[ia + 1] = itmp;
+			}
+		}
+	}
+	for (i = 0; i < isz; i++) {
+		printf("%d ", arr[i]);
+	}
+	printf("\n");
+	return 0;
+}
+*///“冒泡排序”^
