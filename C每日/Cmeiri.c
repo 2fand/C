@@ -3506,3 +3506,41 @@ int main() {
 	return 0;
 }
 *///“斜向移动”^
+/*
+int main() {
+	int i = 0;
+	int ia = 0;
+	int ib = 0;
+	printf("百分号的长度为多少?(大小 = 百分号的长度 * 百分号的长度) -> ");
+	scanf("%d", &i);
+	printf("\n");
+	if (1 == i) {
+		printf("%c\n", '%');//防止“%\n”打印不出来
+	}
+	else {
+		for (ia = 0; ia < i; ia++) {
+			if (!ia) {
+				printf("0");
+				for (ib = 0; ib < i - 2; ib++) {
+					printf(" ");
+				}
+				printf("/\n");
+			}
+			else if (i - 1 == ia) {
+				printf("/");
+				for (ib = 0; ib < i - 2; ib++) {
+					printf(" ");
+				}
+				printf("0\n");
+			}
+			else {
+				for (ib = 0; ib < i - 1 - ia; ib++) {
+					printf(" ");
+				}
+				printf("/\n");
+			}
+		}
+	}
+	return 0;
+}
+*///百分号打印器(选自我的CSDN博客)^
