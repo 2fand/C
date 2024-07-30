@@ -3682,3 +3682,13 @@ int main() {
 	return 0;
 }
 *///斜向钥匙迷宫(选自我的CSDN博客)^
+/*
+int main() {
+	char ch = 65;
+	const char* const cp = &ch;
+	//cp++;//err
+	//*cp++//err
+	printf("%c\n",*cp);
+	return 0;
+}
+*///“const char* const cp”^
