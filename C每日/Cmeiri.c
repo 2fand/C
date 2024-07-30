@@ -3565,3 +3565,120 @@ int main() {
 	return 0;
 }
 *///“冒泡排序”^
+/*
+void printmaze(const char strmaze[9][9], const int ia) {
+	int iaa = 0;
+	int ib = 0;
+	for (iaa = 0; iaa < 9; iaa++) {
+		for (ib = 0; ib < 9; ib++) {
+			printf("\033[%sm%c", 'G' == strmaze[iaa][ib] ? "32;1" : '&' == strmaze[iaa][ib] || '#' == strmaze[iaa][ib] ? "33" : "0", strmaze[iaa][ib]);
+		}
+		printf("\033[0m|\n");
+	}
+	printf("---------@\n\033[33m钥匙总数 = %d\033[0m\n", (ia & 1) + !!(ia & 2));
+}
+int main() {
+	int i = 0;
+	int ia = 0b00;//0b00 = 0
+	char ch = 0;
+	char strmaze[9][9] = {
+		"P* * *  *",
+		"* * * **&",
+		" ** * *  ",
+		"** ** * *",
+		"  *******",
+		"**  * * *",
+		"* **** * ",
+		"  *  * **",
+		"&* *  *#G"
+	};
+	char* cp = &strmaze[0][0];
+	printf("欢迎你来玩这个\033[33m斜向钥匙迷宫\033[0m，在这个迷宫中，“P”是你，\033[32;1m“G”\033[0m是\033[32;1m终点\033[0m，而“*”是墙，空格是你可以走的地方，“w”往上走，“a”往左走，“s”往下走，“d”往右走，“q”往左上走，“e”往右上走，“z”往左下走，“c”往右下走，而你只要用你收集的全部的\033[33m钥匙“&”(总共有2把)\033[0m打开\033[33m门“#”\033[0m来走到\033[32;1m终点\033[0m就可以了，这就是这个\033[33m斜向钥匙迷宫\033[0m的规则");
+	Sleep(6600);
+	system("cls");
+	while ('G' == strmaze[8][8]) {
+		('&' != strmaze[1][8] && !(ia & 1)) && ia++;
+		('&' != strmaze[8][0] && !(ia & 2)) && (ia += 2);//2 = 0b10
+		printmaze(strmaze, ia);
+		scanf("%c", &ch);
+		while ('\n' != getchar()) {
+			;
+		}
+		*cp = ' ';
+		switch (ch) {
+		case 'w':
+			for (i = 0; i < 9; i++) {
+				if (cp == &strmaze[0][i]) {
+					break;
+				}
+			}
+			(9 == i && '*' != *(cp - 9) && '#' != *(cp - 9)) && (cp -= 9);
+			break;
+		case 'a':
+			for (i = 0; i < 9; i++) {
+				if (cp == &strmaze[i][0]) {
+					break;
+				}
+			}
+			(9 == i && '*' != *(cp - 1) && '#' != *(cp - 1)) && cp--;
+			break;
+		case 's':
+			for (i = 0; i < 9; i++) {
+				if (cp == &strmaze[8][i]) {
+					break;
+				}
+			}
+			(9 == i && '*' != *(cp + 9) && '#' != *(cp + 9)) && (cp += 9);
+			break;
+		case 'd':
+			for (i = 0; i < 9; i++) {
+				if (cp == &strmaze[i][8]) {
+					break;
+				}
+			}
+			(9 == i && '*' != *(cp + 1) && '#' != *(cp + 1)) && cp++;
+			break;
+		case 'q':
+			for (i = 0; i < 9; i++) {
+				if (cp == &strmaze[i][0] || cp == &strmaze[0][i]) {
+					break;
+				}
+			}
+			(9 == i && '*' != *(cp - 10) && '#' != *(cp - 10)) && (cp -= 10);
+			break;
+		case 'e':
+			for (i = 0; i < 9; i++) {
+				if (cp == &strmaze[i][8] || cp == &strmaze[0][i]) {
+					break;
+				}
+			}
+			(9 == i && '*' != *(cp - 8) && '#' != *(cp - 8)) && (cp -= 8);
+			break;
+		case 'z':
+			for (i = 0; i < 9; i++) {
+				if (cp == &strmaze[i][0] || cp == &strmaze[8][i]) {
+					break;
+				}
+			}
+			(9 == i && '*' != *(cp + 8) && '#' != *(cp + 8)) && (cp += 8);
+			break;
+		case 'c':
+			for (i = 0; i < 9; i++) {
+				if (cp == &strmaze[i][8] || cp == &strmaze[8][i]) {
+					break;
+				}
+			}
+			(9 == i && '*' != *(cp + 10) && '#' != *(cp + 10)) && (cp += 10);
+			(3 == ia && cp == &strmaze[7][6]) && (strmaze[8][7] = ' ');
+			break;
+		default:
+			break;
+		}
+		*cp = 'P';
+		system("cls");
+	}
+	system("color 0A");
+	printf("恭喜你，你赢了\n");
+	return 0;
+}
+*///斜向钥匙迷宫(选自我的CSDN博客)^
