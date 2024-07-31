@@ -3708,3 +3708,19 @@ int main() {
 	return 0;
 }
 *///“逐汉字输出”(选自我的CSDN博客)^
+/*
+int main() {
+	char str[99999] = "";
+	char strc[6][4] = { "1;1", "3", "2;1", "6;1", "6", "5;1" };
+	char* pc = str;
+	char* pca = pc + 1;
+	int i = 0;
+	printf("请输入你想要七彩化的汉字 -> ");
+	scanf("%s", str);
+	for (system("cls"); i < strlen(str) / 2; i++, pc += 2, pca += 2) {
+		printf("\033[3%sm%c%c\033[0m", strc[i % 6],*pc, *pca);
+	}
+	printf("\n");
+	return 0;
+}
+*///“汉字七彩化”(选自我的CSDN博客)^
