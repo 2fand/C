@@ -3692,3 +3692,19 @@ int main() {
 	return 0;
 }
 *///“const char* const cp”^
+/*
+int main() {
+	char str[99999] = "";
+	char* pc = str;
+	char* pca = pc + 1;
+	int i = 0;
+	printf("请输入你想要逐字输出的汉字 -> ");
+	scanf("%s", str);
+	for (system("cls"); i < strlen(str) / 2; i++, pc += 2, pca += 2) {
+		printf("%c%c", *pc, *pca);
+		Sleep(100);
+	}
+	printf("\n");
+	return 0;
+}
+*///“逐汉字输出”(选自我的CSDN博客)^
