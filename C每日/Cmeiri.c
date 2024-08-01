@@ -3725,10 +3725,6 @@ int main() {
 }
 *///“汉字七彩化”(选自我的CSDN博客)^
 /*
-#define _CRT_SECURE_NO_WARNINGS 1
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 int main() {
 	char str[10][11] = {"xE53RE}y_z","7G,c#5hzFO","^0hp^RZI0z","8<2)aURnlS","72bwC<DA?x","0xITrbN+0","<!unRtFW07","5#YIfG?r4y","P<uRb@9Yb2","rRB4(uM~d2"};//密码
 	int i = 0;
@@ -3740,3 +3736,19 @@ int main() {
 	return 0;
 }
 *///“密码排序(升序)”(选自我的CSDN博客)^
+/*
+int chrcmp(const void* vp, const void* vpa) {
+	return *(char*)vpa - *(char*)vp;
+}
+int main() {
+	srand((unsigned int)time(NULL));
+	char str[101] = "";
+	int i = 0;
+	for (;i<100;i++) {
+		str[i] = rand() % 95 + 32;
+	}
+	qsort(str, 100, 1, chrcmp);
+	printf("%s\n", str);
+	return 0;
+}
+*///“字符串的字符排序(降序)”(选自我的CSDN博客)^
