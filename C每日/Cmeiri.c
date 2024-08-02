@@ -3767,3 +3767,15 @@ int main() {
 	return 0;
 }
 *///“有序数组查询”(选自我的CSDN博客)^
+/*
+int main() {
+	char str[10][11] = { "fagsfdrefd","454fv41ddd","64vfd7#$%)","&&&%%gbdla",";;;;;h;h;o","qgsdjeh52g","alalalalal","jfhryf5555","jndhejbrfd","jfgrjhzvas" };
+	char stra[11] = "";
+	printf("请输入你要查询的字符串 -> ");
+	scanf("%s", stra);
+	qsort(str, 10, 11, strcmp);
+	char* cp = ((char*)bsearch((void*)(&stra), str, 10, 11, strcmp));
+	cp && printf("“%s”这个字符串在这个有序的str二维数组里", cp), cp || printf("“%s”这个字符串不在这个有序的str二维数组里",stra);
+	return 0;
+}
+*///“有序二维字符串数组查询”(选自我的CSDN博客)^
