@@ -3752,3 +3752,18 @@ int main() {
 	return 0;
 }
 *///“字符串的字符排序(降序)”(选自我的CSDN博客)^
+/*
+int intcmp(const void* vp, const void* vpa) {
+	return *(int*)vpa - *(int*)vp;
+}
+int main() {
+	int arr[10] = {1,42,3,5,7,342,54,43,3,3332};
+	int i = 0;
+	printf("请输入你要查询的数字 -> ");
+	scanf("%d", &i);
+	qsort(arr, 10, 4, intcmp);
+	int* ip = ((int*)(bsearch((void*)(&i), arr, 10, 4, intcmp)));
+	ip && printf("“%d”在这个有序的arr数组里", *ip), ip || printf("“%d”不在这个有序的arr数组里",i);
+	return 0;
+}
+*///“有序数组查询”(选自我的CSDN博客)^
