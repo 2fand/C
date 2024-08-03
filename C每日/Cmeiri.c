@@ -3788,3 +3788,17 @@ int main() {
 	return 0;
 }
 *///“字符串的加减法”(选自我的CSDN博客)^
+/*
+int fua() {
+	return 1;
+}
+void fub() {
+	int i = fua();
+	printf("%d", 3 - i);
+	
+}
+int main() {
+	fub();
+	return 0;
+}
+*///“回调函数”^
