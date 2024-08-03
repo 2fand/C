@@ -3779,3 +3779,12 @@ int main() {
 	return 0;
 }
 *///“有序二维字符串数组查询”(选自我的CSDN博客)^
+/*
+int main() {
+	char str[999] = "";
+	printf("请输入一个字符串 -> ");
+	scanf("%s", str);
+	printf("%d + 1 = %d\n%d - 1 = %d\n", atoi(str), atoi(str) + 1, atoi(str), atoi(str) - 1);
+	return 0;
+}
+*///“字符串的加减法”(选自我的CSDN博客)^
