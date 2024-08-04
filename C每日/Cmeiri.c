@@ -3810,3 +3810,11 @@ int main() {
 	return 0;
 }
 *///“*cp与cp的区别”^
+/*
+int main() {
+	int arr[10] = { 1,4,2,3,5,6,7,67,76,5 };
+	int(*arrp)[10] = &arr;
+	printf("%d", (*arrp)[5]);
+	return 0;
+}
+*///“数组指针”^
