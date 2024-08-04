@@ -3802,3 +3802,11 @@ int main() {
 	return 0;
 }
 *///“回调函数”^
+/*
+int main() {
+	char* cp = "Hello,world!";
+	printf("%c\n", *cp);
+	printf("%s\n", cp);
+	return 0;
+}
+*///“*cp与cp的区别”^
