@@ -3818,3 +3818,13 @@ int main() {
 	return 0;
 }
 *///“数组指针”^
+/*
+int Add(int i, int ia) {
+	return i + ia;
+}
+int main() {
+	int (*funp)(int, int) = Add;
+	printf("%d", funp(3, 5));
+	return 0;
+}
+*///“函数指针”^
