@@ -3828,3 +3828,48 @@ int main() {
 	return 0;
 }
 *///“函数指针”^
+/*
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+int Add(int i, int ia) {
+    return i + ia;
+}
+int Sum(int i, int ia) {
+    return i - ia;
+}
+int Tim(int i, int ia) {
+    return i * ia;
+}
+int Div(int i, int ia) {
+    return i / ia;
+}
+void calc(int(*funp)(int, int)) {
+    int i = 0;
+    int ia = 0;
+    printf("请输入你要计算的两个整型 -> ");
+    scanf("%d %d", &i, &ia);
+    printf("计算的结果为：%d", funp(i, ia));
+}
+int main() {
+    char ch = 0;
+    printf("请输入一个运算符号(+-*/) -> ");
+    scanf("%c", &ch);
+    switch (ch) {
+    case '+':
+        calc(Add);
+        break;
+    case '-':
+        calc(Sum);
+        break;
+    case '*':
+        calc(Tim);
+        break;
+    case '/':
+        calc(Div);
+        break;
+    default:
+        break;
+    }
+    return 0;
+}
+*///“简易整型计算器”(选自我的CSDN博客)^
