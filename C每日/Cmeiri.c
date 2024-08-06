@@ -3873,3 +3873,43 @@ int main() {
     return 0;
 }
 *///“简易整型计算器”(选自我的CSDN博客)^
+/*
+int Add(int i, int ia) {
+    return i + ia;
+}
+int Sum(int i, int ia) {
+    return i - ia;
+}
+int Tim(int i, int ia) {
+    return i * ia;
+}
+int Div(int i, int ia) {
+    return i / ia;
+}
+int Mod(int i, int ia) {
+    return i % ia;
+}
+int Pow(int i, int ia) {
+    return (int)pow(i,ia);
+}
+void calc(int(*funp)(int, int)) {
+    int i = 0;
+    int ia = 0;
+    printf("请输入你要计算的两个整型 -> ");
+    scanf("%d %d", &i, &ia);
+    printf("计算的结果为：%d", funp(i, ia));
+}
+int main() {
+    int i = 0;
+    printf("**********************************\n");
+    printf("* 1.Add(+)   2.Sum(-)   3.Tim(*) *\n");
+    printf("* 4.Div(/)   5.Mod(%c)   6.Pow(^) *\n",'%');
+    printf("**********************************\n");
+    scanf("%d", &i);
+    int (*funarp[6])(int, int) = { Add,Sum,Tim,Div,Mod,Pow };
+    if (i > 0 && i < 7) {
+        calc(funarp[i - 1]);
+    }
+    return 0;
+}
+*///“简易整型计算器(加强版)”(选自我的CSDN博客)^
