@@ -3913,3 +3913,13 @@ int main() {
     return 0;
 }
 *///“简易整型计算器(加强版)”(选自我的CSDN博客)^
+/*
+int main() {
+	int* ip = malloc(4);
+	*ip = 5;
+	printf("%d", *ip);
+	free(ip);
+	ip = NULL;
+	return 0;
+}
+*///“malloc函数与free函数”^
