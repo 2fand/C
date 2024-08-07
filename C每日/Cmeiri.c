@@ -3924,10 +3924,6 @@ int main() {
 }
 *///“malloc函数与free函数”^
 /*
-#define _CRT_SECURE_NO_WARNINGS 1
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h> 
 int main() {
 	srand((size_t)time(NULL));
 	int i = 0;
@@ -3942,3 +3938,20 @@ int main() {
 	return 0;
 }
 *///“随机乱码打印”(选自我的CSDN博客)^
+/*
+int main() {
+	srand((size_t)time(NULL));
+	int i = 0;
+	int ia = 0;
+	scanf("%d", &i);
+	int* arrp = malloc(4 * i);
+	for (; ia < i; ia++) {
+		arrp[ia] = rand();
+	}
+	for (ia = 0; ia < i; ia++) {
+		printf("%d ", arrp[ia]);
+	}
+	free(arrp);
+	return 0;
+}
+*///“随机数组打印”(选自我的CSDN博客)^
