@@ -3923,3 +3923,22 @@ int main() {
 	return 0;
 }
 *///“malloc函数与free函数”^
+/*
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h> 
+int main() {
+	srand((size_t)time(NULL));
+	int i = 0;
+	int ia = 0;
+	scanf("%d", &i);
+	char* strp = malloc(i);
+	for (; ia < i; ia++) {
+		strp[ia] = rand() % 127;
+	}
+	printf("%s", strp);
+	free(strp);
+	return 0;
+}
+*///“随机乱码打印”(选自我的CSDN博客)^
