@@ -3955,3 +3955,12 @@ int main() {
 	return 0;
 }
 *///“随机数组打印”(选自我的CSDN博客)^
+/*
+int main() {
+	char str[99] = "";
+	char stra[99] = "";
+	scanf("%s %s", str, stra);
+	printf("%s", strstr(str,stra) ? "YES\n" : "NO\n");
+	return 0;
+}
+*///“判断一个字符串是否包含另一个字符串”(选自我的CSDN博客)^
