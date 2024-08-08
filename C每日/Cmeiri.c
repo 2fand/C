@@ -3964,3 +3964,19 @@ int main() {
 	return 0;
 }
 *///“判断一个字符串是否包含另一个字符串”(选自我的CSDN博客)^
+/*
+int IsStrSpin(char* str, char* stra) {
+	if (strlen(str) != strlen(stra)) {
+		return 0;
+	}
+	strncat(str, str, strlen(str));
+	return !!strstr(str, stra);
+}
+int main() {
+	char str[99] = "";
+	char stra[99] = "";
+	scanf("%s %s", str, stra);
+	printf("%s",IsStrSpin(str, stra) ? "YES\n" : "NO\n");
+	return 0;
+}
+*///“判断一个字符串是否由另一个字符串旋转得来的”(选自我的CSDN博客)^
