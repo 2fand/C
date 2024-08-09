@@ -3980,3 +3980,13 @@ int main() {
 	return 0;
 }
 *///“判断一个字符串是否由另一个字符串旋转得来的”(选自我的CSDN博客)^
+/*
+int main() {
+	char str[99] = "";
+	char stra[99] = "";
+	scanf("%s %s", str, stra);
+	char* cp = strpbrk(str, stra);
+	cp && printf("字符%c在整个str字符串里的下标为：%d\n", *cp, cp - str),cp || printf("定位失败,cp为NULL\n");
+	return 0;
+}
+*///“定位字符串中的字符”(选自我的CSDN博客)^
