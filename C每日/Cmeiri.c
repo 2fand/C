@@ -3990,3 +3990,17 @@ int main() {
 	return 0;
 }
 *///“定位字符串中的字符”(选自我的CSDN博客)^
+/*
+int main() {
+	int iconut = 0;
+	char str[999] = "";
+	char* cp = str;
+	printf("请输入你想要从中查询元音字母的个数的字符串 -> ");
+	scanf("%s", str);
+	for (; cp = strpbrk(cp, "aeiouAEIOU");cp++, iconut++) {
+		;
+	}
+	printf("%s的元音字母个数：%d", str, iconut);
+	return 0;
+}
+*///“求元音字母(a e i o u A E I O U)的个数”(选自我的CSDN博客)^
