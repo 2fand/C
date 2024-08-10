@@ -4004,3 +4004,28 @@ int main() {
 	return 0;
 }
 *///“求元音字母(a e i o u A E I O U)的个数”(选自我的CSDN博客)^
+/*
+int main() {
+	int i = 0;
+	int ia = 0;
+	char str[99999] = "";
+	const char stra[11] = "RYGBW13247";//红41 黄43 绿42 蓝44 白47
+	printf("欢迎你来用这个电子画板，在这画板中，你可以输入一些东西来绘制你自己的画，其中，“R”代表\033[31m红色\033[0m，“B”代表\033[34m蓝色\033[0m，“Y”代表\033[33m黄色\033[0m，“G”代表\033[32m绿色\033[0m，“W”代表白色，而其它的东西则代表了\033[7m黑色\033[0m，并且，“/”可以结束你对这个电子画板的绘制，这就是这个电子画板的用法");
+	Sleep(6770);
+	system("cls");
+	while ((str[i++] = getchar()) - '/') {
+		;
+	}
+	system("cls");
+	for (i = 0; '/' != str[i]; i++) {
+		for (ia = 0; ia < 5; ia++) {
+			if (str[i] == stra[ia]) {
+				break;
+			}
+		}
+		5 == ia || printf("\033[4%cm \033[0m", stra[ia + 5]), 5 == ia && printf(" ");
+		'\n' == str[i] && printf("\n");
+	}
+	return 0;
+}
+*///“电子画板”(选自我的CSDN博客)^
