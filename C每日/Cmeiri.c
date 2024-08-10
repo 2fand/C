@@ -33,6 +33,7 @@
 #include <random>
 #include <time.h>
 #include <assert.h>
+#include <errno.h>
 /*
 int main()
 {
@@ -4029,3 +4030,12 @@ int main() {
 	return 0;
 }
 *///“电子画板”(选自我的CSDN博客)^
+/*
+int main() {
+	int i = 0;
+	for (; i < 44; i++) {
+		printf("%s\n", strerror(i));
+	}
+	return 0;
+}
+*///“strerror函数”^
