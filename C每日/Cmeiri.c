@@ -34,6 +34,7 @@
 #include <time.h>
 #include <assert.h>
 #include <errno.h>
+#include <ctype.h>
 /*
 int main()
 {
@@ -4039,3 +4040,22 @@ int main() {
 	return 0;
 }
 *///“strerror函数”^
+/*
+/*
+int main() {
+	char str[999] = "";
+	int i = 0;
+	printf("请输入你想要大小写互换的字符串 -> ");
+	scanf("%s", str);
+	for (; str[i]; i++) {
+		if (str[i] >= 'A' && str[i] <= 'Z') {
+			str[i] = tolower(str[i]);
+		}
+		else if (str[i] >= 'a' && str[i] <= 'z') {
+			str[i] = toupper(str[i]);
+		}
+	}
+	printf("\n%s", str);
+	return 0;
+}
+*///“大小写互换”(选自我的CSDN博客)^
