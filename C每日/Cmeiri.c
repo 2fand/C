@@ -4074,3 +4074,16 @@ int main() {
 	return 0;
 }
 *///“全转成小写”(选自我的CSDN博客)^
+/*
+int main() {
+	int i = 0;
+	double arr[5] = { 1.2,2.3,3.3,4.4,5.5 };
+	double arra[5] = { 0 };
+	int isz = sizeof arr / sizeof arr[0];
+	memcpy(arra,arr,40);
+	for (; i < isz; i++) {
+		printf("%lf ", arra[i]);
+	}
+	return 0;
+}
+*///“浮点型数组拷贝”(选自我的CSDN博客)^
