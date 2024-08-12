@@ -4087,3 +4087,14 @@ int main() {
 	return 0;
 }
 *///“浮点型数组拷贝”(选自我的CSDN博客)^
+/*
+int main() {
+	int arr[3][3] = { 1,2,3,4,5,6,76,8,91 };
+	int* arrp[3] = { arr[0],arr[1],arr[2] };
+	int* arrpa[3] = { &arr[0][1],&arr[1][1], &arr[2][1] };
+	int isz = sizeof arrpa / sizeof arrpa[0];
+	memcpy(arrpa, arrp, sizeof &arr*isz);
+	printf("%d %d %d\n", *(arrpa[0]), *(arrpa[1]), *(arrpa[2]));
+	return 0;
+}
+*///“指针数组拷贝”(选自我的CSDN博客)^
