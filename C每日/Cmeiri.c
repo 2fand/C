@@ -4098,3 +4098,15 @@ int main() {
 	return 0;
 }
 *///“指针数组拷贝”(选自我的CSDN博客)^
+/*
+int main() {
+	int i = 0;
+	int arr[100] = { 1, 3, 4, 5, 6, 0 };
+	memmove(arr + 5, arr, 20);
+	memmove(arr + 10, arr, 40);
+	for (; i < 20; i++) {
+		printf("%d ", arr[i]);
+	}
+	return 0;
+}
+*///“数组*4”(选自我的CSDN博客)^
