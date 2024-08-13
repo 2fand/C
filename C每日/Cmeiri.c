@@ -4110,3 +4110,24 @@ int main() {
 	return 0;
 }
 *///“数组*4”(选自我的CSDN博客)^
+/*
+int main() {
+	int i = 0;
+	int im = 0;
+	int arr[999] = { 1, 3, 4, 5, 6, 0 };
+	printf("你要移动几位? -> ");
+	scanf("%d", &im);
+	for (; i < 5 + im; i++) {
+		printf("%d ", arr[i]);
+	}
+	printf("\n");
+	memmove(arr + im, arr, 20);
+	for (i = 0; i < im; i++) {
+		arr[i] = 0;
+	}
+	for (i = 0; i < 5 + im; i++) {
+		printf("%d ", arr[i]);
+	}
+	return 0;
+}
+*///“数组内容移动”(选自我的CSDN博客)^
