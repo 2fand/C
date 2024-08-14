@@ -4139,3 +4139,15 @@ int main() {
 	return 0;
 }
 *///“比较整型数组”(选自我的CSDN博客)^
+/*
+struct Moster {
+	int x;
+	int y;
+	char direction;
+};
+int main() {
+	struct Moster m = { 7,5,'S' };
+	struct Moster ma = { 3,9,'W' };
+	printf("%d", memcmp(&m, &ma, sizeof(struct Moster)));
+}
+*///“比较结构体变量”(选自我的CSDN博客)^
