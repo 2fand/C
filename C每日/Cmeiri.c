@@ -4131,3 +4131,11 @@ int main() {
 	return 0;
 }
 *///“数组内容移动”(选自我的CSDN博客)^
+/*
+int main() {
+	int arr[4] = { 3,5,6,7 };
+	int arra[4] = { 3,5,6,7 };
+	printf("%d\n", memcmp(arr, arra, 16));
+	return 0;
+}
+*///“比较整型数组”(选自我的CSDN博客)^
