@@ -4151,3 +4151,16 @@ int main() {
 	printf("%d", memcmp(&m, &ma, sizeof(struct Moster)));
 }
 *///“比较结构体变量”(选自我的CSDN博客)^
+/*
+struct abc {
+	int a : 3;
+	int b : 5;
+	int c : 10;
+	int d : 30;
+};
+int main() {
+	struct abc e = { 11,45,14,58 };
+	printf("%d %d %d %d\n", e.a, e.b, e.c, e.d);
+	return 0;
+}
+*///“位段”^
