@@ -4164,3 +4164,14 @@ int main() {
 	return 0;
 }
 *///“位段”^
+/*
+struct {
+	int i;
+	int ia;
+}a;
+int main() {
+	a.i = 1;
+	printf("%d", a.i);
+	return 0;
+}
+*///“匿名结构体”^
