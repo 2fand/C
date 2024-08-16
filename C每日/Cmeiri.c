@@ -4175,3 +4175,84 @@ int main() {
 	return 0;
 }
 *///“匿名结构体”^
+/*
+enum Option {
+    ADD = 1,
+    SUM,
+    TIM,
+    DIV,
+    MOD,
+    POW,
+    LMOVE,
+    RMOVE
+};
+int Add(int i, int ia) {
+    return i + ia;
+}
+int Sum(int i, int ia) {
+    return i - ia;
+}
+int Tim(int i, int ia) {
+    return i * ia;
+}
+int Div(int i, int ia) {
+    return i / ia;
+}
+int Mod(int i, int ia) {
+    return i % ia;
+}
+int Pow(int i, int ia) {
+    return (int)pow(i, ia);
+}
+int Rmv(int i, int ia) {
+    return i >> ia;
+}
+int Lmv(int i, int ia) {
+    return i << ia;
+}
+void calc(int(*funp)(int, int)) {
+    int i = 0;
+    int ia = 0;
+    printf("请输入你要计算的两个整型 -> ");
+    scanf("%d %d", &i, &ia);
+    printf("计算的结果为：%d", funp(i, ia));
+}
+int main() {
+    int i = 0;
+    printf("**********************************\n");
+    printf("* 1.Add(+)   2.Sum(-)   3.Tim(*) *\n");
+    printf("* 4.Div(/)   5.Mod(%c)   6.Pow(^) *\n", '%');
+    printf("* 7.Rmv(>>)  8.Lmv(<<)           *\n");
+    printf("**********************************\n");
+    scanf("%d", &i);
+    switch (i) {
+    case ADD:
+        calc(Add);
+        break;
+    case SUM:
+        calc(Sum);
+        break;
+    case TIM:
+        calc(Tim);
+        break;
+    case DIV:
+        calc(Div);
+        break;
+    case MOD:
+        calc(Mod);
+        break;
+    case POW:
+        calc(Pow);
+        break;
+    case LMOVE:
+        calc(Lmv);
+        break;
+    case RMOVE:
+        calc(Rmv);
+        break;
+    default:
+        break;
+    }
+    return 0;
+}
+*///“简易计算器枚举版”(选自我的CSDN博客)^
