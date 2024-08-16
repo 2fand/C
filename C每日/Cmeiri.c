@@ -4256,3 +4256,14 @@ int main() {
     return 0;
 }
 *///“简易计算器枚举版”(选自我的CSDN博客)^
+/*
+union un {
+	int i;
+	char c;
+};
+int main() {
+	union un u = { 35 };
+	printf("%d %c\n", u.i, u.c);
+	return 0;
+}
+*///“union联合体”^
