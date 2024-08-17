@@ -4267,3 +4267,14 @@ int main() {
 	return 0;
 }
 *///“union联合体”^
+/*
+union un {
+	int i;
+	char c;
+};
+int main() {
+	union un u = { 1 };
+	printf("%s\n", u.c ? "小端" : "大端");
+	return 0;
+}
+*///“C语言union联合”(选自我的CSDN博客)^
