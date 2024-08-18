@@ -4478,3 +4478,19 @@ int main() {
 	return 0;
 }
 *///“C语言钥匙迷宫2.0”(选自我的CSDN博客)^
+/*
+int main() {
+	long long ll = 0;
+	int isz = 0;
+	printf("请输入一个初始数 -> ");
+	scanf("%lld", &ll);
+	printf("请输入这个随机降序数列的大小 -> ");
+	scanf("%d", &isz);
+	for (; isz > 0; isz--) {
+		isz % 2 || ((ll*=((ll-=114514) /= (ll*=6))+isz)), isz % 2 && (ll*=(long long)pow((isz/ll, ll/isz),++ll-isz));
+		printf("%lld ", ll);
+	}
+	printf("\n");
+	return 0;
+}
+*///“随机降序数列生成器”^
