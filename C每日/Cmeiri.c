@@ -4289,3 +4289,192 @@ int main() {
 	return 0;
 }
 *///“匿名联合”^
+/*
+enum color {
+	Y,
+	B,
+	R
+};
+typedef struct Key {
+	enum color co;
+	int ix;
+	int iy;
+}Key;
+typedef struct Door {
+	enum color co;
+	int ix;
+	int iy;
+}Door;
+void printmaze(char strmaze[11][11], int* apkeys, Key(*k)[12], Door(*d)[29]) {
+	const char sarr[3][5] = { "33","36","31;1" };
+	Key* ka = *k;
+	Door* da = *d;
+	const Key* const kb = *k + 11;
+	const Door* const db = *d + 28;
+	int ia = 0;
+	int ib = 0;
+	char stc[5] = "";
+	for (ia = 0; ia < 11; ia++) {
+		for (ib = 0; ib < 11; ib++) {
+			while (ka->ix <= ia) {
+				if (ka->iy == ib && ka->ix == ia) {
+					strcpy(stc, sarr[ka->co]);
+				}
+				if (ka == kb) { 
+					break; 
+				}
+				ka++;
+			}
+			while (da->ix <= ia) {
+				if (da->iy == ib && da->ix == ia) {
+					strcpy(stc, sarr[da->co]);
+				}
+				if (da == db) {
+					break;
+				}
+				da++;
+			}
+			printf("\033[%sm%c\033[0m", 'G' == strmaze[ia][ib] ? "32;1" : !!strcmp(stc,"33") + !!strcmp(stc,"36") + !!strcmp(stc,"31;1") == 2 && 'P' != strmaze[ia][ib] && '*' != strmaze[ia][ib] ? stc : "0", strmaze[ia][ib]);
+			ka = *k;
+			da = *d;
+			strcpy(stc, "");
+		}
+		printf("|\n");
+	}
+	printf("-----------@\n\033[33m黄钥匙*%d\033[0m\n\033[36m蓝钥匙*%d\033[0m\n\033[31;1m红钥匙*%d\033[0m\n", apkeys[0], apkeys[1], apkeys[2]);
+}
+int main() {
+	int apkeys[3] = { 0 };
+	Key k[12] = { {R,0,5},{Y,0,6},{B,0,8},{R,2,3},{B,3,4},{B,3,6},{Y,4,3},{R,4,7},{Y,6,3},{Y,6,4},{Y,7,1},{Y,9,0} };
+	Door d[29] = { {B,0,7}, {Y,0,10}, {Y,1,0}, {B,1,1}, {R,1,3}, {B,1,6}, {Y,1,9}, {B,1,10}, {B,2,9}, {Y,3,0}, {Y,4,8}, {Y,5,0}, {Y,7,7}, {Y,7,8}, {B,7,9}, {Y,7,10}, {Y,8,0}, {R,8,5}, {Y,8,7}, {R,8,8}, {B,8,9}, {B,8,10}, {B,9,7}, {B,9,8}, {R,9,9}, {R,9,10}, {Y,10,7}, {B,10,8}, {R,10,9} };
+	const Key ka[12] = { {R,0,5},{Y,0,6},{B,0,8},{R,2,3},{B,3,4},{B,3,6},{Y,4,3},{R,4,7},{Y,6,3},{Y,6,4},{Y,7,1},{Y,9,0} };
+	const Door da[29]= { {B,0,7}, {Y,0,10}, {Y,1,0}, {B,1,1}, {R,1,3}, {B,1,6}, {Y,1,9}, {B,1,10}, {B,2,9}, {Y,3,0}, {Y,4,8}, {Y,5,0}, {Y,7,7}, {Y,7,8}, {B,7,9}, {Y,7,10}, {Y,8,0}, {R,8,5}, {Y,8,7}, {R,8,8}, {B,8,9}, {B,8,10}, {B,9,7}, {B,9,8}, {R,9,9}, {R,9,10}, {Y,10,7}, {B,10,8}, {R,10,9} };
+	int i = 0;
+	int ia = 0;
+	char ch = 0;
+	char strmaze[11][11] = {
+		' ',' ',' ',' ','*','+','+','#','+',' ','#',
+		'#','#','*','#','*','*','#',' ',' ','#','#',
+		' ',' ','*','+',' ','*','*','*','*','#',' ',
+		'#',' ','*',' ','+','*','+',' ','*','*',' ',
+		' ',' ','*','+',' ','*',' ','+','#',' ',' ',
+		'#','*','*','*','*','*','*','*','*','*',' ',
+		' ',' ','*','+','+','*',' ',' ',' ',' ',' ',
+		' ','+','*','*',' ','*',' ','#','#','#','#',
+		'#',' ',' ','*',' ','#',' ','#','#','#','#',
+		'+','*',' ','*','*',' ',' ','#','#','#','#',
+		'P','*',' ',' ',' ',' ',' ','#','#','#','G'
+	};
+	const char strmz[] = "    *++#+ ###*#**#  ##  *+ ****# # * +*+ **   *+ * +#  #*********   *++*      +** * #####  * # ####+* **  ####P*     ###G";
+	char* cp = &strmaze[10][0];
+	printf("欢迎你来玩这个\033[33m钥\033[36m匙\033[31;1m迷宫\033[0m，这个迷宫的规则与50层魔塔的规则基本无异，只不过输入“r”可以使你重新开始这个游戏，而且，这三种颜色的“+”：“\033[33m+\033[0m”“\033[36m+\033[0m”“\033[31;1m+\033[0m”分别代表了50层魔塔里的\033[33m黄钥匙\033[0m，\033[36m蓝钥匙\033[0m和\033[31;1m红钥匙\033[0m，并且那三种颜色的“#”：“\033[33m#\033[0m”“\033[36m#\033[0m”“\033[31;1m#\033[0m”分别代表了50层魔塔里的\033[33m黄门\033[0m，\033[36m蓝门\033[0m和\033[31;1m红门\033[0m，你明白了吗?");
+	Sleep(6600);
+	system("cls");
+	while ('G' == strmaze[10][10]) {
+		int ix = (cp - &strmaze[0][0]) / 11;
+		int iy = (cp - &strmaze[0][0]) % 11;
+		for (ia = 0; ia < 12; ia++) {
+			if (k[ia].ix == ix && k[ia].iy == iy && -2 != k[ia].ix + k[ia].iy) {
+				apkeys[k[ia].co]++;
+				k[ia].ix = -1;
+				k[ia].iy = -1;
+			}
+		}
+		printmaze(strmaze, apkeys, &k, &d);
+		scanf("%c", &ch);
+		while ('\n' != getchar()) {
+			;
+		}
+		*cp = ' ';
+		switch (ch) {
+		case 'w':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmaze[0][i]) {
+					break;
+				}
+			}
+			(11 == i && '*' != *(cp - 11) && '#' != *(cp - 11)) && (cp -= 11);
+			for (ia = 0; ia < 29; ia++) {
+				if (apkeys[d[ia].co] > 0 && -1 != d[ia].ix && -1 != d[ia].iy && d[ia].ix == ix - 1 && d[ia].iy == iy) {
+					strmaze[d[ia].ix][d[ia].iy] = ' ';
+					apkeys[d[ia].co]--;
+					d[ia].ix = -1;
+					d[ia].iy = -1;
+				}
+			}
+			break;
+		case 'a':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmaze[i][0]) {
+					break;
+				}
+			}
+			(11 == i && '*' != *(cp - 1) && '#' != *(cp - 1)) && cp--;
+			for (ia = 0; ia < 29; ia++) {
+				if (apkeys[d[ia].co] > 0 && -1 != d[ia].ix && -1 != d[ia].iy && d[ia].ix == ix && d[ia].iy == iy - 1) {
+					strmaze[d[ia].ix][d[ia].iy] = ' ';
+					apkeys[d[ia].co]--;
+					d[ia].ix = -1;
+					d[ia].iy = -1;
+				}
+			}
+			break;
+		case 's':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmaze[10][i]) {
+					break;
+				}
+			}
+			(11 == i && '*' != *(cp + 11) && '#' != *(cp + 11)) && (cp += 11);
+			for (ia = 0; ia < 29; ia++) {
+				if (apkeys[d[ia].co] > 0 && -1 != d[ia].ix && -1 != d[ia].iy && d[ia].ix == ix + 1 && d[ia].iy == iy) {
+					strmaze[d[ia].ix][d[ia].iy] = ' ';
+					apkeys[d[ia].co]--;
+					d[ia].ix = -1;
+					d[ia].iy = -1;
+				}
+			}
+			break;
+		case 'd':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmaze[i][10]) {
+					break;
+				}
+			}
+			(11 == i && '*' != *(cp + 1) && '#' != *(cp + 1)) && cp++;
+			for (ia = 0; ia < 29; ia++) {
+				if (apkeys[d[ia].co] > 0 && -1 != d[ia].ix && -1 != d[ia].iy && d[ia].ix == ix && d[ia].iy == iy + 1) {
+					strmaze[d[ia].ix][d[ia].iy] = ' ';
+					apkeys[d[ia].co]--;
+					d[ia].ix = -1;
+					d[ia].iy = -1;
+				}
+			}
+			break;
+		case 'r':
+			for (ia = 0; ia < 12; ia++) {
+				k[ia] = ka[ia];
+				d[ia] = da[ia];
+			}
+			for (; ia < 29; ia++) {
+				d[ia] = da[ia];
+			}
+			for (i = 0; i < 121; i++) {
+				strmaze[0][i] = strmz[i];
+			}
+			cp = &strmaze[10][0];
+			for (i = 0; i < 3; i++) {
+				apkeys[i] = 0;
+			}
+			break;
+		default:
+			break;
+		}
+		*cp = 'P';
+		system("cls");
+	}
+	system("color 0A");
+	printf("恭喜你，你赢了\n");
+	return 0;
+}
+*///“C语言钥匙迷宫2.0”(选自我的CSDN博客)^
