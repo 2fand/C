@@ -4615,3 +4615,11 @@ int main() {
 	return 0;
 }//绽/尽 --> 动 --> 绽/尽 --> ...
 *///“C语言绽尽之‘#’”(选自我的CSDN博客)^
+/*
+int main() {
+	perror("main");
+	int* arr = (int*)malloc(6E80);
+	perror("main");
+	return 0;
+}
+*///“perror函数”^
