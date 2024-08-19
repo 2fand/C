@@ -4494,3 +4494,124 @@ int main() {
 	return 0;
 }
 *///“随机降序数列生成器”^
+/*
+char strmap[19][19] = { 0 };
+void printmap(char strmap[19][19]) {
+	int i = 0;
+	int ia = 0;
+	const char strco[6][4] = { "1;1","3","2;1","6;1","6","5;1" };
+	for (; i < 19; i++) {
+		for (ia = 0; ia < 19; ia++) {
+			printf("\033[3%sm%c\033[0m", strco[rand() % 6], strmap[i][ia]);
+		}
+		printf("|\n");
+	}
+	printf("-------------------@");
+}
+enum WASD {
+	N,
+	W,
+	A,
+	S,
+	D
+};
+typedef struct jin {
+	enum WASD w;
+	unsigned char cx:5;
+	unsigned char cy:5;
+}jin;
+jin jarrp[9999999] = { {W,9,9} };
+void del(char strmap[19][19], jin* jp, jin* jpa) {
+	strmap[jp->cx][jp->cy] = ' ';
+	*jp = *(jpa - 1);
+	jpa->w = N;
+}
+void loop(char strmap[19][19], jin* jp, int isz, int* ipa, int* ipc) {
+	int i = 0;
+	int ia = 0;
+	for (; i < 19; i++) {
+		for (ia = 0; ia < 19; ia++) {
+			if ('#'==strmap[i][ia]) {
+				goto g;
+			}
+		}
+	}
+g:
+	if (19 == i && 19 == ia) {
+		memset(jp, 0, isz);
+		strmap[9][10] = '#';//因为往上移动会偏移
+		jp->cx = 9;//因为往上移动会偏移
+		jp->cy = 10;//因为往上移动会偏移
+		jp->w = W;
+		*ipa = 2;
+		*ipc = 0;
+	}
+}
+int main() {
+	int i = 0;
+	int ib = 0;
+	int ia = 2;
+	int ic = 0;
+	memset(strmap, ' ', sizeof strmap);
+	srand((size_t)time(NULL));
+	jin* jpa = jarrp;
+	for (;;ib++) {
+		jin* jp = jarrp;
+		for (; jp->w; jp++) {
+			;
+		}
+		jpa = jp;
+		for (jp = jarrp; jp->w; jp++) {
+			if (ib % 2) {
+				//动
+				switch (jp->w) {
+				case W:
+					jp->cy--;
+					break;
+				case A:
+					jp->cx--;
+					break;
+				case S:
+					jp->cy++;
+					break;
+				case D:
+					jp->cx++;
+					break;
+				default:
+					break;
+				}
+			}
+			else {
+				if (!(jp->cx) || 18 == jp->cx || !(jp->cy) || 18 == jp->cy) {
+					//尽
+					del(strmap, jp, jpa);
+				}
+				else {
+					//绽
+					if (jp == jpa) {
+						break;
+					}
+					for (i = 0; i < 4; i++) {
+						(jp + i + (ia > 1 ? 1 : ia) + ic)->cx = jp->cx;
+						(jp + i + (ia > 1 ? 1 : ia) + ic)->cy = jp->cy;
+						(jp + i + (ia > 1 ? 1 : ia) + ic)->w = ((enum WASD)(i + 1));
+					}
+					ic += 4; 
+					ia--;
+				}
+			}
+		}
+		for (jp = jarrp; jp->w; jp++) {
+			strmap[jp->cx][jp->cy] = '#';
+		}
+		printmap(strmap);
+		Sleep(100);
+		system("cls");
+		loop(strmap, jarrp, sizeof jarrp, &ia, &ic);
+		for (jp = jarrp; jp->w; jp++) {
+			strmap[jp->cx][jp->cy] = ' ';
+		}
+	}
+	return 0;
+}//绽/尽 --> 动 --> 绽/尽 --> ...
+*///“C语言绽尽之‘#’”(选自我的CSDN博客)^
