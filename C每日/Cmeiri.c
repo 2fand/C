@@ -35,6 +35,7 @@
 #include <assert.h>
 #include <errno.h>
 #include <ctype.h>
+#include <stddef.h>
 /*
 int main()
 {
@@ -4777,3 +4778,21 @@ int main() {
 	return 0;
 }//是真男人就挺过100回合:P走(可跳) P碰怪? 怪生(&)走 怪换方向 怪碰P? --> P走
 *///“C语言是真男人就挺过100回合”(选自我的CSDN博客)^
+/*
+enum WASD {
+	N,
+	W,
+	A,
+	S,
+	D,
+};
+typedef struct Moster {
+	enum WASD w;
+	int ix;
+	int iy;
+}Moster;
+int main() {
+	printf("%d %d %d\n", offsetof(Moster, w), offsetof(Moster, ix), offsetof(Moster, iy));
+	return 0;
+}
+*///“返回结构体的成员的偏移量的宏——offsetof宏”^
