@@ -4623,3 +4623,157 @@ int main() {
 	return 0;
 }
 *///“perror函数”^
+/*
+enum WASD {
+	N,
+	W,
+	A,
+	S,
+	D,
+};
+typedef struct Moster {
+	enum WASD w;
+	int ix;
+	int iy;
+}Moster;
+void printmap(const char strmap[11][11], const int ir) {
+	int ia = 0;
+	int ib = 0;
+	for (ia = 0; ia < 11; ia++) {
+		for (ib = 0; ib < 11; ib++) {
+			printf("\033[%sm%c\033[0m", '&' == strmap[ia][ib] ? "31;1" : "0", strmap[ia][ib]);
+		}
+		printf("|\n");
+	}
+	printf("-----------@\n\033[%sm你已挺过%d回合\033[0m\n", ir>99 ? "32;1" : "0", ir);
+}
+int main() {
+	system("color 07");
+	srand((unsigned int)time(NULL));
+	int i = 0;
+	int im = 0;
+	int ims = 0;
+	int ir = 0;
+	int is = 0;
+	char ch = 0;
+	char strmap[11][11] = {
+		'P',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',
+		' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',
+		' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',
+		' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',
+		' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',
+		' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',
+		' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',
+		' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',
+		' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',
+		' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',
+		' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '
+	};
+	char* cp = &strmap[0][0];
+	printf("欢迎你来玩这个名叫真男人就挺过100回合的游戏，在这个游戏中，“P”是你，空格是你可以走的地方，而怪物“\033[31;1m&\033[0m”是你要躲避的东西，如果你跟怪物接触，那你就\033[31;1m泗\033[0m了，这就是这个游戏的规则");
+	Sleep(4500);
+	system("cls");
+	const Moster* const m=(Moster*)calloc(1000, sizeof(Moster));
+	Moster* mm = m;
+	for (; !is; ir++) {
+		printmap(strmap, ir);
+		Moster* ma = m;
+		for (; ma->w; ma++) {
+			;
+		}
+		const Moster* mb = ma;
+		ma = m;
+		scanf("%c", &ch);
+		while ('\n' != getchar()) {
+			;
+		}
+		*cp = ' ';
+		switch (ch) {
+		case 'w':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmap[0][i]) {
+					break;
+				}
+			}
+			11 == i && (cp -= 11);
+			break;
+		case 'a':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmap[i][0]) {
+					break;
+				}
+			}
+			11 == i && cp--;
+			break;
+		case 's':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmap[10][i]) {
+					break;
+				}
+			}
+			11 == i && (cp += 11);
+			break;
+		case 'd':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmap[i][10]) {
+					break;
+				}
+			}
+			11 == i && cp++;
+			break;
+		default:
+			break;
+		}//P走(可跳)
+		*cp = 'P';
+		system("cls");
+		int ix = (cp - &strmap[0][0]) / 11;
+		int iy = (cp - &strmap[0][0]) % 11;
+		for (; im && ma->w ;ma++) {
+			if (ma->ix == ix && ma->iy == iy) {
+				is = 1;
+			}
+		}//P碰怪?/怪碰P?
+		for (ma = m; ma != mb; ma++) {
+			strmap[ma->ix][ma->iy] = ' ';
+		}
+		for (ims = ir / 10 + 1, ma = m; ims; mm++, im++, ims--) {
+			do {
+				mm->ix = rand() % 11;
+				mm->iy = rand() % 11;
+			} while (mm->ix == ix && mm->iy == iy);
+			mm->w = (enum WASD)(rand() % 4 + 1);
+		}//怪生
+		for (ma = m; ma->w; ma++) {
+			switch (ma->w) {
+			case W:
+				!(ma->ix) && ma->ix--;
+				break;
+			case A:
+				!(ma->iy) && ma->iy--;
+				break;
+			case S:
+				10 != ma->ix && ma->ix++;
+				break;
+			case D:
+				10 != ma->iy && ma->iy++;
+				break;
+			default:
+				break;
+			}
+			ma->w = (enum WASD)(rand() % 4 + 1);
+		}//怪走&换方向
+		for (ma = m; ma->w; ma++) {
+			if (ma->ix == ix && ma->iy == iy) {
+				is = 1;
+			}
+		}//P碰怪?/怪碰P?
+		for (ma = m; ma != mb; ma++) {
+			strmap[ma->ix][ma->iy] = '&';
+		}
+	}
+	system("color 0C");
+	printf("恭喜你，你泗了\n");
+	free(m);
+	return 0;
+}//是真男人就挺过100回合:P走(可跳) P碰怪? 怪生(&)走 怪换方向 怪碰P? --> P走
+*///“C语言是真男人就挺过100回合”(选自我的CSDN博客)^
