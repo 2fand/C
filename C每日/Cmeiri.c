@@ -4902,3 +4902,140 @@ int main() {
 	return 0;
 }
 *///“‘%7s’和‘%-7s’”^
+/*
+enum WASD {
+	W,
+	A,
+	S,
+	D
+};
+void printmaze(const char strmaze[11][11], const int ip, const int ic) {
+	int ia = 0;
+	int ib = 0;
+	for (ia = 0; ia < 11; ia++) {
+		for (ib = 0; ib < 11; ib++) {
+			printf("\033[%sm%c\033[0m",'G' == strmaze[ia][ib] ? "32;1" : "0", strmaze[ia][ib]);
+		}
+		printf("|\n");
+	}
+	printf("-----------@\n\033[%sm破墙镐*%d%s\n\033[%sm对称飞*%d%s\033[0m\n", ip ? "0" : "30;1", ip, ip ? "(q)" : "", ic ? "0" : "30;1", ic, ic ? "(e)" : "");
+}
+int main() {
+	enum WASD wp = W;
+	int i = 0;
+	int ip = 4;
+	int ic = 2;
+	char ch = 0;
+	char strmaze[11][11] = {
+		'P','*',' ','*',' ',' ',' ','*',' ',' ','*',
+		'*',' ',' ','*','*','*','*',' ','*','*',' ',
+		' ',' ',' ','*','*',' ','*',' ','*','*',' ',
+		'*','*','*','*','*','*','*',' ','*','*',' ',
+		' ','*','*','*',' ','*',' ','*','*','*',' ',
+		'*',' ','*','*','*','G','*','*','*','*',' ',
+		'*',' ',' ','*',' ','*','*','*','*','*',' ',
+		'*','*','*','*',' ','*','*','*',' ',' ',' ',
+		'*','*','*','*','*','*','*','*',' ','*','*',
+		' ',' ',' ','*','*','*','*','*','*','*','*',
+		'*',' ',' ',' ',' ','*',' ',' ','*','*',' '
+	};
+	char* rmaze = malloc(122 * sizeof(char));
+	char* rmazea = rmaze;
+	rmaze = "P* *   *  **  **** **    ** * ** ******* **  *** * *** * ***G**** *  * ***** **** ***   ******** **   *********    *  ** ";
+	char* cp = &strmaze[0][0];
+	printf("\033[0m欢迎你来玩破墙镐对称飞迷宫，在这个迷宫中，“P”是你，空格是你可以走的地方，“\033[32;1mG\033[0m”为\033[32;1m终点\033[0m，输入“q”来用掉一把破墙镐来破掉你面前的墙，输入“e”来使用对称飞飞到你与迷宫的中心点中心对称的一个点，输入“r”即可重置迷宫，而你只要走到\033[32;1m终点\033[0m，就可以\033[32;1m赢\033[0m了，你听懂了吗?");
+	Sleep(6400);
+	system("cls");
+	while ('G' == strmaze[5][5]) {
+		int ix = (cp - &strmaze[0][0]) / 11;
+		int iy = (cp - &strmaze[0][0]) % 11;
+		printmaze(strmaze, ip, ic);
+		scanf("%c", &ch);
+		while ('\n' != getchar()) {
+			;
+		}
+		*cp = ' ';
+		switch (ch) {
+		case 'w':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmaze[0][i]) {
+					break;
+				}
+			}
+			11 == i && '*' != *(cp - 11) && (cp -= 11);
+			wp = W;
+			break;
+		case 'a':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmaze[i][0]) {
+					break;
+				}
+			}
+			11 == i && '*' != *(cp - 1) && cp--;
+			wp = A;
+			break;
+		case 's':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmaze[10][i]) {
+					break;
+				}
+			}
+			11 == i && '*' != *(cp + 11) && (cp += 11);
+			wp = S;
+			break;
+		case 'd':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmaze[i][10]) {
+					break;
+				}
+			}
+			11 == i && '*' != *(cp + 1) && cp++;
+			wp = D;
+			break;
+		case 'q':
+			if (ip) {
+				int ipa = 0;
+				switch (wp) {
+				case W:
+					(ix && '*' == *(cp - 11)) && (*(cp - 11) = ' ', ipa = 1);
+					break;
+				case A:
+					(iy && '*' == *(cp - 1)) && (*(cp - 1) = ' ', ipa = 1);
+					break;
+				case S:
+					(10 != ix && '*' == *(cp + 11)) && (*(cp + 11) = ' ', ipa = 1);
+					break;
+				case D:
+					(10 != iy && '*' == *(cp + 1)) && (*(cp + 1) = ' ', ipa = 1);
+					break;
+				default:
+					break;
+				}
+				ipa && ip--;
+			}
+			break;//破墙镐
+		case 'e':
+			(ic && ' ' == strmaze[10 - ix][10 - iy]) && (ic--, cp = &strmaze[10 - ix][10 - iy]);//对称飞
+			break;
+		case 'r':
+			ip = 4;
+			ic = 2;
+			cp = &strmaze[0][0];
+			for (i = 0; i < 121; i++) {
+				strmaze[0][i] = rmaze[i];
+			}
+			break;
+		default:
+			break;
+		}
+		*cp = 'P';
+		system("cls");
+	}
+	system("color 0A");
+	printf("恭喜你，你赢了\n");
+	free(rmazea);
+	rmaze = NULL;
+	rmazea = NULL;
+	return 0;
+}//破墙镐(2)(q)对称飞(4)(e)迷宫:破墙镐——破墙(有墙才破)，对称飞——从迷宫的中心点瞬移(瞬移点没墙)
+*///“C语言破墙镐对称飞迷宫”(选自我的CSDN博客)^
