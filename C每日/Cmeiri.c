@@ -5039,3 +5039,31 @@ int main() {
 	return 0;
 }//破墙镐(2)(q)对称飞(4)(e)迷宫:破墙镐——破墙(有墙才破)，对称飞——从迷宫的中心点瞬移(瞬移点没墙)
 *///“C语言破墙镐对称飞迷宫”(选自我的CSDN博客)^
+/*
+int main() {
+	int* arr = realloc(NULL, 40);
+	int i = 0;
+	for (i = 0; i < 10; i++) {
+		arr[i] = i;
+	}
+	int* arrt = arr;
+	arrt = realloc(arr, 80);
+	if (!arrt) {
+		perror("main");
+		return 1;
+	}
+	else {
+		arr = arrt;
+	}
+	for (i = 10; i < 20; i++) {
+		arr[i] = 0;
+	}
+	for (i = 0; i < 20; i++) {
+		printf("%d ", arr[i]);
+	}
+	free(arr);
+	arr = NULL;
+	arrt = NULL;
+	return 0;
+}
+*///“realloc函数”^
