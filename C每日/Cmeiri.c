@@ -5175,3 +5175,11 @@ int main() {
 	return 0;
 }//占领游戏(我随便取的)：改变 打印 判断-->改变（概率:(←↑→↓↖↗↘↙)?本+多数）
 *///C语言占领游戏”(选自我的CSDN博客)^
+/*
+int main() {
+	FILE* fp = fopen("C:\\Users\\Administrator\\Desktop\\a.txt", "w");
+	fputs("Hello,world!", fp);
+	fclose(fp);
+	return 0;
+}
+*///“fputs函数”^
