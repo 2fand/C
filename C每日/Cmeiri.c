@@ -5183,3 +5183,11 @@ int main() {
 	return 0;
 }
 *///“fputs函数”^
+/*
+int main() {
+	FILE* fp = fopen("C:\\Users\\Administrator\\Desktop\\a.txt", "w");
+	fputc('#', fp);
+	fclose(fp);
+	return 0;
+}
+*///“fputc函数”^
