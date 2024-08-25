@@ -5279,3 +5279,13 @@ int main() {
 	return 0;
 }
 *///“C语言文件迷宫”(选自我的CSDN博客)^
+/*
+int main() {
+	char str[10] = "123 12 1";
+	int i = 0;
+	int ia = 0;
+	sscanf(str, "%d %d", &i, &ia);
+	printf("%d %d\n", i, ia);
+	return 0;
+}
+*///“sscanf函数”^
