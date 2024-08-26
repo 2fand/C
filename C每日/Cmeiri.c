@@ -5289,3 +5289,109 @@ int main() {
 	return 0;
 }
 *///“sscanf函数”^
+/*
+void printmaze(const char strmaze[11][11]) {
+	int ia = 0;
+	int ib = 0;
+	for (ia = 0; ia < 11; ia++) {
+		for (ib = 0; ib < 11; ib++) {
+			printf("\033[%sm%c\033[0m", 'G' == strmaze[ia][ib] ? "32;1" : "0", strmaze[ia][ib]);
+		}
+		printf("|\n");
+	}
+	printf("-----------@\n");
+}
+int main() {
+	int i = 0;
+	int ia = 0;
+	int ip = 0;
+	int ig = 0;
+	char ch = 0;
+	char strmaze[11][11] = { 0 };
+	char* cpg = NULL;
+	memset(strmaze, ' ', sizeof strmaze);
+	char* cp = &strmaze[0][0];
+	printf("迷宫制造的规则：\n\t1.迷宫最大能制造的大小为11*11\n\t2.迷宫中只能有“P”“\033[32;1mG\033[0m”“*”和空格，不能有的会自动地被清除掉\n\t3.可以用“/”或者“|”来结束迷宫的制造，只不过，用“|”来结束迷宫的制造的话就可以使你可以边界互通了\n\t4.在制造迷宫的时候，迷宫最多只能有121个字符，如果超出这个部分，那么就会在换行之后自动结束迷宫的制造，如果你制造的完整的迷宫的右边紧挨着“|”，那么就可以使你可以边界互通了\n\t5.最好把迷宫造的完整点，并且右边要加上“/”或者“|”，不然就会耽误你玩你自己做的迷宫的时间\n\n");
+	while (ch = getchar(), ((' ' == ch || '*' == ch || 'P' == ch || 'G' == ch) && (i++, *cp = ch, (i <= 120 && cp++))), (ch - '/' && ch - '|')) {
+		'P' == ch && ip++;
+		'G' == ch && ig++;
+		if (121 == i) {
+			break;
+		}
+	}
+	((!(ch - '|')) || (!(getchar() - '|'))) && (ia = 1);
+	if (!(ip && ig)) {
+		system("color 0C");
+		system("cls");
+		printf("ERROR: “P”或者“G”并\033[4m没有被创建出来\033[0m\n");
+		return 1;
+	}
+	if (ip > 1 || ig > 1) {
+		system("color 0C");
+		system("cls");
+		printf("ERROR: “P”和“G”\033[4m只能创建一个\033[0m\n");
+		return 1;
+	}
+	for (i = 0, cp = NULL; !(cp && cpg); i++) {
+		!cp && (cp = strstr(strmaze[i], "P"));
+		!cpg && (cpg = strstr(strmaze[i], "G"));
+	}
+	system("cls");
+	while ('\n' != getchar()) {
+		;
+	}
+	while ('G' == *cpg) {
+		printmaze(strmaze);
+		scanf("%c", &ch);
+		while ('\n' != getchar()) {
+			;
+		}
+		*cp = ' ';
+		switch (ch) {
+		case 'w':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmaze[0][i]) {
+					break;
+				}
+			}
+			11 == i && '*' != *(cp - 11) && (cp -= 11);
+			(ia && 11 != i && '*' != *(cp + 110)) && (cp += 110);
+			break;
+		case 'a':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmaze[i][0]) {
+					break;
+				}
+			}
+			11 == i && '*' != *(cp - 1) && cp--;
+			(ia && 11 != i && '*' != *(cp + 10)) && (cp += 10);
+			break;
+		case 's':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmaze[10][i]) {
+					break;
+				}
+			}
+			11 == i && '*' != *(cp + 11) && (cp += 11);
+			(ia && 11 != i && '*' != *(cp - 110)) && (cp -= 110);
+			break;
+		case 'd':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmaze[i][10]) {
+					break;
+				}
+			}
+			11 == i && '*' != *(cp + 1) && cp++;
+			(ia && 11 != i && '*' != *(cp - 10)) && (cp -= 10);
+			break;
+		default:
+			break;
+		}
+		*cp = 'P';
+		system("cls");
+	}
+	system("color 0A");
+	printf("恭喜你，你赢了\n");
+	return 0;
+}
+*///“C语言迷宫制造”(选自我的CSDN博客)^
