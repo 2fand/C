@@ -5395,3 +5395,12 @@ int main() {
 	return 0;
 }
 *///“C语言迷宫制造”(选自我的CSDN博客)^
+/*
+int main() {
+	int arr[3] = { 3, 4, 1 };
+	char str[10] = "";
+	sprintf(str, "%d %d %d", arr[0], arr[1], arr[2]);
+	printf("%s\n", str);
+	return 0;
+}
+*///“sprintf函数”^
