@@ -5404,3 +5404,14 @@ int main() {
 	return 0;
 }
 *///“sprintf函数”^
+/*
+int main() {
+	int i = 0;
+	printf("请输入一个整数 -> ");
+	scanf("%d", &i);
+	char str[12] = "";
+	sprintf(str, "%d", i);
+	printf(str);
+	return 0;
+}
+*///“整数转字符串”(选自我的CSDN博客)^
