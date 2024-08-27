@@ -5415,3 +5415,16 @@ int main() {
 	return 0;
 }
 *///“整数转字符串”(选自我的CSDN博客)^
+/*
+int main() {
+	int i = 0;
+	char ch = 0;
+	printf("请输入一个整数 -> ");
+	scanf("%d", &i);
+	char str[12] = "";
+	sprintf(str, "%+d", i);
+	sscanf(str, "%c", &ch);
+	printf("%d为%s数", i, '+' == ch ? "正" : "负");
+	return 0;
+}
+*///“判断一个整数是正数还是负数”(选自我的CSDN博客)^
