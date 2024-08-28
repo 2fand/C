@@ -5428,3 +5428,109 @@ int main() {
 	return 0;
 }
 *///“判断一个整数是正数还是负数”(选自我的CSDN博客)^
+/*
+void printmaze(const char strmaze[11][11], const int iwalk) {
+	int ia = 0;
+	int ib = 0;
+	for (ia = 0; ia < 11; ia++) {
+		for (ib = 0; ib < 11; ib++) {
+			printf("\033[%sm%c\033[0m", 'G' == strmaze[ia][ib] ? "32;1" : "0", strmaze[ia][ib]);
+		}
+		printf("|\n");
+	}
+	printf("-----------@\n你走了%d步\n", iwalk);
+}
+int main() {
+	srand((unsigned int)time(NULL));
+	int i = 0;
+	int iw = 0;
+	int iwalk = 0;
+	char ch = 0;
+	char strmaze[11][11] = {
+		'*','*','*','*','*','*','*','*','*','*','G',
+		'*','*','*','*','*','*','*','*','*','*','*',
+		'*','*','*','*','*','*','*','*','*','*','*',
+		'*','*','*','*','*','*','*','*','*','*','*',
+		'*','*','*','*','*','*','*','*','*','*','*',
+		'*','*','*','*','*','*','*','*','*','*','*',
+		'*','*','*','*','*','*','*','*','*','*','*',
+		'*','*','*','*','*','*','*','*','*','*','*',
+		'*','*','*','*','*','*','*','*','*','*','*',
+		'*','*','*','*','*','*','*','*','*','*','*',
+		'P','*','*','*','*','*','*','*','*','*','*'
+	};
+	int wallarr[11][11] = { 0 };
+	wallarr[0][10] = 2;
+	wallarr[10][0] = 2;
+	char* cp = &strmaze[10][0];
+	printf("欢迎你来玩穿墙迷宫，在这个迷宫中，“P”是你，空格是你可以走的地方，“\033[32;1mG\033[0m”为\033[32;1m终点\033[0m，有些“*”是假墙，你可以走，有些“*”是真墙，你撞上去的话就会改变整个迷宫里所有墙的真假性了，而你只要走到\033[32;1m终点\033[0m，就可以\033[32;1m赢\033[0m了，你听懂了吗?");
+	Sleep(6400);
+	system("cls");
+	for (i = 0; i < 121; i++) {
+		2 != wallarr[0][i] && (wallarr[0][i] = rand() % 2);
+	}//墙之初始化
+	while ('G' == strmaze[0][10]) {
+		int ip = cp - &strmaze[0][0];
+		for (i = 0; i < 121; i++) {
+			2 != wallarr[0][i] && i != ip && (strmaze[0][i] = '*');
+		}//设墙
+		printmaze(strmaze, iwalk);
+		scanf("%c", &ch);
+		while ('\n' != getchar()) {
+			;
+		}
+		*cp = ' ';
+		switch (ch) {
+		case 'w':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmaze[0][i]) {
+					break;
+				}
+			}
+		    11 == i && 1 == wallarr[0][ip - 11] && (iw = 1), 11 == i && (!(wallarr[0][ip - 11]) || 2 == wallarr[0][ip - 11]) && (cp -= 11);
+			iwalk++;
+			break;
+		case 'a':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmaze[i][0]) {
+					break;
+				}
+			}
+			11 == i && 1 == wallarr[0][ip - 1] && (iw = 1), 11 == i && (!(wallarr[0][ip - 1]) || 2 == wallarr[0][ip - 1]) && (cp--);
+			iwalk++;
+			break;
+		case 's':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmaze[10][i]) {
+					break;
+				}
+			}
+			11 == i && 1 == wallarr[0][ip + 11] && (iw = 1), 11 == i && (!(wallarr[0][ip + 11]) || 2 == wallarr[0][ip + 11]) && (cp += 11);
+			iwalk++;
+			break;
+		case 'd':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmaze[i][10]) {
+					break;
+				}
+			}
+			11 == i && 1 == wallarr[0][ip + 1] && (iw = 1), 11 == i && (!(wallarr[0][ip + 1]) || 2 == wallarr[0][ip + 1]) && (cp++);
+			iwalk++;
+			break;
+		default:
+			break;
+		}
+		if (iw) {
+			for (i = 0; i < 121; i++) {
+				2 != wallarr[0][i] && ip != i && (wallarr[0][i] = rand() % 2);
+			}
+		}//走后撞墙? --> (-是->改变墙的属性)
+		iw = 0;
+		*cp = 'P';
+		system("cls");
+	}
+	system("color 0A");
+	printf("恭喜你，你一共走了%d步就到达了终点\n", iwalk);
+	return 0;
+}//穿墙迷宫: 走后撞墙? --> (-是->改变墙的属性) 设墙
+*///“穿墙迷宫”(选自我的CSDN博客)
