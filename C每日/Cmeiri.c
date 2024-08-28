@@ -5534,3 +5534,16 @@ int main() {
 	return 0;
 }//穿墙迷宫: 走后撞墙? --> (-是->改变墙的属性) 设墙
 *///“穿墙迷宫”(选自我的CSDN博客)
+/*
+int main() {
+	FILE* fp = fopen("C:\\Users\\Administrator\\Desktop\\a.txt", "r");
+	if (!fp) {
+		perror("fopen");
+		return 1;
+	}
+	printf("%c\n", fgetc(fp));
+	fclose(fp);
+	fp = NULL;
+	return 0;
+}
+*///“fgetc函数”^
