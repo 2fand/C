@@ -26,6 +26,7 @@
 //#define WAIT 50 <------ “走马灯文字”中的宏(可以自己改)
 //#define T 10000 <------ “走马灯文字”中的宏(可以自己改)
 //#define RIGHT 1 <------ “走马灯文字”中的宏(可以自己改)(0往左，非0往右)
+//#define PRINT(A) printf(#A"\n") <------ “#”中的宏
 #include <stdio.h>//““ ’”里的东西是重点
 #include <string.h>//“/-”“-/” <-- 程序里本来就有的注释
 #include <stdlib.h>
@@ -5763,3 +5764,14 @@ int main() {
 	return 0;
 }
 *///“C语言阴阳迷宫”(选自我的CSDN博客)^
+/*
+int main() {
+	int i = 0;
+	float f = 0.0f;
+	unsigned int def = 0;
+	PRINT(i);
+	PRINT(f);
+	PRINT(def);
+	return 0;
+}
+*///“#”^
