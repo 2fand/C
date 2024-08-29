@@ -5547,3 +5547,219 @@ int main() {
 	return 0;
 }
 *///“fgetc函数”^
+/*
+enum WASD {
+	W,
+	A,
+	S,
+	D
+};
+enum YYSe{
+	YI,
+	YA,
+	SW,
+	N
+};
+typedef struct YYS {
+	enum YYSe yy;
+	int ix;
+	int iy;
+}YYS;
+void printmaze(const char strmaze[11][11], const int iyi, const int iya, const int iyy) {
+	int ia = 0;
+	int ib = 0;
+	for (ia = 0; ia < 11; ia++) {
+		for (ib = 0; ib < 11; ib++) {
+			printf("\033[%s%sm%c\033[0m", 'G' == strmaze[ia][ib] ? "32;1" : "0", iyy % 2 ? ";7" : "", strmaze[ia][ib]);
+		}
+		printf("\033[%cm|\033[0m\n", iyy % 2 ? '7' : '0');
+	}
+	printf("\033[%cm-----------@\n\033[0m阳之镐*%d\n\033[7m阴之镐*%d\033[0m\n", iyy % 2 ? '7' : '0', iyi, iya);
+}
+int main() {
+	enum WASD wp = W;
+	int i = 0;
+	int ia = 0;
+	int iyi = 0;
+	int iya = 0;
+	int iyy = 0;
+	YYS yys[10] = { {YI,0,1}, {YI,1,7}, {YA,0,7}, {YA,0,8}, {YA,2,0}, {YA,7,5}, {SW,0,3}, {SW,0,9}, {SW,6,3}, {SW,7,7} };
+	char ch = 0;
+	char strmaze[11][11] = {
+		'P','-','*','&',' ',' ','*','+','+','&',' ',
+		'*','*','*',' ','*',' ','*','-','*','*',' ',
+		'+',' ',' ',' ',' ','*','*','*','*',' ',' ',
+		'*','*','*','*','*',' ',' ',' ','*',' ',' ',
+		'*',' ',' ',' ','*','*','*',' ','*','*','*',
+		'*','*','*',' ',' ',' ',' ','*','*',' ',' ',
+		'*',' ','*','&','*',' ',' ',' ','*',' ',' ',
+		'*','*',' ','*','*','+','*','&',' ',' ',' ',
+		'*','*',' ','*',' ',' ',' ',' ',' ','*','*',
+		'*',' ',' ',' ',' ',' ',' ',' ','*','*','*',
+		' ','*','*','*',' ',' ','*','*','*','*','G'
+	};
+	int yiya[11][11] = { 0 };
+	for (i = 0; i < 121; i++) {
+		switch (strmaze[0][i]) {
+		case '*':
+			yiya[0][i] = 1;
+			break;
+		case ' ':
+			yiya[0][i] = 0;
+			break;
+		default:
+			i && (yiya[0][i] = 2), i || (yiya[0][i] = 0);
+			break;
+		}
+	}
+	char strmazer[11][11] = { 0 };
+	int yiyar[11][11] = { 0 };
+	memcpy(strmazer, strmaze, sizeof strmaze);
+	memcpy(yiyar, yiya, sizeof yiya);
+	char* cp = &strmaze[0][0];
+	printf("\033[0m欢迎你来玩\033[4;7m阴\033[0m\033[4m阳\033[0m迷宫，在这个迷宫中，“P”是你，空格是你可以走的地方，“\033[32;1mG\033[0m”为\033[32;1m终\033[7m点\033[0m，输入“q”来用掉一把阳之镐破墙，\033[7m输入“e”来用掉一把阴之镐造墙\033[0m，输入“r”即可重置迷宫，在“&”上输入“z”就可以把“*”切换成\033[7m空格\033[0m，空格切换成“\033[7m*\033[0m”，再输入一次即可变回原样，而你只要走到\033[32;1m终\033[7m点\033[0m，就可以\033[32;1m赢\033[0m了，你听懂了吗?");
+	Sleep(7500);
+	system("cls");
+	while ('G' == strmaze[10][10]) {
+		int ix = (cp - &strmaze[0][0]) / 11;
+		int iy = (cp - &strmaze[0][0]) % 11;
+		for (i = 0; i < 6; i++) {
+			' ' == strmaze[yys[i].ix][yys[i].iy] && (strmaze[yys[i].ix][yys[i].iy] = '%');
+		}
+		for (; i < 10; i++) {
+			' ' == strmaze[yys[i].ix][yys[i].iy] && (strmaze[yys[i].ix][yys[i].iy] = '&');
+		}
+		printmaze(strmaze, iyi, iya, iyy);
+		scanf("%c", &ch);
+		while ('\n' != getchar()) {
+			;
+		}
+		*cp = ' ';
+		switch (ch) {
+		case 'w':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmaze[0][i]) {
+					break;
+				}
+			}
+			11 == i && '*' != *(cp - 11) && (cp -= 11);
+			wp = W;
+			break;
+		case 'a':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmaze[i][0]) {
+					break;
+				}
+			}
+			11 == i && '*' != *(cp - 1) && cp--;
+			wp = A;
+			break;
+		case 's':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmaze[10][i]) {
+					break;
+				}
+			}
+			11 == i && '*' != *(cp + 11) && (cp += 11);
+			wp = S;
+			break;
+		case 'd':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmaze[i][10]) {
+					break;
+				}
+			}
+			11 == i && '*' != *(cp + 1) && cp++;
+			wp = D;
+			break;
+		case 'q':
+			if (iyi) {
+				switch (wp) {
+				case W:
+					ix && '*' == *(cp - 11) && 2 != yiya[ix - 1][iy] && (*(cp - 11) = ' ', yiya[ix - 1][iy] = 0, iyi--);
+					break;
+				case A:
+					iy && '*' == *(cp - 1) && 2 != yiya[ix][iy - 1] && (*(cp - 1) = ' ', yiya[ix][iy - 1] = 0, iyi--);
+					break;
+				case S:
+					10 != ix && '*' == *(cp + 11) && 2 != yiya[ix + 1][iy] && (*(cp + 11) = ' ', yiya[ix + 1][iy] = 0， iyi--);
+					break;
+				case D:
+					10 != iy && '*' == *(cp + 1) && 2 != yiya[ix][iy + 1] && (*(cp + 1) = ' ', yiya[ix][iy + 1] = 0, iyi--);
+					break;
+				default:
+					break;
+				}
+			}
+			break;
+		case 'e':
+			if (iya) {
+				switch (wp) {
+				case W:
+					ix && ' ' == *(cp - 11) && 2 != yiya[ix - 1][iy] && (*(cp - 11) = '*', yiya[ix - 1][iy] = 1, iya--);
+					break;
+				case A:
+					iy && ' ' == *(cp - 1) && 2 != yiya[ix][iy - 1] && (*(cp - 1) = '*', yiya[ix][iy - 1] = 1, iya--);
+					break;
+				case S:
+					10 != ix && ' ' == *(cp + 11) && 2 != yiya[ix + 1][iy] && (*(cp + 11) = '*', yiya[ix + 1][iy] = 1, iya--);
+					break;
+				case D:
+					10 != iy && ' ' == *(cp + 1) && 2 != yiya[ix][iy + 1] && (*(cp + 1) = '*', yiya[ix][iy + 1] = 1, iya--);
+					break;
+				default:
+					break;
+				}
+			}
+			break;
+		case 'z':
+			for (i = 6; i < 10; i++) {
+				if (cp == &strmaze[yys[i].ix][yys[i].iy]) {
+					iyy++;
+					for (ia = 0; ia < 121; ia++) {
+						if (2 != yiya[0][ia]) {
+							if (yiya[0][ia]) {
+								strmaze[0][ia] = ' ';
+								yiya[0][ia] = 0;
+							}
+							else {
+								strmaze[0][ia] = '*';
+								yiya[0][ia] = 1;
+							}
+						}
+					}
+				}
+			}
+			break;
+		case 'r':
+			iyy = 0;
+			iyi = 0;
+			iya = 0;
+			cp = &strmaze[0][0];
+			memcpy(strmaze, strmazer, sizeof strmaze);
+			memcpy(yiya, yiyar, sizeof yiya);
+			wp = W;
+			for (i = 0; i < 2; i++) {
+				yys[i].yy = YI;
+			}
+			for (; i < 10; i++) {
+				i < 6 && (yys[i].yy = YA), i < 6 || (yys[i].yy = SW);
+			}
+			break;
+		default:
+			break;
+		}
+		*cp = 'P';
+		system("cls");
+		for (i = 0; i < 6; i++) {
+			if (cp == &strmaze[yys[i].ix][yys[i].iy] && N != yys[i].yy) {
+				i < 2 && iyi++, i < 2 || iya++;
+				yys[i].yy = N;
+			}
+		}
+	}
+	system("color 0A");
+	printf("恭喜你\033[37m，\033[32;1;7m你赢了\033[32;1m\n");
+	return 0;
+}
+*///“C语言阴阳迷宫”(选自我的CSDN博客)^
