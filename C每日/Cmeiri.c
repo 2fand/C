@@ -27,6 +27,12 @@
 //#define T 10000 <------ “走马灯文字”中的宏(可以自己改)
 //#define RIGHT 1 <------ “走马灯文字”中的宏(可以自己改)(0往左，非0往右)
 //#define PRINT(A) printf(#A"\n") <------ “#”中的宏
+//#define CAT(A, B) A##B <------ “##”中的宏
+//#define E 0 <------ “##”中的宏
+//#define OF 67 <------ “##”中的宏
+//#define DE(A) 1.2 <------ “##”中的宏
+//#define D 666 <------ “##”中的宏
+//#define E(A) 678 <------ “##”中的宏
 #include <stdio.h>//““ ’”里的东西是重点
 #include <string.h>//“/-”“-/” <-- 程序里本来就有的注释
 #include <stdlib.h>
@@ -5908,3 +5914,14 @@ int main() {
 	return 0;
 }
 *///“C语言推箱子迷宫”(选自我的CSDN博客)^
+/*
+int main() {
+	int i = 1;
+	int ii = 7;
+	int iii = 87887;
+	printf("%d\n", CAT(i, ii));
+	printf("%d\n", CAT(E, OF));
+	printf("%f\n", CAT(D, E(A)));
+	return 0;
+}
+*///“##”^
