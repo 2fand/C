@@ -5775,3 +5775,136 @@ int main() {
 	return 0;
 }
 *///“#”^
+/*
+typedef struct T {
+	int ix;
+	int iy;
+}T;
+void printmaze(const char strmaze[11][11], T tarr[9]) {
+	int ia = 0;
+	int ib = 0;
+	int ic = 0;
+	char str[5] = "33";
+	for (ia = 0; ia < 11; ia++) {
+		for (ib = 0; ib < 11; ib++) {
+			for (ic = 0; ic < 9; ic++) {
+				if ('@' == strmaze[tarr[ic].ix][tarr[ic].iy] && tarr[ic].ix == ia && tarr[ic].iy == ib) {
+					strcpy(str, "33;1");
+					break;
+				}
+			}
+			printf("\033[%sm%c\033[0m", 'G' == strmaze[ia][ib] ? "32;1" : '$' == strmaze[ia][ib] || '#' == strmaze[ia][ib] ? "33;1" : '@' == strmaze[ia][ib] ? str : "0", strmaze[ia][ib]);
+			strcpy(str, "33");
+		}
+		printf("|\n");
+	}
+	printf("-----------@\n");
+}
+int main() {
+	int i = 0;
+	char ch = 0;
+	T tarr[9] = { {0,3},{0,9},{3,1},{4,0},{5,1},{7,4},{7,5},{9,2},{10,2} };
+	char strmaze[11][11] = {
+		'P','@',' ','$','*',' ',' ',' ',' ','$','@',
+		'*','*',' ',' ','*',' ',' ',' ',' ','@','@',
+		' ',' ','*',' ','@',' ',' ','@',' ','@',' ',
+		'@','$',' ','*','*','@','@','*',' ','*',' ',
+		'$','@',' ',' ',' ',' ',' ','*','@','*',' ',
+		'@','$',' ','@',' ',' ',' ','@','*','@',' ',
+		' ',' ',' ',' ','*','*',' ',' ',' ',' ',' ',
+		'@','*',' ','*','$','$','*',' ','*','@','*',
+		' ',' ','*',' ','@',' ',' ','*',' ',' ',' ',
+		' ',' ','$','@',' ',' ',' ','@','@',' ','#',
+		' ',' ','$',' ',' ','@',' ','*',' ','#','G'
+	};
+	char strmazer[11][11] = { 0 };
+	memcpy(strmazer, strmaze, sizeof strmaze);
+	char* cp = &strmaze[0][0];
+	char* cboxp = cp;
+	printf("欢迎你来玩推\033[33m箱子\033[0m迷宫，在这个迷宫中，“P”是你，空格是你可以走的地方，“\033[32;1mG\033[0m”为\033[32;1m终点\033[0m，\033[33m箱子“@”\033[0m可以推，门“\033[33;1m#\033[0m”一般无法通行，但在“\033[33;1m$\033[33;1m”全被\033[33m箱子“@”\033[0m占的时候，它们就会被打开，而且打开的时候所有的箱子“\033[33m@\033[0m”都会变成墙“*”，并且输入“r”即可重置迷宫，而你只要走到\033[32;1m终点\033[0m，就可以\033[32;1m赢\033[0m了，现在你听懂了吗?");
+	Sleep(8000);
+	system("cls");
+	while ('G' == strmaze[10][10]) {
+		int ifl = 0;
+		printmaze(strmaze, tarr);
+		scanf("%c", &ch);
+		while ('\n' != getchar()) {
+			;
+		}
+		*cp = ' ';
+		switch (ch) {
+		case 'w':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmaze[0][i]) {
+					break;
+				}
+			}
+			11 == i && '*' != *(cp - 11) && '#' != *(cp - 11) && '@' != *(cp - 11) && (cp -= 11, ifl = 1);
+			if (!ifl && 11 == i && '@' == *(cp - 11)) {
+				cboxp = cp - 11;
+				(cboxp - &strmaze[0][0]) / 11 && (' ' == *(cboxp - 11) || '$' == *(cboxp - 11)) && (*cboxp = ' ', cboxp -= 11, *cboxp = '@', cp -= 11);
+			}
+			break;
+		case 'a':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmaze[i][0]) {
+					break;
+				}
+			}
+			11 == i && '*' != *(cp - 1) && '#' != *(cp - 1) && '@' != *(cp - 1) && (cp--, ifl = 1);
+			if (!ifl && 11 == i && '@' == *(cp - 1)) {
+				cboxp = cp - 1;
+				(cboxp - &strmaze[0][0]) % 11 && (' ' == *(cboxp - 1) || '$' == *(cboxp - 1)) && (*cboxp-- = ' ', *cboxp = '@', cp--);
+			}
+			break;
+		case 's':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmaze[10][i]) {
+					break;
+				}
+			}
+			11 == i && '*' != *(cp + 11) && '#' != *(cp + 11) && '@' != *(cp + 11) && (cp += 11, ifl = 1);
+			if (!ifl && 11 == i && '@' == *(cp + 11)) {
+				cboxp = cp + 11;
+				10 != (cboxp - &strmaze[0][0]) / 11 && (' ' == *(cboxp + 11) || '$' == *(cboxp + 11)) && (*cboxp = ' ', cboxp += 11, *cboxp = '@', cp += 11);
+			}
+			break;
+		case 'd':
+			for (i = 0; i < 11; i++) {
+				if (cp == &strmaze[i][10]) {
+					break;
+				}
+			}
+			11 == i && '*' != *(cp + 1) && '#' != *(cp + 1) && '@' != *(cp + 1) && (cp++, ifl = 1);
+			if (!ifl && 11 == i && '@' == *(cp + 1)) {
+				cboxp = cp + 1;
+				10 != (cboxp - &strmaze[0][0]) % 11 && (' ' == *(cboxp + 1) || '$' == *(cboxp + 1)) && (*cboxp++ = ' ', *cboxp = '@', cp++);
+			}
+			break;
+		case 'r':
+			memcpy(strmaze, strmazer, sizeof strmaze);
+			cp = &strmaze[0][0];
+			cboxp = cp;
+			break;
+		default:
+			break;
+		}
+		*cp = 'P';
+		system("cls");
+		for (ifl = 0, i = 0; i < 9; i++) {
+			' ' == strmaze[tarr[i].ix][tarr[i].iy] && (strmaze[tarr[i].ix][tarr[i].iy] = '$');
+			'@' == strmaze[tarr[i].ix][tarr[i].iy] && ifl++;
+		}
+		if (9 == ifl) {
+			strmaze[9][10] = ' ';
+			strmaze[10][9] = ' ';
+			for (i = 0; i < 121; i++) {
+				'@' == strmaze[0][i] && (strmaze[0][i] = '*');
+			}
+		}
+	}
+	system("color 0A");
+	printf("恭喜你，你赢了\n");
+	return 0;
+}
+*///“C语言推箱子迷宫”(选自我的CSDN博客)^
