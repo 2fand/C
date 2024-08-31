@@ -5925,3 +5925,9 @@ int main() {
 	return 0;
 }
 *///“##”^
+/*
+int main() {
+	printf("%d", __LINE__);
+	return 0;
+}
+*///“__LINE__”^
