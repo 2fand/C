@@ -5931,3 +5931,13 @@ int main() {
 	return 0;
 }
 *///“__LINE__”^
+/*
+int main() {
+	printf("%d %s\n", __LINE__, __FILE__);
+#line 114514
+	printf("%d %s\n", __LINE__, __FILE__);
+#line 1919810 "Hello, world!.c"
+	printf("%d %s\n", __LINE__, __FILE__);
+	return 0;
+}
+*///“预处理指令#line”^
