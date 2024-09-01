@@ -5947,3 +5947,9 @@ int main() {
 	return 0;
 }
 *///“__FUNCTION__”^
+/*
+int main() {
+	printf("%s\n", __DATE__);
+	return 0;
+}
+*///“__DATE__”^
