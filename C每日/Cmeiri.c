@@ -5941,3 +5941,9 @@ int main() {
 	return 0;
 }
 *///“预处理指令#line”^
+/*
+int main() {
+	printf("%s\n", __FUNCTION__);
+	return 0;
+}
+*///“__FUNCTION__”^
