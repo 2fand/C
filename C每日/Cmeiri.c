@@ -5961,3 +5961,12 @@ int main() {
 	return 0;
 }
 *///“#if”和“#endif”^
+/*
+#if 0
+	printf("%s\n", __DATE__);
+#else
+	printf("%s", __FILE__);
+#endif
+	return 0;
+}
+*///“#else”^
