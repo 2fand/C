@@ -5953,3 +5953,11 @@ int main() {
 	return 0;
 }
 *///“__DATE__”^
+/*
+int main() {
+#if 0
+	printf("%s\n", __DATE__);
+#endif
+	return 0;
+}
+*///“#if”和“#endif”^
