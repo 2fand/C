@@ -5970,3 +5970,15 @@ int main() {
 	return 0;
 }
 *///“#else”^
+/*
+int main() {
+#if 0
+	printf("0");
+#elif 1
+	printf("1");
+#else 2
+	printf("2");
+#endif
+	return 0;
+}
+*///“#elif”^
