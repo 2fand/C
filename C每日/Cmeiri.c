@@ -33,6 +33,7 @@
 //#define DE(A) 1.2 <------ “##”中的宏
 //#define D 666 <------ “##”中的宏
 //#define E(A) 678 <------ “##”中的宏
+//#define ABCD ------> “ABCD”里的宏
 #include <stdio.h>//““ ’”里的东西是重点
 #include <string.h>//“/-”“-/” <-- 程序里本来就有的注释
 #include <stdlib.h>
@@ -5982,3 +5983,11 @@ int main() {
 	return 0;
 }
 *///“#elif”^
+/*
+int main() {
+#ifdef ABCD
+	printf("ABCD");
+#endif
+	return 0;
+}
+*///“#ifdef”^
