@@ -5991,3 +5991,12 @@ int main() {
 	return 0;
 }
 *///“#ifdef”^
+/*
+//#define ABCD
+int main() {
+#ifndef ABCD
+	printf("ABCD");
+#endif
+	return 0;
+}
+*///“#ifndef”^
