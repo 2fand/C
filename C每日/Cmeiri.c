@@ -5991,6 +5991,7 @@ int main() {
 	return 0;
 }
 *///“#ifdef”^
+
 /*
 //#define ABCD
 int main() {
@@ -6000,3 +6001,26 @@ int main() {
 	return 0;
 }
 *///“#ifndef”^
+/*
+int main() {
+    int i = 0;
+    int ia = 0;
+    int ib = 0;
+    char ch = 0;
+    scanf("%d %c", &i,&ch);
+    int ic = i;
+    for (i--; i > -1; i--) {
+        for (ia = 0; ia < i; ia++) {
+            printf(" ");
+        }
+        for (ib = 0; ib < ic - i; ib++) {
+            printf("%c", ib % 2 ? ' ' : ch);
+        }
+        for (ic++, ia = 0; ia < i; ia++) {
+            printf(" ");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+*///“金字塔打印(字符可自定)”(大多选自牛客网)^
